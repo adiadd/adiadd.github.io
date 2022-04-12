@@ -86,7 +86,7 @@ a{
     margin:0;
 }
 
-.section-2 a{
+.section-2 .titleLink{
     display: block;
     padding: 5px;
     font-size: 1.2rem;
@@ -94,8 +94,16 @@ a{
     color: blue;
 }
 
+.section-2 .normLinks{
+    font-size: 1.1rem;
+    padding-bottom: 10px;
+    margin:0;
+    color: white;
+    text-decoration: none;
+}
+
 /* animations / utilities */
-.section-2 a:hover{
+.section-2 .titleLink:hover{
     font-size: 1.3rem;
     text-decoration: underline;
     cursor: pointer;

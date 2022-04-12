@@ -32,8 +32,25 @@
 <body>
     <div class="grid-2">
         <div class="section-1">
-            <img src='https://raw.githubusercontent.com/adiadd/adiadd.github.io/master/img/agnipfp.png' onmouseover="this.src='https://raw.githubusercontent.com/adiadd/adiadd.github.io/master/img/pfp.png';" onmouseout="this.src='https://raw.githubusercontent.com/adiadd/adiadd.github.io/master/img/agnipfp.png';" width="200" height="auto"/>
-            <h6>Hover to see the real me ⤻</h6>
+            <img id ="imageOne" src ="https://raw.githubusercontent.com/adiadd/adiadd.github.io/master/img/agnipfp.png" onclick = "changeColor()" width="200" height="auto"/>
+
+            <script>
+                var image =  document.getElementById("imageOne");
+
+                function changeColor()
+                {
+                    if (image.getAttribute('src') == "https://raw.githubusercontent.com/adiadd/adiadd.github.io/master/img/agnipfp.png")
+                    {
+                        image.src = "https://raw.githubusercontent.com/adiadd/adiadd.github.io/master/img/pfp.png";
+                    }
+                    else
+                    {
+                        image.src = "https://raw.githubusercontent.com/adiadd/adiadd.github.io/master/img/agnipfp.png";
+                    }
+                }
+            </script>
+            
+            <h6>Click to see the real me ⤻</h6>
             <h2>Aditya Addepalli</h2>
             <p>Welcome to my personal website👋🏽</p>
             <a href="https://www.twitter.com/adiaddxyz" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a>
@@ -42,16 +59,16 @@
         </div>
         <div class="section-2">
             <h2>About</h2>
-            <p>Hi! My name is Aditya but you can call me <strong>Adi</strong> <i>[ah d ee]</i>. I graduated from <span style="color: white; color:#bf5700">UT Austin</span> with a major in Management Information Systems and a certificate in Computer Science. I really love learning and building new things, from games to applications. My life's goal is to <mark style="color: white; background-color: green">make the world a better place</mark>, in whatever way that may be. I am a big believer in working for the greater good and strive to live each day to its <strong><u>fullest</u></strong> </p>
+            <p>Hi! My name is Aditya but you can call me <strong>Adi</strong> <i>[ah d ee]</i>. I graduated from <span style="color:#bf5700">UT Austin</span> with a major in Management Information Systems and a certificate in Computer Science. I really love learning and building new things, from games to applications. My life's goal is to <strong style="color: black;"" ><i>make the world a better place</i></strong>, in whatever way that may be. I am a big believer in working for the greater good and strive to live each day to its <strong><u>fullest</u></strong> </p>
 
             <h2>Experience</h2>
-            <a href="#" target="_blank" rel="noopener noreferrer">🔗 Cloud Developer @ <strong>AWS</strong></a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="titleLink">🔗 Cloud Developer @ <strong>AWS</strong></a>
             <ul>
                 <li>
                     Architected and developed an internal application that allows UX researchers to view real-time ML data analytics with the power of eye-tracking using React, AWS Amplify, Webgazer.js, and AWS Sagemaker
                 </li>
             </ul>
-            <a href="#" target="_blank" rel="noopener noreferrer">🔗 Application Developer Intern @ <strong>AWS</strong></a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="titleLink">🔗 Application Developer Intern @ <strong>AWS</strong></a>
             <ul>
                 <li>
                     Developed an internal headcount tool using custom Honeycode functions to aggregate and streamline headcount information for 4,000+ employees
@@ -63,16 +80,16 @@
                     Redesigned and automated the “Resource Management Utilization and Availability mailer” to dynamically create customized links for each Professional Services consultant using Salesforce CRM data integration
                 </li>
             </ul>
-            <a href="#" target="_blank" rel="noopener noreferrer">🔗 Co-founder & Developer @ <strong>Bounty Hunters</strong></a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="titleLink">🔗 Co-founder & Developer @ <strong>Bounty Hunters</strong></a>
             <ul>
                 <li>
                     Developed a multiplayer game using Unity, C#, and AWS modeled after the live-action game “Assassin” while incorporating a sandbox environment and battle royale component
                 </li>
             </ul>
-            <a href="https://www.vGlogs.com" target="_blank" rel="noopener noreferrer">🔗 Founder & CEO of <strong>vGlogs</strong></a>
+            <a href="https://www.vGlogs.com" target="_blank" rel="noopener noreferrer" class="titleLink">🔗 Founder & CEO of <strong>vGlogs</strong></a>
             <ul>
                 <li>
-                    Founded and architected an online social media app and platform to allow gamers to build their gaming resume ($3-4 million rough valuation)
+                    Founded and architected an online social media app and platform to allow gamers to build their gaming resume
                 </li>
             </ul>
 
@@ -108,7 +125,7 @@
             </ul>
             
             <h2>On the side</h2>
-            <p>Outside of work/personal projects, I really enjoy playing video games 🎮, working out 💪🏽, spending time with friends/family 😎, helping my TikTok famous sister 💃, and meeting new people 🤙🏽</p>
+            <p>Outside of work/personal projects, I really enjoy playing <a href="https://www.twitch.tv/agniFPS" target="_blank" rel="noopener noreferrer" class="homepage-link">video games</a> 🎮, working out 💪🏽, spending time with friends/family 😎, helping my TikTok famous twin <a href="https://www.tiktok.com/@aishuadd" target="_blank" rel="noopener noreferrer" class="homepage-link">(@aishuadd)</a> 💃, and meeting new people 🤙🏽</p>
 
             <h2>Contact</h2>
             <p>I'm a human just like you and love making new friends! Don't hesitate to DM me on Twitter: <a href="https://twitter.com/messages/compose?recipient_id=1595924352&ref_src=twsrc%5Etfw" class="twitter-dm-button" data-screen-name="@adiaddxyz" data-show-count="false" target="_blank" rel="noopener noreferrer">Message @@adiaddxyz</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  or shoot an email over to <a class="homepage-link" href="mailto: adi.addepalli@gmail.com" target="_blank" rel="noopener noreferrer"><nobr>adi.addepalli@gmail.com</nobr></a></p>
