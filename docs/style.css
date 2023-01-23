@@ -75,6 +75,18 @@ a{
     padding: 10px;
 }
 
+#twitter-tag:hover {
+    color: #1DA1F2;
+}
+
+#linkedin-tag:hover {
+    color: #0077b5;
+}
+
+#github-tag:hover {
+    color: #333;
+}
+
 /* section 2 */
 .section-2{
     padding-top: 5vh;
