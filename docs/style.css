@@ -23,12 +23,12 @@ body{
 
 .innerLink {
     width: 200px;
-    color: red; 
+    color: red;
   }
-  
+
   .innerLink#status-label {
     width: auto;
-    color: blue; 
+    color: blue;
   }
 
 .homepage-link{
@@ -85,6 +85,10 @@ a{
 
 #github-tag:hover {
     color: #333;
+}
+
+#substack-tag:hover {
+    color: #FFA500
 }
 
 /* section 2 */
