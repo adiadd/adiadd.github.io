@@ -1,0 +1,131 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Aditya Addepalli">
+	<main>
+		<div class="grid-2">
+			<div class="section-1">
+				<img id ="imageOne" src ="https://raw.githubusercontent.com/adiadd/adiadd.github.io/master/img/agnipfp.png" onclick = "changeColor()" width="200" height="auto"/>
+
+				<script async>
+					var image =  document.getElementById("imageOne");
+
+					function changeColor()
+					{
+						if (image.getAttribute('src') == "https://raw.githubusercontent.com/adiadd/adiadd.github.io/master/img/agnipfp.png")
+						{
+							image.src = "https://raw.githubusercontent.com/adiadd/adiadd.github.io/master/img/pfp.png";
+						}
+						else
+						{
+							image.src = "https://raw.githubusercontent.com/adiadd/adiadd.github.io/master/img/agnipfp.png";
+						}
+					}
+				</script>
+
+				<h6>Click to see the real me ⤻</h6>
+				<h2>Aditya Addepalli</h2>
+				<p>Welcome to my personal website 👋🏽</p>
+				<a href="https://www.twitter.com/adiaddxyz" target="_blank" rel="noopener noreferrer" id="twitter-tag"><i class="fa-brands fa-twitter"></i></a>
+				<a href="https://www.linkedin.com/in/adiadd" target="_blank" rel="noopener noreferrer" id="linkedin-tag"><i class="fa-brands fa-linkedin-in"></i></a>
+				<a href="https://www.github.com/adiadd" target="_blank" rel="noopener noreferrer" id="github-tag"><i class="fa-brands fa-github"></i></a>
+				<a href="https://substack.com/@adiadd" target="_blank" rel="noopener noreferrer" id="substack-tag"><i class="fa-solid fa-book"></i></a>
+				<br/>
+				<br/>
+				<br/>
+
+				<a href="/blog"><button class="button-85" role="button">my random thoughts</button></a>
+
+			</div>
+			<div class="section-2">
+				<h2>About</h2>
+				<p>Hi ✌🏾! My name is Aditya but you can call me <strong>Adi</strong> <i>[ah d ee]</i>. I graduated from <span style="color:#bf5700">UT Austin</span> with a major in Management Information Systems and a certificate in Computer Science. During the day, I work for Amazon Web Services and at night, I am pursuing a Master of Computer Science from Georgia Tech. </p>
+				<p>My life's goal is to <strong style="color: black;"" ><i>eventually make the world a better place</i></strong>, in whatever way that may be. By nature, I'm a curious person and strive to live each day to its <strong><u>fullest</u></strong> (one can try but doesn't mean it always happens 😅) </p>
+				<h2>Experience</h2>
+				<h4>Senior Cloud Developer & prev AppDev Intern @ <strong>AWS</strong></h4>
+				<ul>
+					<li>
+						Led, architected, and developed applications across the entire stack for numerous engagements with customers ranging from $1 million to $1 billion. Front-end to back-end, TypeScript to Python, and internal to external customers, I built major and integral user-driven features generating over $60 million in future revenues
+					</li>
+					<!-- <li>
+						Engineered a strong and crucial GraphQL API that hundreds of developers relied on, handling millions of dollars' worth of infrastructure for a major landing zone platform
+					</li>
+					<li>
+						Helped develop several critical features for an AWS customer's interactive cyber range using React, TypeScript, Python, and FastAPI
+					</li>
+					<li>
+						Built a critical visualization tool for a large AWS customer using React, AWS CDK, Java, Spark, and Node.js
+					</li>
+					<li>
+						Architected and developed an internal application that allows UX researchers to view real-time ML data analytics with the power of eye-tracking using React, AWS Amplify, Webgazer.js, and AWS Sagemaker
+					</li> -->
+				</ul>
+				<h4>Building fun stuff @ <strong><a href="https://www.agnilabs.xyz" target="_blank" rel="noopener noreferrer" class="homepage-link">Agni Labs</a></strong></h4>
+				<ul>
+					<li>
+						Trying to materialize the ideas in my head one mvp at a time💡🧪
+					</li>
+				</ul>
+				<h4>Co-founder & Developer @ <strong>Bounty Hunters</strong></h4>
+				<ul>
+					<li>
+						Developed a multiplayer game using Unity, C#, and AWS modeled after the live-action game “Assassin” while incorporating a sandbox environment and battle royale component with a bunch of awesome friends
+					</li>
+				</ul>
+				<h4>Founder & CEO of <strong><a href="https://www.vglogs.com" target="_blank" rel="noopener noreferrer" class="homepage-link">vGlogs</a></strong></h4>
+				<ul>
+					<li>
+						Founded and architected a professional social media app and platform that allowed gamers to build their gaming resume for recognition, credibility, and monetization
+					</li>
+				</ul>
+
+				<h2>Skills</h2>
+				<p>I like to write the following languages:<ul class="two-columns">
+					<li>Python</li>
+					<li>Java</li>
+					<li>C#</li>
+					<li>SQL</li>
+					<li>JavaScript & TypeScript</li>
+					<li>HTML/CSS</li>
+				  </ul> </p>
+				<p>and use the following frameworks/tools:<ul class="two-columns">
+				<li>React</li>
+				<li>Next.js</li>
+				<li>GraphQL</li>
+				<li>Node</li>
+				<li>FastAPI</li>
+				<li>Unity</li>
+				<li>AWS (numerous services)</li>
+				</ul> </p>
+
+				<h2>Certs/Honors</h2>
+				<ul class="two-columns">
+					<li>
+						AWS Security - Professional
+					</li>
+					<li>
+						AWS Developer - Associate
+					</li>
+					<li>
+						AWS Solutions Architect - Associate
+					</li>
+					<li>
+						AWS Cloud Practitioner
+					</li>
+					<li>
+						Eagle Scout (2016)
+					</li>
+				</ul>
+
+				<h2>On the side</h2>
+				<p>Outside of work/personal projects, I really enjoy playing <a href="https://www.twitch.tv/agniFPS" target="_blank" rel="noopener noreferrer" class="homepage-link">video games</a> 🎮, working out 💪🏽, spending time with friends/family 😎, helping my TikTok famous twin <a href="https://www.tiktok.com/@aishuadd" target="_blank" rel="noopener noreferrer" class="homepage-link">(@aishuadd)</a> 💃, and meeting new people 🤙🏽</p>
+
+				<h2>Contact</h2>
+				<p>I'm a human just like you and love making new friends! Don't hesitate to shoot an email over to <a class="homepage-link" href="mailto: adi.addepalli@gmail.com" target="_blank" rel="noopener noreferrer"><nobr>adi.addepalli@gmail.com</nobr></a>, DM me on Twitter: <a href="https://twitter.com/messages/compose?recipient_id=1595924352&ref_src=twsrc%5Etfw" class="twitter-dm-button homepage-link" data-screen-name="@adiaddxyz" data-show-count="false" target="_blank" rel="noopener noreferrer">@adiaddxyz</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> , or <a class="homepage-link" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/adiadd?hide_gdpr_banner=1'});return false;">schedule a chat with me</a>!</p>
+
+			</div>
+		</div>
+	</main>
+</Layout>
+

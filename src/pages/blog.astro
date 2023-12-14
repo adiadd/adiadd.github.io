@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import BlogPost from "../components/BlogPost.astro";
+const allPosts = await getCollection("posts");
+import Layout from "../layouts/Layout.astro";
+
+---
+
+<Layout title="Aditya's Blog">
+    <div class="center-content">
+        <h1>my random thoughts</h1>
+        <ul role="list" class="link-card-grid">
+            {allPosts.map((post) => <BlogPost url={`/posts/${post.slug}/`} title={post.data.title}  />)}
+          </ul>
+    </div>
+</Layout>
+
+<style>
+    .center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.link-card-grid {
+    list-style: none;
+    padding: 0;
+}
+
+.link-card-grid li {
+    margin: 10px;
+}
+
+</style>
