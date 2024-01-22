@@ -6,26 +6,23 @@ import Layout from "../layouts/Layout.astro";
   <main>
     <div class="grid-2">
       <div class="section-1">
-        <img
-          id="imageOne"
-          src="./src/assets/agnipfp.png"
-          onclick="changeColor()"
-          width="200"
-          height="auto"
-		  alt="Aditya's Profile Picture"
-        />
+        <img id ="imageOne" src ="https://raw.githubusercontent.com/adiadd/adiadd.github.io/master/img/agnipfp.png" onclick = "changeColor()" width="200" height="auto"/>
 
-        <script async>
-          var image = document.getElementById("imageOne");
+				<script async>
+					var image =  document.getElementById("imageOne");
 
-          function changeColor() {
-            if (image.getAttribute("src") == "./src/assets/agnipfp.png") {
-              image.src = "./src/assets/pfp.png";
-            } else {
-              image.src = "./src/assets/agnipfp.png";
-            }
-          }
-        </script>
+					function changeColor()
+					{
+						if (image.getAttribute('src') == "https://raw.githubusercontent.com/adiadd/adiadd.github.io/master/img/agnipfp.png")
+						{
+							image.src = "https://raw.githubusercontent.com/adiadd/adiadd.github.io/master/img/pfp.png";
+						}
+						else
+						{
+							image.src = "https://raw.githubusercontent.com/adiadd/adiadd.github.io/master/img/agnipfp.png";
+						}
+					}
+				</script>
 
         <h6>Click to see the real me ⤻</h6>
         <h2>Aditya Addepalli</h2>
