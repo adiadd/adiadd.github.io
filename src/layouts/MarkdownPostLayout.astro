@@ -1,9 +1,10 @@
 ---
 import Layout from "./Layout.astro";
+import { SHORT_SITE_TITLE } from "../consts"
 const { frontmatter } = Astro.props;
 ---
 
-<Layout title={frontmatter.title}>
+<Layout title={`${frontmatter.title} | ${SHORT_SITE_TITLE}`}>
     <div class="center-content">
   <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
   <!-- <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} /> -->
@@ -18,15 +19,6 @@ const { frontmatter } = Astro.props;
     align-items: center;
     justify-content: center;
     text-align: center;
-}
-
-.link-card-grid {
-    list-style: none;
-    padding: 0;
-}
-
-.link-card-grid li {
-    margin: 10px;
 }
 
 </style>

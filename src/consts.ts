@@ -4,3 +4,4 @@
 export const SITE_TITLE = "Aditya Addepalli";
 export const SITE_DESCRIPTION = "Aditya's personal website.";
 export const SITE_URL = "https://adiadd.xyz";
+export const SHORT_SITE_TITLE = "Adi";

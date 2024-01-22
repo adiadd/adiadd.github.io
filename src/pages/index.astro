@@ -1,54 +1,104 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Aditya Addepalli">
-	<main>
-		<div class="grid-2">
-			<div class="section-1">
-				<img id ="imageOne" src ="https://raw.githubusercontent.com/adiadd/adiadd.github.io/master/img/agnipfp.png" onclick = "changeColor()" width="200" height="auto"/>
+  <main>
+    <div class="grid-2">
+      <div class="section-1">
+        <img
+          id="imageOne"
+          src="./src/assets/agnipfp.png"
+          onclick="changeColor()"
+          width="200"
+          height="auto"
+		  alt="Aditya's Profile Picture"
+        />
 
-				<script async>
-					var image =  document.getElementById("imageOne");
+        <script async>
+          var image = document.getElementById("imageOne");
 
-					function changeColor()
-					{
-						if (image.getAttribute('src') == "https://raw.githubusercontent.com/adiadd/adiadd.github.io/master/img/agnipfp.png")
-						{
-							image.src = "https://raw.githubusercontent.com/adiadd/adiadd.github.io/master/img/pfp.png";
-						}
-						else
-						{
-							image.src = "https://raw.githubusercontent.com/adiadd/adiadd.github.io/master/img/agnipfp.png";
-						}
-					}
-				</script>
+          function changeColor() {
+            if (image.getAttribute("src") == "./src/assets/agnipfp.png") {
+              image.src = "./src/assets/pfp.png";
+            } else {
+              image.src = "./src/assets/agnipfp.png";
+            }
+          }
+        </script>
 
-				<h6>Click to see the real me ⤻</h6>
-				<h2>Aditya Addepalli</h2>
-				<p>Welcome to my personal website 👋🏽</p>
-				<a href="https://www.twitter.com/adiaddxyz" target="_blank" rel="noopener noreferrer" id="twitter-tag"><i class="fa-brands fa-twitter"></i></a>
-				<a href="https://www.linkedin.com/in/adiadd" target="_blank" rel="noopener noreferrer" id="linkedin-tag"><i class="fa-brands fa-linkedin-in"></i></a>
-				<a href="https://www.github.com/adiadd" target="_blank" rel="noopener noreferrer" id="github-tag"><i class="fa-brands fa-github"></i></a>
-				<a href="https://substack.com/@adiadd" target="_blank" rel="noopener noreferrer" id="substack-tag"><i class="fa-solid fa-book"></i></a>
-				<br/>
-				<br/>
-				<br/>
+        <h6>Click to see the real me ⤻</h6>
+        <h2>Aditya Addepalli</h2>
+        <p>Welcome to my personal website 👋🏽</p>
+        <a
+          href="https://www.twitter.com/adiaddxyz"
+          target="_blank"
+          rel="noopener noreferrer"
+          id="twitter-tag"><i class="fa-brands fa-twitter"></i></a
+        >
+        <a
+          href="https://www.linkedin.com/in/adiadd"
+          target="_blank"
+          rel="noopener noreferrer"
+          id="linkedin-tag"><i class="fa-brands fa-linkedin-in"></i></a
+        >
+        <a
+          href="https://www.github.com/adiadd"
+          target="_blank"
+          rel="noopener noreferrer"
+          id="github-tag"><i class="fa-brands fa-github"></i></a
+        >
+        <a
+          href="https://substack.com/@adiadd"
+          target="_blank"
+          rel="noopener noreferrer"
+          id="substack-tag"><i class="fa-solid fa-book"></i></a
+        >
+        <br />
+        <br />
+        <br />
 
-				<a href="/blog"><button class="button-85" role="button">my random thoughts</button></a>
-
-			</div>
-			<div class="section-2">
-				<h2>About</h2>
-				<p>Hi ✌🏾! My name is Aditya but you can call me <strong>Adi</strong> <i>[ah d ee]</i>. I graduated from <span style="color:#bf5700">UT Austin</span> with a major in Management Information Systems and a certificate in Computer Science. During the day, I work for Amazon Web Services and at night, I am pursuing a Master of Computer Science from Georgia Tech. </p>
-				<p>My life's goal is to <strong style="color: black"><i>eventually make the world a better place</i></strong>, in whatever way that may be. By nature, I'm a curious person and strive to live each day to its <strong><u>fullest</u></strong> (one can try but doesn't mean it always happens 😅) </p>
-				<h2>Experience</h2>
-				<h4>Senior Cloud Developer & prev AppDev Intern @ <strong>AWS</strong></h4>
-				<ul>
-					<li>
-						Led, architected, and developed applications across the entire stack for numerous engagements with customers ranging from $1 million to $1 billion. Front-end to back-end, TypeScript to Python, and internal to external customers, I built major and integral user-driven features generating over $60 million in future revenues
-					</li>
-					<!-- <li>
+        <a href="/blog"
+          ><button class="button-85" role="button">my random thoughts</button
+          ></a
+        >
+      </div>
+      <div class="section-2">
+        <h2>About</h2>
+        <p>
+          Hi ✌🏾! My name is Aditya but you can call me <strong>Adi</strong>
+          <i>[ah d ee]</i>. I graduated from <span style="color:#bf5700"
+            >UT Austin</span
+          > with a major in Management Information Systems and a certificate in Computer
+          Science. During the day, I work for Amazon Web Services and at night, I
+          am pursuing a Master of Computer Science from Georgia Tech.
+        </p>
+        <p>
+          My life's goal is to <strong style="color: black"
+            ><i>eventually make the world a better place</i></strong
+          >, in whatever way that may be. By nature, I'm a curious person and
+          strive to live each day to its <strong><u>fullest</u></strong> (one can
+          try but doesn't mean it always happens 😅)
+        </p>
+        <h2>Experience</h2>
+        <h4>
+          Senior Cloud Developer & prev AppDev Intern @ <strong
+            ><a
+              href="https://aws.amazon.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="homepage-link">AWS</a
+            ></strong>
+        </h4>
+        <ul>
+          <li>
+            Led, architected, and developed applications across the entire stack
+            for numerous engagements with customers ranging from $1 million to
+            $1 billion. Front-end to back-end, TypeScript to Python, and
+            internal to external customers, I built major and integral
+            user-driven features generating over $60 million in future revenues
+          </li>
+          <!-- <li>
 						Engineered a strong and crucial GraphQL API that hundreds of developers relied on, handling millions of dollars' worth of infrastructure for a major landing zone platform
 					</li>
 					<li>
@@ -60,72 +110,362 @@ import Layout from '../layouts/Layout.astro';
 					<li>
 						Architected and developed an internal application that allows UX researchers to view real-time ML data analytics with the power of eye-tracking using React, AWS Amplify, Webgazer.js, and AWS Sagemaker
 					</li> -->
-				</ul>
-				<h4>Building fun stuff @ <strong><a href="https://www.agnilabs.xyz" target="_blank" rel="noopener noreferrer" class="homepage-link">Agni Labs</a></strong></h4>
-				<ul>
-					<li>
-						Trying to materialize the ideas in my head one mvp at a time💡🧪
-					</li>
-				</ul>
-				<h4>Co-founder & Developer @ <strong>Bounty Hunters</strong></h4>
-				<ul>
-					<li>
-						Developed a multiplayer game using Unity, C#, and AWS modeled after the live-action game “Assassin” while incorporating a sandbox environment and battle royale component with a bunch of awesome friends
-					</li>
-				</ul>
-				<h4>Founder & CEO of <strong><a href="https://www.vglogs.com" target="_blank" rel="noopener noreferrer" class="homepage-link">vGlogs</a></strong></h4>
-				<ul>
-					<li>
-						Founded and architected a professional social media app and platform that allowed gamers to build their gaming resume for recognition, credibility, and monetization
-					</li>
-				</ul>
+        </ul>
+        <h4>
+          Building fun stuff @ <strong
+            ><a
+              href="https://www.agnilabs.xyz"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="homepage-link">Agni Labs</a
+            ></strong>
+        </h4>
+        <ul>
+          <li>
+            Trying to materialize the ideas in my head one mvp at a time💡🧪
+          </li>
+        </ul>
+        <h4>Co-founder & Developer @ <strong>Bounty Hunters</strong></h4>
+        <ul>
+          <li>
+            Developed a multiplayer game using Unity, C#, and AWS modeled after
+            the live-action game “Assassin” while incorporating a sandbox
+            environment and battle royale component with a bunch of awesome
+            friends
+          </li>
+        </ul>
+        <h4>
+          Founder & CEO of <strong
+            ><a
+              href="https://www.vglogs.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="homepage-link">vGlogs</a
+            ></strong>
+        </h4>
+        <ul>
+          <li>
+            Founded and architected a professional social media app and platform
+            that allowed gamers to build their gaming resume for recognition,
+            credibility, and monetization
+          </li>
+        </ul>
 
-				<h2>Skills</h2>
-				<p>I like to write the following languages:<ul class="two-columns">
-					<li>Python</li>
-					<li>Java</li>
-					<li>C#</li>
-					<li>SQL</li>
-					<li>JavaScript & TypeScript</li>
-					<li>HTML/CSS</li>
-				  </ul> </p>
-				<p>and use the following frameworks/tools:<ul class="two-columns">
-				<li>React</li>
-				<li>Next.js</li>
-				<li>GraphQL</li>
-				<li>Node</li>
-				<li>FastAPI</li>
-				<li>Unity</li>
-				<li>AWS (numerous services)</li>
-				</ul> </p>
+        <h2>Skills</h2>
+        <p>
+          I like to write the following languages:<ul class="two-columns">
+            <li>Python</li>
+            <li>Java</li>
+            <li>C#</li>
+            <li>SQL</li>
+            <li>JavaScript & TypeScript</li>
+            <li>HTML/CSS</li>
+          </ul>
+        </p>
+        <p>
+          and use the following frameworks/tools:<ul class="two-columns">
+            <li>React</li>
+            <li>Next.js</li>
+            <li>GraphQL</li>
+            <li>Node</li>
+            <li>FastAPI</li>
+            <li>Unity</li>
+            <li>AWS (numerous services)</li>
+          </ul>
+        </p>
 
-				<h2>Certs/Honors</h2>
-				<ul class="two-columns">
-					<li>
-						AWS Security - Professional
-					</li>
-					<li>
-						AWS Developer - Associate
-					</li>
-					<li>
-						AWS Solutions Architect - Associate
-					</li>
-					<li>
-						AWS Cloud Practitioner
-					</li>
-					<li>
-						Eagle Scout (2016)
-					</li>
-				</ul>
+        <h2>Certs/Honors</h2>
+        <ul class="two-columns">
+          <li>AWS Security - Professional</li>
+          <li>AWS Developer - Associate</li>
+          <li>AWS Solutions Architect - Associate</li>
+          <li>AWS Cloud Practitioner</li>
+          <li>Eagle Scout (2016)</li>
+        </ul>
 
-				<h2>On the side</h2>
-				<p>Outside of work/personal projects, I really enjoy playing <a href="https://www.twitch.tv/agnifps" target="_blank" rel="noopener noreferrer" class="homepage-link">video games</a> 🎮, working out 💪🏽, spending time with friends/family 😎, helping my TikTok famous twin <a href="https://www.tiktok.com/@aishuadd" target="_blank" rel="noopener noreferrer" class="homepage-link">(@aishuadd)</a> 💃, and meeting new people 🤙🏽</p>
+        <h2>On the side</h2>
+        <p>
+          Outside of work/personal projects, I really enjoy playing <a
+            href="https://www.twitch.tv/agnifps"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="homepage-link">video games</a
+          > 🎮, working out 💪🏽, spending time with friends/family 😎, helping my
+          TikTok famous twin <a
+            href="https://www.tiktok.com/@aishuadd"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="homepage-link">(@aishuadd)</a
+          > 💃, and meeting new people 🤙🏽
+        </p>
 
-				<h2>Contact</h2>
-				<p>I'm a human just like you and love making new friends! Don't hesitate to shoot an email over to <a class="homepage-link" href="mailto: adi.addepalli@gmail.com" target="_blank" rel="noopener noreferrer"><nobr>adi.addepalli@gmail.com</nobr></a>, DM me on Twitter: <a href="https://twitter.com/messages/compose?recipient_id=1595924352&ref_src=twsrc%5Etfw" class="twitter-dm-button homepage-link" data-screen-name="@adiaddxyz" data-show-count="false" target="_blank" rel="noopener noreferrer">@adiaddxyz</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> , or <a class="homepage-link" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/adiadd?hide_gdpr_banner=1'});return false;">schedule a chat with me</a>!</p>
-
-			</div>
-		</div>
-	</main>
+        <h2>Contact</h2>
+        <p>
+          I'm a human just like you and love making new friends! Don't hesitate
+          to shoot an email over to <a
+            class="homepage-link"
+            href="mailto: adi.addepalli@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"><nobr>adi.addepalli@gmail.com</nobr></a
+          >, DM me on Twitter: <a
+            href="https://twitter.com/messages/compose?recipient_id=1595924352&ref_src=twsrc%5Etfw"
+            class="twitter-dm-button homepage-link"
+            data-screen-name="@adiaddxyz"
+            data-show-count="false"
+            target="_blank"
+            rel="noopener noreferrer">@adiaddxyz</a
+          ><script
+            async
+            src="https://platform.twitter.com/widgets.js"
+            charset="utf-8"></script> , or <a
+            class="homepage-link"
+            href=""
+            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/adiadd?hide_gdpr_banner=1'});return false;"
+            >schedule a chat with me</a
+          >!
+        </p>
+      </div>
+    </div>
+  </main>
 </Layout>
 
+<style>
+  .two-columns {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+  }
+
+  .innerLink {
+    width: 200px;
+    color: red;
+  }
+
+  .innerLink#status-label {
+    width: auto;
+    color: blue;
+  }
+
+  .homepage-link {
+    color: #2f78c5;
+    font-weight: 400;
+    position: relative;
+    text-decoration: none;
+  }
+
+  .homepage-link:hover {
+    color: #2f78c5;
+    font-weight: 400;
+    position: relative;
+    text-decoration: underline;
+  }
+
+  h2,
+  .white {
+    color: #0d0d0d;
+  }
+
+  a {
+    color: #7a7c80;
+    text-decoration: none;
+  }
+  /* section 1 */
+  .section-1 {
+    padding-top: 5vh;
+    text-align: center;
+  }
+
+  .section-1 p {
+    font-size: 1.1rem;
+    padding-bottom: 10px;
+    margin: 0;
+  }
+
+  .section-1 h2 {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+  }
+
+  .section-1 a {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+
+  #twitter-tag:hover {
+    color: #1da1f2;
+  }
+
+  #linkedin-tag:hover {
+    color: #0077b5;
+  }
+
+  #github-tag:hover {
+    color: #333;
+  }
+
+  #substack-tag:hover {
+    color: #ffa500;
+  }
+
+  /* section 2 */
+  .section-2 {
+    padding-top: 5vh;
+    width: 80%;
+  }
+
+  .section-2 h2 {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+  }
+
+  .section-2 p {
+    font-size: 1.1rem;
+    padding-bottom: 10px;
+    margin: 0;
+  }
+
+  .section-2 .titleLink {
+    display: block;
+    padding: 5px;
+    font-size: 1.2rem;
+    padding-left: 0;
+    color: blue;
+  }
+
+  .section-2 .normLinks {
+    font-size: 1.1rem;
+    padding-bottom: 10px;
+    margin: 0;
+    color: white;
+    text-decoration: none;
+  }
+
+  /* animations / utilities */
+  .section-2 .titleLink:hover {
+    font-size: 1.3rem;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: 0.2s;
+    color: blue;
+  }
+
+  .section-1 a:hover {
+    color: #000;
+    cursor: pointer;
+    transition: 0.3s;
+    color: blue;
+  }
+
+  .white:hover {
+    position: relative;
+    padding-left: 10px;
+  }
+
+  /* media queres */
+  @media (max-width: 780px) {
+    .grid-2 {
+      grid-template-columns: 1fr;
+    }
+    .section-1 {
+      padding: 0;
+      padding-top: 5rem;
+    }
+    .section-2 {
+      padding: 0;
+      padding-left: 1.5rem;
+      padding-top: 2rem;
+    }
+  }
+
+  .button-2 {
+    background-color: rgba(51, 51, 51, 0.05);
+    border-radius: 8px;
+    border-width: 0;
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+      sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 10px 12px;
+    text-align: center;
+    transition: all 200ms;
+    vertical-align: baseline;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  /* CSS */
+  .button-85 {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  .button-85:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button-85 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+  }
+
+  @keyframes glowing-button-85 {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+
+  .button-85:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+</style>
