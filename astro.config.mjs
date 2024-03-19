@@ -4,7 +4,7 @@ import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.adiadd.xyz",
+  site: "https://adiadd.xyz",
   integrations: [
     partytown({
       config: {

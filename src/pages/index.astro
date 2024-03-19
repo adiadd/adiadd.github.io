@@ -8,7 +8,7 @@ import Layout from "../layouts/Layout.astro";
       <div class="section-1">
         <img id ="imageOne" src ="https://raw.githubusercontent.com/adiadd/adiadd.github.io/master/img/agnipfp.png" alt="Aditya's face" onclick = "changeColor()" width="200" height="auto"/>
 
-				<script async>
+				<script is:inline async>
 					var image =  document.getElementById("imageOne");
 
 					function changeColor()
@@ -200,7 +200,7 @@ import Layout from "../layouts/Layout.astro";
             target="_blank"
             rel="noopener noreferrer">@adiaddxyz</a
           ><script
-            async
+            is:inline async
             src="https://platform.twitter.com/widgets.js"
             charset="utf-8"></script> , or <a
             class="homepage-link"
