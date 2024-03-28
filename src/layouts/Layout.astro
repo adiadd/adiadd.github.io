@@ -1,8 +1,9 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import { SITE_URL } from "../consts";
 interface Props {
-  title: string;
-  ogImage?: string;
+	title: string;
+	ogImage?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -31,10 +32,20 @@ const { title, ogImage = "/default-og.png" } = Astro.props;
         <!-- Open Graph Tags -->
         <meta property="og:title" content={title} />
         <meta property="og:image" content={ogImage} />
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalURL} />
         <meta property="og:locale" content="en_GB" />
 
+        <!-- Facebook Meta Tags -->
+        <meta property="og:description" content="Aditya's website">
+
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="twitter:domain" content={SITE_URL}>
+        <meta property="twitter:url" content={canonicalURL}>
+        <meta name="twitter:title" content="Aditya Addepalli">
+        <meta name="twitter:description" content="Aditya's website">
+        <meta name="twitter:image" content={ogImage} >
 
         <!-- View Transitions -->
         <ViewTransitions />
