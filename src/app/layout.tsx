@@ -3,6 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
+import Head from "next/head";
 import NextTopLoader from "nextjs-toploader";
 import { siteConfig } from "src/config/site";
 import Footer from "./components/footer";
@@ -54,6 +55,7 @@ export default function RootLayout({
         GeistMono.variable,
       )}
     >
+      <Head><script defer src="https://cloud.umami.is/script.js" data-website-id="0b0c8b0f-00d7-42c4-859e-b6b1716298e6" /></Head>
       <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto frappe dark:mocha bg-base dark:text-white dark:bg-crust text-text">
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
           <NextTopLoader showSpinner={false} color="#D18800" />
