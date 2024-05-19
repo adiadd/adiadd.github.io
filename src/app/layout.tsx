@@ -37,6 +37,15 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${siteConfig.name}`,
+    description: `${siteConfig.description}`,
+    siteId: '1595924352',
+    creator: '@adiaddxyz',
+    creatorId: '1595924352',
+    images: ['https://adiadd.xyz/og.png'],
+  },
 };
 
 const cx = (...classes) => classes.filter(Boolean).join(" ");
