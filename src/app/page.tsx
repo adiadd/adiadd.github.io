@@ -15,8 +15,8 @@ export default function Page() {
         <i> [ah d ee]</i>. i graduated from{" "}
         <span style={{ color: "#bf5700" }}>UT Austin</span> with a major in
         information systems and a certificate in cs. during the day, i write
-        code for Amazon Web Services and at night, for the master of computer
-        science from Georgia Tech i&apos;m pursuing.
+        code for Amazon Web Services, at night, for the master of computer
+        science from Georgia Tech i&apos;m pursuing, and in between, for fun.
       </p>
       <p className="mb-4">
         one of my life&apos;s goal is to{" "}
