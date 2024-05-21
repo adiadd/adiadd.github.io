@@ -33,7 +33,7 @@ export default function Page() {
       <div className="my-8 flex items-center justify-center">
         <a href="/blog">
           <button className="button-85 px-4 py-2 text-sm" type="button">
-            random thoughts
+            my thoughts
           </button>
         </a>
       </div>
