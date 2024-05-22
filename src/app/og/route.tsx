@@ -11,6 +11,7 @@ export function GET(request: Request) {
         <div tw="flex flex-col md:flex-row w-full py-12 px-4 md:items-center justify-between p-8">
           <h2 tw="flex flex-col text-4xl font-bold tracking-tight text-left">
             {title}
+            <span tw="text-3xl text-gray-700 pt-8">adiadd.xyz</span>
           </h2>
         </div>
       </div>
