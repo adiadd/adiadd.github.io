@@ -32,9 +32,7 @@ export default function Page() {
       </p>
       <div className="my-8 flex items-center justify-center">
         <a href="/blog">
-          <button className="button-85 px-4 py-2 text-sm" type="button">
-            my thoughts
-          </button>
+          <button className="glow-on-hover px-4 py-2 text-sm" type="button">my thoughts</button>
         </a>
       </div>
       <div>
