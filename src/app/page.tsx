@@ -4,13 +4,13 @@ export default function Page() {
       <h1 className="mb-2 text-4xl font-semibold tracking-tighter">
         aditya addepalli
       </h1>
-      <h2 className=" text-lg font-semibold tracking-tighter">
+      <h2 className=" text-lg font-semibold tracking-tighter text-neutral-900 dark:text-neutral-100">
         welcome to my small corner of the internet 👋🏾
       </h2>
       <h2 className="my-4 text-lg font-semibold tracking-tighter">
         📍 nyc/dfw
       </h2>
-      <p className="mb-4">
+      <p className="mb-4 text-neutral-900 dark:text-neutral-100">
         hi ✌🏾! my name is aditya but you can call me <strong>adi</strong>
         <i> [ah d ee]</i>. i graduated from{" "}
         <span style={{ color: "#bf5700" }}>UT Austin</span> with a major in
@@ -18,7 +18,7 @@ export default function Page() {
         code for Amazon Web Services, at night, for the master of computer
         science from Georgia Tech i&apos;m pursuing, and in between, for fun.
       </p>
-      <p className="mb-4">
+      <p className="mb-4 text-neutral-900 dark:text-neutral-100">
         one of my life&apos;s goal is to{" "}
         <strong style={{ color: "#D18800" }}>
           <i>eventually make the world a better place</i>
@@ -32,11 +32,11 @@ export default function Page() {
       </p>
       <div className="my-8 flex items-center justify-center">
         <a href="/blog">
-          <button className="glow-on-hover px-4 py-2 text-sm" type="button">my thoughts</button>
+          <button className="glow-on-hover px-4 py-2 text-sm text-neutral-900 dark:text-neutral-100" type="button">my thoughts</button>
         </a>
       </div>
       <div>
-        <p>
+        <p className="text-neutral-900 dark:text-neutral-100">
           i&apos;m human just like you and love making new friends! feel free to
           shoot an email over to{" "}
           <a

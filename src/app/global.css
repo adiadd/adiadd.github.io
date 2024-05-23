@@ -15,7 +15,8 @@
   --sh-jsxliterals: #6266d1;
   --sh-property: #e25a1c;
   --sh-entity: #e25a1c;
-  --background-color: #ffffff;
+  --background-color: #F5E9DE;
+  --text-color: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,7 +25,8 @@
     --sh-identifier: white;
     --sh-keyword: #f47067;
     --sh-string: #0fa295;
-    --background-color: #121212; /* dark mode background color */
+    --background-color: #11111B;
+    --text-color: #CDD6F4;
   }
   html {
     color-scheme: dark;
@@ -33,6 +35,11 @@
 
 html {
   min-width: 360px;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color)
 }
 
 .prose .anchor {
@@ -163,8 +170,8 @@ table {
 }
 
 .glow-on-hover {
-  width: 220px;
-  height: 50px;
+  width: 140px;
+  height: 40px;
   border: none;
   outline: none;
   background: var(--background-color);
@@ -235,6 +242,12 @@ table {
   }
   100% {
     background-position: 0 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .glow-on-hover {
+    outline: 2px solid var(--text-color);
   }
 }
 

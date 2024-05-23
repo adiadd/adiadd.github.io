@@ -22,7 +22,7 @@ export default function Page() {
           </a>
         </strong>
       </h2>
-      <p className="mb-4">
+      <p className="mb-4 text-neutral-900 dark:text-neutral-100">
         led, architected, and developed applications across the entire stack for
         numerous engagements with customers ranging from $1 million to $1
         billion. frontend to backend, TypeScript to Python, and internal to
@@ -42,13 +42,13 @@ export default function Page() {
           </a>
         </strong>
       </h2>
-      <p className="mb-4">
+      <p className="mb-4 text-neutral-900 dark:text-neutral-100">
         trying to materialize the ideas in my head one mvp at a time💡🧪
       </p>
       <h2 className="mb-2 text-lg font-semibold tracking-tighter">
         co-founder & developer @ <strong>bounty hunters</strong>
       </h2>
-      <p className="mb-4">
+      <p className="mb-4 text-neutral-900 dark:text-neutral-100">
         developed a multiplayer game using Unity, C#, and AWS modeled after the
         live-action game “assassin” while incorporating a sandbox environment
         and battle royale component with a bunch of awesome friends
@@ -66,16 +66,17 @@ export default function Page() {
           </a>
         </strong>
       </h2>
-      <p className="mb-6">
+      <p className="mb-6 text-neutral-900 dark:text-neutral-100">
         founded and architected a professional social media app and platform
         that allowed gamers to build their gaming resume for recognition,
         credibility, and monetization
       </p>
 
-      <h2 className="mb-5 text-2xl font-semibold tracking-tighter">skills</h2>
-      <p>
+      <h2 className="mb-5 text-2xl font-semibold tracking-tighter ">skills</h2>
+      <p className="text-neutral-900 dark:text-neutral-100">
         i like to write the following languages:
-        <ul className="two-columns mb-5 list-disc">
+      </p>
+      <ul className="two-columns mb-5 list-disc">
           <li>Python</li>
           <li>TypeScript & JavaScript</li>
           <li>HTML/CSS</li>
@@ -83,10 +84,10 @@ export default function Page() {
           <li>C#</li>
           <li>SQL</li>
         </ul>
-      </p>
-      <p>
+      <p className="text-neutral-900 dark:text-neutral-100">
         and use the following frameworks/tools:
-        <ul className="two-columns mb-5 list-disc ">
+      </p>
+      <ul className="two-columns mb-5 list-disc ">
           <li>React</li>
           <li>Next.js</li>
           <li>GraphQL</li>
@@ -95,7 +96,6 @@ export default function Page() {
           <li>Unity</li>
           <li>AWS (numerous services)</li>
         </ul>
-      </p>
 
       <h2 className="mb-5 text-2xl font-semibold tracking-tighter">
         certs/honors
