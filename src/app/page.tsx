@@ -19,20 +19,17 @@ export default function Page() {
         science from Georgia Tech i&apos;m pursuing, and in between, for fun.
       </p>
       <p className="mb-4 text-neutral-900 dark:text-neutral-100">
-        one of my life&apos;s goal is to{" "}
-        <strong style={{ color: "#D18800" }}>
-          <i>eventually make the world a better place</i>
-        </strong>
-        , in whatever way that may be. by nature, i&apos;m a curious person and
-        strive to live each day to its{" "}
-        <strong>
-          <u>fullest</u>
-        </strong>{" "}
-        (one can try but doesn&apos;t mean it always happens 😅)
+        i&apos;m a curious person by nature and one of my life&apos;s goal is to
+        eventually make the world a better place, in whatever way that may be.
       </p>
       <div className="my-8 flex items-center justify-center">
         <a href="/blog">
-          <button className="glow-on-hover px-4 py-2 text-sm text-neutral-900 dark:text-neutral-100" type="button">my thoughts</button>
+          <button
+            className="glow-on-hover px-4 py-2 text-sm text-neutral-900 dark:text-neutral-100"
+            type="button"
+          >
+            my thoughts
+          </button>
         </a>
       </div>
       <div>
