@@ -2,6 +2,7 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "aditya addepalli",
+  nickName: "adi",
   description: "aditya addepalli's personal website",
   mainNav: [],
   links: {

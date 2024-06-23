@@ -15,7 +15,7 @@
   --sh-jsxliterals: #6266d1;
   --sh-property: #e25a1c;
   --sh-entity: #e25a1c;
-  --background-color: #F5E9DE;
+  --background-color: #f5e9de;
   --text-color: #000000;
 }
 
@@ -25,8 +25,8 @@
     --sh-identifier: white;
     --sh-keyword: #f47067;
     --sh-string: #0fa295;
-    --background-color: #11111B;
-    --text-color: #CDD6F4;
+    --background-color: #11111b;
+    --text-color: #cdd6f4;
   }
   html {
     color-scheme: dark;
@@ -39,7 +39,7 @@ html {
 
 body {
   background-color: var(--background-color);
-  color: var(--text-color)
+  color: var(--text-color);
 }
 
 .prose .anchor {
@@ -173,7 +173,7 @@ table {
   width: 140px;
   height: 40px;
   border: none;
-  outline: none;
+  outline: 2px solid var(--text-color);
   background: var(--background-color);
   cursor: pointer;
   position: relative;
@@ -245,16 +245,15 @@ table {
   }
 }
 
-@media (max-width: 768px) {
-  .glow-on-hover {
-    outline: 2px solid var(--text-color);
-  }
-}
-
 .two-columns {
   columns: 2;
   -webkit-columns: 2;
   -moz-columns: 2;
+  padding: 0 10px;
+}
+
+.two-columns li {
+  margin-bottom: 5px;
 }
 
 #twitter-tag:hover {

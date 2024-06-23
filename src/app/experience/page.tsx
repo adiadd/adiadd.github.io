@@ -46,14 +46,6 @@ export default function Page() {
         trying to materialize the ideas in my head one mvp at a time💡🧪
       </p>
       <h2 className="mb-2 text-lg font-semibold tracking-tighter">
-        co-founder & developer @ <strong>bounty hunters</strong>
-      </h2>
-      <p className="mb-4 text-neutral-900 dark:text-neutral-100">
-        developed a multiplayer game using Unity, C#, and AWS modeled after the
-        live-action game “assassin” while incorporating a sandbox environment
-        and battle royale component with a bunch of awesome friends
-      </p>
-      <h2 className="mb-2 text-lg font-semibold tracking-tighter">
         founder & ceo @{" "}
         <strong>
           <a
@@ -71,31 +63,39 @@ export default function Page() {
         that allowed gamers to build their gaming resume for recognition,
         credibility, and monetization
       </p>
+      <h2 className="mb-2 text-lg font-semibold tracking-tighter">
+        co-founder & developer @ <strong>bounty hunters</strong>
+      </h2>
+      <p className="mb-4 text-neutral-900 dark:text-neutral-100">
+        developed a multiplayer game using Unity, C#, and AWS modeled after the
+        live-action game “assassin” while incorporating a sandbox environment
+        and battle royale component with a bunch of awesome friends
+      </p>
 
       <h2 className="mb-5 text-2xl font-semibold tracking-tighter ">skills</h2>
       <p className="text-neutral-900 dark:text-neutral-100">
         i like to write the following languages:
       </p>
       <ul className="two-columns mb-5 list-disc">
-          <li>Python</li>
-          <li>TypeScript & JavaScript</li>
-          <li>HTML/CSS</li>
-          <li>Java</li>
-          <li>C#</li>
-          <li>SQL</li>
-        </ul>
+        <li>Python</li>
+        <li>TypeScript & JavaScript</li>
+        <li>HTML/CSS</li>
+        <li>Java</li>
+        <li>C#</li>
+        <li>SQL</li>
+      </ul>
       <p className="text-neutral-900 dark:text-neutral-100">
         and use the following frameworks/tools:
       </p>
       <ul className="two-columns mb-5 list-disc ">
-          <li>React</li>
-          <li>Next.js</li>
-          <li>GraphQL</li>
-          <li>Node</li>
-          <li>FastAPI</li>
-          <li>Unity</li>
-          <li>AWS (numerous services)</li>
-        </ul>
+        <li>React</li>
+        <li>Next.js</li>
+        <li>GraphQL</li>
+        <li>Node</li>
+        <li>FastAPI</li>
+        <li>Unity</li>
+        <li>AWS (numerous services)</li>
+      </ul>
 
       <h2 className="mb-5 text-2xl font-semibold tracking-tighter">
         certs/honors

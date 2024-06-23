@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
     default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`,
+    template: `%s | ${siteConfig.nickName}`,
   },
   description: siteConfig.description,
   openGraph: {
@@ -38,13 +38,13 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: `${siteConfig.name}`,
     description: `${siteConfig.description}`,
-    siteId: '1595924352',
-    creator: '@adiaddxyz',
-    creatorId: '1595924352',
-    images: ['https://adiadd.xyz/og.png'],
+    siteId: "1595924352",
+    creator: "@adiaddxyz",
+    creatorId: "1595924352",
+    images: ["https://adiadd.xyz/og.png"],
   },
 };
 
@@ -59,14 +59,18 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        "frappe dark:mocha bg-base dark:text-white dark:bg-crust text-text", // latte dark:mocha bg-base dark:bg-crust text-text
+        "frappe dark:mocha bg-base dark:text-white dark:bg-crust text-text",
         GeistSans.variable,
         GeistMono.variable,
       )}
     >
-      <Script defer src="https://cloud.umami.is/script.js" data-website-id="0b0c8b0f-00d7-42c4-859e-b6b1716298e6" />
-      <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto frappe dark:mocha bg-base dark:text-white dark:bg-crust text-text">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+      <Script
+        defer
+        src="https://cloud.umami.is/script.js"
+        data-website-id="0b0c8b0f-00d7-42c4-859e-b6b1716298e6"
+      />
+      <body className="antialiased mx-auto mt-8 frappe dark:mocha bg-base dark:text-white dark:bg-crust text-text">
+        <main className="flex-auto mt-6 flex flex-col px-2 mx-auto max-w-xl">
           <NextTopLoader showSpinner={false} color="#D18800" />
           <Navbar />
           {children}
