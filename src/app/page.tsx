@@ -7,9 +7,7 @@ export default function Page() {
       <h2 className=" text-lg font-semibold tracking-tighter text-neutral-900 dark:text-neutral-100">
         welcome to my small corner of the internet 👋🏾
       </h2>
-      <h2 className="my-4 text-lg font-semibold tracking-tighter">
-        📍 nyc/dfw
-      </h2>
+      <h2 className="my-4 text-lg font-semibold tracking-tighter">📍 nyc</h2>
       <p className="mb-4 text-neutral-900 dark:text-neutral-100">
         hi ✌🏾! my name is aditya but you can call me <strong>adi</strong>
         <i> [ah d ee]</i>. i graduated from{" "}
@@ -23,23 +21,13 @@ export default function Page() {
         i&apos;m a curious person by nature and one of my life&apos;s goal is to
         eventually make the world a better place, in whatever way that may be.
       </p>
-      <div className="my-8 flex items-center justify-center">
-        <a href="/blog">
-          <button
-            className="glow-on-hover px-4 py-2 text-sm text-neutral-900 dark:text-neutral-100"
-            type="button"
-          >
-            my thoughts
-          </button>
-        </a>
-      </div>
       <div>
         <p className="text-neutral-900 dark:text-neutral-100">
           i&apos;m human just like you and love making new friends! feel free to
           shoot an email over to{" "}
           <a
             className="homepage-link"
-            href="mailto: adiaddxyz@gmail.com"
+            href="mailto:adiaddxyz@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
