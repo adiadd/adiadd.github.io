@@ -21,49 +21,40 @@ export async function GET(request: Request) {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            width: '50%', // Changed from 33.33% to 50%
+            width: '50%',
             height: '100%',
             justifyContent: 'center',
-            alignItems: 'center', // Added to center content horizontally
             padding: '40px',
           }}
         >
-          <div
+          <h1
             style={{
-              width: '80%', // Set width to 80% of the container
+              fontSize: '48px',
+              fontWeight: 'bold',
+              color: '#45363F',
+              margin: 0,
+              marginBottom: '16px',
+              maxWidth: '100%',
+              textAlign: 'left',
             }}
           >
-            <h2
-              style={{
-                fontSize: '48px',
-                fontWeight: 'bold',
-                color: '#45363F',
-                margin: 0,
-                marginBottom: '16px',
-                maxWidth: '100%',
-                textAlign: 'left',
-              }}
-            >
-              {title}
-            </h2>
-            <p
-              style={{
-                fontSize: '24px',
-                color: '#45363F',
-                margin: 0,
-                textAlign: 'left',
-              }}
-            >
-              adiadd.xyz
-            </p>
-          </div>
+            {title}
+          </h1>
+          <h3
+            style={{
+              color: '#45363F',
+              margin: 0,
+            }}
+          >
+            adiadd.xyz
+          </h3>
         </div>
         <div
           style={{
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            width: '50%', // Changed from 66.67% to 50%
+            width: '66.67%',
             height: '100%',
           }}
         >
