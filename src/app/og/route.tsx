@@ -1,10 +1,15 @@
 import { ImageResponse } from "next/og";
 import { siteConfig } from "src/config/site";
+import fs from 'node:fs';
+import path from 'node:path';
 
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const title = url.searchParams.get("title") || `${siteConfig.name}`;
 
+  // Read the SVG file
+  const svgPath = path.join(process.cwd(), 'public', 'adihoodedpfpsvg.svg');
+  const svgContent = fs.readFileSync(svgPath, 'utf8');
 
   return new ImageResponse(
     (
@@ -29,7 +34,6 @@ export async function GET(request: Request) {
         >
           <h1
             style={{
-              fontSize: '48px',
               fontWeight: 'bold',
               color: '#45363F',
               margin: 0,
@@ -54,10 +58,19 @@ export async function GET(request: Request) {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            width: '66.67%',
+            width: '50%',
             height: '100%',
           }}
         >
+          <img
+            src={`data:image/svg+xml,${encodeURIComponent(svgContent)}`}
+            alt="aditya's personal website svg"
+            style={{
+              width: '80%',
+              height: '80%',
+              objectFit: 'contain',
+            }}
+          />
         </div>
       </div>
     ),
