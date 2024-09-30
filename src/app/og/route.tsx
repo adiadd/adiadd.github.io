@@ -7,7 +7,6 @@ export async function GET(request: Request) {
   const url = new URL(request.url);
   const title = url.searchParams.get("title") || `${siteConfig.name}`;
 
-  // Read the SVG file
   const svgPath = path.join(process.cwd(), 'public', 'adihoodedpfpsvg.svg');
   const svgContent = fs.readFileSync(svgPath, 'utf8');
 
@@ -40,6 +39,8 @@ export async function GET(request: Request) {
               marginBottom: '16px',
               maxWidth: '100%',
               textAlign: 'left',
+              fontSize: '64px', // Increased font size
+              lineHeight: '1.2', // Added line height for better readability
             }}
           >
             {title}
@@ -48,6 +49,7 @@ export async function GET(request: Request) {
             style={{
               color: '#45363F',
               margin: 0,
+              fontSize: '36px', // Increased font size
             }}
           >
             adiadd.xyz
