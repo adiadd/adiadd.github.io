@@ -23,7 +23,7 @@ export async function GET(request: Request) {
             flexDirection: 'column',
             width: '33.33%',
             height: '100%',
-            justifyContent: 'space-between',
+            justifyContent: 'center', // Changed from 'space-between' to 'center'
             padding: '40px',
           }}
         >
@@ -33,6 +33,7 @@ export async function GET(request: Request) {
               fontWeight: 'bold',
               color: '#45363F',
               margin: 0,
+              marginBottom: '16px', // Added margin bottom for spacing
               maxWidth: '100%',
               textAlign: 'left',
             }}
