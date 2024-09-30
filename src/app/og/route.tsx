@@ -21,41 +21,49 @@ export async function GET(request: Request) {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            width: '33.33%',
+            width: '50%', // Changed from 33.33% to 50%
             height: '100%',
-            justifyContent: 'center', // Changed from 'space-between' to 'center'
+            justifyContent: 'center',
+            alignItems: 'center', // Added to center content horizontally
             padding: '40px',
           }}
         >
-          <h2
+          <div
             style={{
-              fontSize: '48px',
-              fontWeight: 'bold',
-              color: '#45363F',
-              margin: 0,
-              marginBottom: '16px', // Added margin bottom for spacing
-              maxWidth: '100%',
-              textAlign: 'left',
+              width: '80%', // Set width to 80% of the container
             }}
           >
-            {title}
-          </h2>
-          <p
-            style={{
-              fontSize: '24px',
-              color: '#45363F',
-              margin: 0,
-            }}
-          >
-            adiadd.xyz
-          </p>
+            <h2
+              style={{
+                fontSize: '48px',
+                fontWeight: 'bold',
+                color: '#45363F',
+                margin: 0,
+                marginBottom: '16px',
+                maxWidth: '100%',
+                textAlign: 'left',
+              }}
+            >
+              {title}
+            </h2>
+            <p
+              style={{
+                fontSize: '24px',
+                color: '#45363F',
+                margin: 0,
+                textAlign: 'left',
+              }}
+            >
+              adiadd.xyz
+            </p>
+          </div>
         </div>
         <div
           style={{
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            width: '66.67%',
+            width: '50%', // Changed from 66.67% to 50%
             height: '100%',
           }}
         >
