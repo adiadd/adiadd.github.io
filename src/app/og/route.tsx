@@ -1,16 +1,17 @@
 import { ImageResponse } from "next/og";
 import { siteConfig } from "src/config/site";
+import { join } from 'node:path'
+import { readFile } from 'node:fs/promises'
 import { Buffer } from 'node:buffer';
 
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const title = url.searchParams.get("title") || `${siteConfig.name}`;
 
-  const imageData = await fetch(new URL('/adihoodedpfpsvg.svg', import.meta.url)).then(
-    (res) => res.arrayBuffer()
-  );
+  const logoData = await readFile(join(process.cwd(), 'adihoodedpfpsvg.svg'))
+  const logoSrc = Uint8Array.from(logoData).buffer
 
-  const base64Image = Buffer.from(imageData).toString('base64');
+  const base64Logo = Buffer.from(logoSrc).toString('base64');
 
   return new ImageResponse(
     (
@@ -65,7 +66,7 @@ export async function GET(request: Request) {
           }}
         >
           <img
-            src={`data:image/png;base64,${base64Image}`}
+            src={`data:image/png;base64,${base64Logo}`}
             alt="Adi Hooded Profile"
             style={{
               width: '100%',
