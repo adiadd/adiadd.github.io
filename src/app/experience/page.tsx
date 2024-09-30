@@ -101,6 +101,7 @@ export default function Page() {
         certs/honors
       </h2>
       <ul className="two-columns mb-5 list-disc ">
+        <li>AWS Solutions Architect - Professional</li>
         <li>AWS Security - Professional</li>
         <li>AWS Developer - Associate</li>
         <li>AWS Solutions Architect - Associate</li>
