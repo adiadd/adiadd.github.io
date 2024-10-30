@@ -70,7 +70,7 @@ export default function RootLayout({
         data-website-id="0b0c8b0f-00d7-42c4-859e-b6b1716298e6"
       />
       <body className="antialiased mx-auto mt-8 frappe dark:mocha bg-base dark:text-white dark:bg-crust text-text">
-        <main className="flex-auto mt-6 flex flex-col px-2 mx-auto max-w-xl">
+        <main className="flex-auto mt-6 flex flex-col px-2 mx-auto max-w-2xl">
           <NextTopLoader showSpinner={false} color="#D18800" />
           <Navbar />
           {children}

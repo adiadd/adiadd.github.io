@@ -22,8 +22,8 @@ function ArrowIcon() {
 export default function Footer() {
   return (
     <footer className="mb-16">
-      <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 dark:text-neutral-300 md:flex-row md:flex-wrap md:justify-center md:space-x-4 md:space-y-0">
-        <li className="flex justify-center md:justify-start">
+      <ul className="font-sm mt-8 grid grid-cols-2 gap-2 text-neutral-600 dark:text-neutral-300 sm:flex sm:flex-row sm:justify-center sm:gap-4 sm:space-x-4">
+        <li className="flex justify-center">
           <a
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
@@ -35,7 +35,7 @@ export default function Footer() {
             <p className="ml-2 h-7">twitter/x</p>
           </a>
         </li>
-        <li className="flex justify-center md:justify-start">
+        <li className="flex justify-center">
           <a
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
@@ -47,7 +47,7 @@ export default function Footer() {
             <p className="ml-2 h-7">linkedin</p>
           </a>
         </li>
-        <li className="flex justify-center md:justify-start">
+        <li className="flex justify-center">
           <a
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
@@ -59,7 +59,7 @@ export default function Footer() {
             <p className="ml-2 h-7">github</p>
           </a>
         </li>
-        <li className="flex justify-center md:justify-start">
+        <li className="flex justify-center">
           <a
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
@@ -71,7 +71,7 @@ export default function Footer() {
             <p className="ml-2 h-7">substack</p>
           </a>
         </li>
-        <li className="flex justify-center md:justify-start">
+        <li className="flex justify-center col-span-2 sm:col-span-1">
           <a
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
