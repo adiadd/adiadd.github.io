@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
     default: siteConfig.name,
-    template: `%s | ${siteConfig.nickName}`,
+    template: `%s / ${siteConfig.nickName}`,
   },
   icons: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✌🏾</text></svg>",
   description: siteConfig.description,
