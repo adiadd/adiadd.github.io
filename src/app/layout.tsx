@@ -6,8 +6,8 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
 import { siteConfig } from "src/config/site";
-import Footer from "./components/footer";
-import { Navbar } from "./components/nav";
+import Footer from "../components/footer";
+import { Navbar } from "../components/nav";
 import "./global.css";
 import { baseUrl } from "./sitemap";
 

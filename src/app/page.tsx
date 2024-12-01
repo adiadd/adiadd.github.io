@@ -1,3 +1,5 @@
+import CalButton from "../components/cal-button";
+
 export default function Page() {
   return (
     <section>
@@ -22,17 +24,16 @@ export default function Page() {
       </p>
       <div>
         <p className="text-neutral-900 dark:text-neutral-100">
-          i&apos;m human just like you and love making new friends! feel free to
-          shoot an email over to{" "}
+          i&apos;m human just like you and love making new friends! feel free to{" "}
           <a
             className="homepage-link"
             href="mailto:adiaddxyz@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            adiaddxyz@gmail.com
-          </a>{" "}
-          or dm me on twitter/x:{" "}
+            shoot me an email
+          </a>
+          {", "}
           <a
             href="https://twitter.com/messages/compose?recipient_id=1595924352&ref_src=twsrc%5Etfw"
             className="twitter-dm-button homepage-link"
@@ -41,8 +42,11 @@ export default function Page() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            @adiaddxyz
+            dm me on twitter/x
           </a>
+          {", or "}
+          <CalButton />
+          {" - let's connect! 🤚🏾"}
         </p>
       </div>
     </section>

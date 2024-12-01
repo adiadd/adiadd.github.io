@@ -64,6 +64,7 @@ export async function GET(request: Request) {
             height: "100%",
           }}
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={`data:image/svg+xml,${encodeURIComponent(svgContent)}`}
             alt="aditya's personal website svg"
