@@ -5,7 +5,7 @@ import { useEffect, useMemo, useState } from 'react';
 type TimeFormat = 'unix' | 'binary' | 'hex' | 'roman' | 'morse' | 'sanskrit' | 'mayan' | 'scientific' | 'stardate' | 'decimal' | 'zodiac' | 'hebrew';
 
 export default function NerdyTime() {
-  const [time, setTime] = useState<number>(Math.floor(Date.now() / 1000));
+  const [time, setTime] = useState<number>(0);
   const [format, setFormat] = useState<TimeFormat>('unix');
   const [showTooltip, setShowTooltip] = useState<boolean>(false);
 
@@ -14,6 +14,7 @@ export default function NerdyTime() {
   ], []);
 
   useEffect(() => {
+    setTime(Math.floor(Date.now() / 1000));
     const updateTime = () => setTime(Math.floor(Date.now() / 1000));
     const timer = setInterval(updateTime, 1000);
     return () => clearInterval(timer);
@@ -126,7 +127,7 @@ export default function NerdyTime() {
           animation: bounce 2s infinite;
         }
       `}</style>
-      <div className="mb-2 text-neutral-500" onClick={toggleFormat}>// for those who appreciate clocks</div>
+      <div className="mb-2 text-neutral-500" onClick={toggleFormat}>&#x2f;&#x2f; for those who appreciate clocks</div>
       {showTooltip && <div className="absolute top-0 right-0 text-xs text-neutral-400 bounce">Click me</div>}
       <div className="overflow-x-auto">{formatTime(time, format)}</div>
     </div>
