@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
 import { siteConfig } from "src/config/site";
+import styles from "../../src/styles/background.module.css";
 import Footer from "../components/footer";
 import { Navbar } from "../components/nav";
 import "./global.css";
@@ -72,6 +73,7 @@ export default function RootLayout({
         data-website-id="0b0c8b0f-00d7-42c4-859e-b6b1716298e6"
       />
       <body className="antialiased mx-auto mt-8 frappe dark:mocha bg-base dark:text-white dark:bg-crust text-text">
+        <div className={styles.gridBackground} />
         <main className="flex-auto mt-6 flex flex-col px-2 mx-auto max-w-2xl">
           <NextTopLoader showSpinner={false} color="#D18800" />
           <Navbar />
