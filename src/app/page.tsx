@@ -1,13 +1,18 @@
 import CalButton from "../components/cal-button";
+import NerdyTime from "../components/nerdy-time";
+import TypeWriter from "../components/type-writer";
 
 export default function Page() {
   return (
     <section>
       <h1 className="mb-2 text-4xl font-semibold tracking-tighter">
-        aditya addepalli
+        <TypeWriter text="aditya addepalli" delay={100} />
       </h1>
       <h2 className=" text-lg font-semibold tracking-tighter text-neutral-900 dark:text-neutral-100">
-        welcome to my small corner of the internet 👋🏾
+        <TypeWriter
+          text="welcome to my small corner of the internet 👋🏾"
+          delay={50}
+        />
       </h2>
       <h2 className="my-4 text-lg font-semibold tracking-tighter">📍 nyc</h2>
       <p className="mb-4 text-neutral-900 dark:text-neutral-100">
@@ -49,6 +54,8 @@ export default function Page() {
           {" - let's connect! 🤚🏾"}
         </p>
       </div>
+
+      <NerdyTime />
     </section>
   );
 }

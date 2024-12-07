@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { formatDate, getBlogPosts } from "src/app/blog/utils";
 import { baseUrl } from "src/app/sitemap";
 import { CustomMDX } from "src/components/mdx";
+import TypeWriter from "src/components/type-writer";
 
 export async function generateStaticParams() {
   const posts = getBlogPosts();
@@ -84,7 +85,7 @@ export default function Blog({ params }) {
         }}
       />
       <h1 className="title font-semibold text-2xl tracking-tighter">
-        {post.metadata.title}
+        <TypeWriter text={post.metadata.title} delay={50} />
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm">
         <p className="text-sm text-neutral-600 dark:text-neutral-400">

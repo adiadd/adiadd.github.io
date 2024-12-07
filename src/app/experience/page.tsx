@@ -1,3 +1,5 @@
+import TypeWriter from "src/components/type-writer";
+
 export const metadata = {
   title: "experience",
   description: "learn about what i've done",
@@ -7,7 +9,7 @@ export default function Page() {
   return (
     <section>
       <h1 className="font-semibold text-4xl mb-8 tracking-tighter">
-        my experience
+        <TypeWriter text="my experience" delay={100} />
       </h1>
       <h2 className="mb-2 text-lg font-semibold tracking-tighter">
         senior cloud engineer & prev AppDev intern @{" "}
