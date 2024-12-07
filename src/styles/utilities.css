@@ -1,0 +1,64 @@
+/* Selection styles */
+::selection {
+  background-color: #47a3f3;
+  color: #fefefe;
+}
+
+/* Base HTML styles */
+html {
+  min-width: 360px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Utility classes */
+.title {
+  text-wrap: balance;
+}
+
+.two-columns {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  padding: 0 10px;
+}
+
+.two-columns li {
+  margin-bottom: 5px;
+}
+
+/* Remove Safari input shadow on mobile */
+input[type="text"],
+input[type="email"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Scrollbar utilities */
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Table styles */
+table {
+  display: block;
+  max-width: fit-content;
+  overflow-x: auto;
+  white-space: nowrap;
+}

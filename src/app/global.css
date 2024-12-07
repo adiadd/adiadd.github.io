@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@import "../styles/variables.css";
+@import "../styles/utilities.css";
+@import "../styles/prose.css";
+@import "../styles/links.css";
 
 ::selection {
   background-color: #47a3f3;
@@ -6,6 +10,9 @@
 }
 
 :root {
+  --link-color: #d18800;
+  --link-hover-opacity: 0.6;
+  --link-transition: 0.2s ease;
   --sh-class: #2d5e9d;
   --sh-identifier: #354150;
   --sh-sign: #8996a3;
@@ -158,26 +165,68 @@ table {
   text-wrap: balance;
 }
 
-.homepage-link {
-  color: #d18800;
-  font-weight: 400;
+.homepage-link,
+.prose a {
   position: relative;
+  display: inline-block;
+  color: var(--link-color);
+  font-weight: 400;
   text-decoration: none;
 }
 
-.homepage-link:hover {
-  text-decoration: underline;
+@media (hover: hover) {
+  .homepage-link,
+  .prose a {
+    padding: 0 4px;
+    transition: all var(--link-transition);
+  }
+
+  .homepage-link::before,
+  .homepage-link::after,
+  .prose a::before,
+  .prose a::after {
+    position: absolute;
+    opacity: 0;
+    font-weight: 300;
+    transition: all var(--link-transition);
+    color: var(--link-color);
+  }
+
+  .homepage-link::before,
+  .prose a::before {
+    content: '[';
+    left: -4px;
+    transform: translateX(8px);
+  }
+
+  .homepage-link::after,
+  .prose a::after {
+    content: ']';
+    right: -4px;
+    transform: translateX(-8px);
+  }
+
+  .homepage-link:hover::before,
+  .homepage-link:hover::after,
+  .prose a:hover::before,
+  .prose a:hover::after {
+    opacity: var(--link-hover-opacity);
+    transform: translateX(0);
+  }
 }
 
-.two-columns {
-  columns: 2;
-  -webkit-columns: 2;
-  -moz-columns: 2;
-  padding: 0 10px;
+@media (hover: none) {
+  .homepage-link,
+  .prose a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: rgba(209, 136, 0, 0.4);
+  }
 }
 
-.two-columns li {
-  margin-bottom: 5px;
+.prose a {
+  text-decoration: none !important;
 }
 
 #twitter-tag:hover {
@@ -194,4 +243,15 @@ table {
 
 #substack-tag:hover {
   color: #ffa500;
+}
+
+.two-columns {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  padding: 0 10px;
+}
+
+.two-columns li {
+  margin-bottom: 5px;
 }
