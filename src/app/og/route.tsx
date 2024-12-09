@@ -1,9 +1,20 @@
 import { ImageResponse } from "next/og";
 import { siteConfig } from "src/config/site";
+import avatar from "../../../assets/agni_8_bit_beige_cropped.png";
+import fs from "node:fs";
+import path from "node:path";
 
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const title = url.searchParams.get("title") || `${siteConfig.name}`;
+
+  const avatarPath = path.join(
+    process.cwd(),
+    "src",
+    "assets",
+    "agni_8_bit_beige_cropped.png",
+  );
+  const avatarContent = fs.readFileSync(avatarPath, "utf8");
 
   return new ImageResponse(
     (
@@ -61,8 +72,8 @@ export async function GET(request: Request) {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://utfs.io/f/X8OJl8spEec6VBsfW0Uvycih9lnJHgb1GtLmP6ZFrzBEURxC"
-            alt="aditya's 8 bit avatar"
+            src={`data:image/png;base64,${avatarContent}`}
+            alt="8-bit avatar with hoodie"
             style={{
               width: "80%",
               height: "80%",
