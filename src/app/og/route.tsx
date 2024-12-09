@@ -1,14 +1,9 @@
 import { ImageResponse } from "next/og";
 import { siteConfig } from "src/config/site";
-import fs from "node:fs";
-import path from "node:path";
 
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const title = url.searchParams.get("title") || `${siteConfig.name}`;
-
-  const svgPath = path.join(process.cwd(), "public", "adihoodedpfpsvg.svg");
-  const svgContent = fs.readFileSync(svgPath, "utf8");
 
   return new ImageResponse(
     (
@@ -39,20 +34,20 @@ export async function GET(request: Request) {
               marginBottom: "16px",
               maxWidth: "100%",
               textAlign: "left",
-              fontSize: "64px", // Increased font size
-              lineHeight: "1.2", // Added line height for better readability
+              fontSize: "50px",
+              lineHeight: "1.2",
             }}
           >
             {title}
           </h1>
           <h3
             style={{
-              color: "#45363F",
+              color: "#6B5A66",
               margin: 0,
-              fontSize: "36px", // Increased font size
+              fontSize: "24px",
             }}
           >
-            adiadd.xyz
+            &#47; &#47; adiadd.xyz
           </h3>
         </div>
         <div
@@ -66,8 +61,8 @@ export async function GET(request: Request) {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={`data:image/svg+xml,${encodeURIComponent(svgContent)}`}
-            alt="aditya's personal website svg"
+            src="https://utfs.io/f/X8OJl8spEec6VBsfW0Uvycih9lnJHgb1GtLmP6ZFrzBEURxC"
+            alt="aditya's 8 bit avatar"
             style={{
               width: "80%",
               height: "80%",
