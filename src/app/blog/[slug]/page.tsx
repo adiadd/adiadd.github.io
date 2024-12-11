@@ -1,10 +1,11 @@
 import { notFound } from "next/navigation";
 import { formatDate, getBlogPosts } from "src/app/blog/utils";
 import { baseUrl } from "src/app/sitemap";
+import JsonLd from "src/components/json-ld";
 import { CustomMDX } from "src/components/mdx";
+import ShareButtons from "src/components/share-buttons";
 import TypeWriter from "src/components/type-writer";
 import { siteConfig } from "src/config/site";
-import JsonLd from "src/components/json-ld";
 
 export async function generateStaticParams() {
   const posts = getBlogPosts();
@@ -58,6 +59,19 @@ export function generateMetadata({ params }) {
     alternates: {
       canonical: `/blog/${post.slug}`,
     },
+    keywords: `${title}, blog, technology, programming`,
+    author: siteConfig.name,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
   };
 }
 
@@ -67,6 +81,8 @@ export default function Blog({ params }) {
   if (!post) {
     notFound();
   }
+
+  const postUrl = `${baseUrl}/blog/${post.slug}`;
 
   return (
     <article className="h-entry">
@@ -98,14 +114,20 @@ export default function Blog({ params }) {
           },
         }}
       />
-      <h1 className="p-name title font-semibold text-2xl tracking-tighter">
-        <TypeWriter text={post.metadata.title} delay={50} />
-      </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-        <time className="dt-published text-sm text-neutral-600 dark:text-neutral-400">
-          {formatDate(post.metadata.publishedAt)}
-        </time>
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 mt-5">
+        <h1 className="p-name title font-semibold text-2xl tracking-tighter">
+          <TypeWriter text={post.metadata.title} delay={50} />
+        </h1>
+
+        <div className="flex items-center gap-4 mt-4 md:mt-0">
+          <time className="dt-published text-sm text-neutral-600 dark:text-neutral-400 whitespace-nowrap">
+            {formatDate(post.metadata.publishedAt)}
+          </time>
+          <div className="border-l border-neutral-200 dark:border-neutral-700 h-6" />
+          <ShareButtons url={postUrl} title={post.metadata.title} />
+        </div>
       </div>
+
       <div className="e-content prose">
         <CustomMDX source={post.content} />
       </div>
