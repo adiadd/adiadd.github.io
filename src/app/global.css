@@ -194,14 +194,14 @@ table {
 
   .homepage-link::before,
   .prose a::before {
-    content: '[';
+    content: "[";
     left: -4px;
     transform: translateX(8px);
   }
 
   .homepage-link::after,
   .prose a::after {
-    content: ']';
+    content: "]";
     right: -4px;
     transform: translateX(-8px);
   }

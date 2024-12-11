@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 interface TypeWriterProps {
   text: string;
@@ -9,20 +9,20 @@ interface TypeWriterProps {
   cursor?: boolean;
 }
 
-export default function TypeWriter({ 
-  text, 
-  className = '', 
+export default function TypeWriter({
+  text,
+  className = "",
   delay = 100,
-  cursor = true 
+  cursor = true,
 }: TypeWriterProps) {
-  const [displayText, setDisplayText] = useState('');
+  const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     if (currentIndex < text.length) {
       const timeout = setTimeout(() => {
-        setDisplayText(prev => prev + text[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
+        setDisplayText((prev) => prev + text[currentIndex]);
+        setCurrentIndex((prev) => prev + 1);
       }, delay);
 
       return () => clearTimeout(timeout);
