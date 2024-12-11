@@ -3,6 +3,8 @@ import { formatDate, getBlogPosts } from "src/app/blog/utils";
 import { baseUrl } from "src/app/sitemap";
 import { CustomMDX } from "src/components/mdx";
 import TypeWriter from "src/components/type-writer";
+import { siteConfig } from "src/config/site";
+import JsonLd from "src/components/json-ld";
 
 export async function generateStaticParams() {
   const posts = getBlogPosts();
@@ -24,12 +26,13 @@ export function generateMetadata({ params }) {
     summary: description,
     image,
   } = post.metadata;
+
   const ogImage = image
     ? image
     : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
 
   return {
-    title,
+    title: `${title} | Blog`,
     description,
     openGraph: {
       title,
@@ -40,6 +43,9 @@ export function generateMetadata({ params }) {
       images: [
         {
           url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: title,
         },
       ],
     },
@@ -48,6 +54,9 @@ export function generateMetadata({ params }) {
       title,
       description,
       images: [ogImage],
+    },
+    alternates: {
+      canonical: `/blog/${post.slug}`,
     },
   };
 }
@@ -60,41 +69,46 @@ export default function Blog({ params }) {
   }
 
   return (
-    <section>
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            headline: post.metadata.title,
-            datePublished: post.metadata.publishedAt,
-            dateModified: post.metadata.publishedAt,
-            description: post.metadata.summary,
-            image: post.metadata.image
-              ? `${baseUrl}${post.metadata.image}`
-              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-            url: `${baseUrl}/blog/${post.slug}`,
-            author: {
-              "@type": "Person",
-              name: "aditya addepalli",
-            },
-          }),
+    <article className="h-entry">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          headline: post.metadata.title,
+          datePublished: post.metadata.publishedAt,
+          dateModified: post.metadata.publishedAt,
+          description: post.metadata.summary,
+          image: post.metadata.image
+            ? `${baseUrl}${post.metadata.image}`
+            : `${baseUrl}/og?title=${encodeURIComponent(post.metadata.title)}`,
+          url: `${baseUrl}/blog/${post.slug}`,
+          author: {
+            "@type": "Person",
+            name: siteConfig.name,
+            url: baseUrl,
+          },
+          publisher: {
+            "@type": "Person",
+            name: siteConfig.name,
+            url: baseUrl,
+          },
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": `${baseUrl}/blog/${post.slug}`,
+          },
         }}
       />
-      <h1 className="title font-semibold text-2xl tracking-tighter">
+      <h1 className="p-name title font-semibold text-2xl tracking-tighter">
         <TypeWriter text={post.metadata.title} delay={50} />
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+        <time className="dt-published text-sm text-neutral-600 dark:text-neutral-400">
           {formatDate(post.metadata.publishedAt)}
-        </p>
+        </time>
       </div>
-      <article className="prose">
+      <div className="e-content prose">
         <CustomMDX source={post.content} />
-      </article>
-    </section>
+      </div>
+    </article>
   );
 }

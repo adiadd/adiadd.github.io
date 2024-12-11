@@ -49,6 +49,11 @@ export const metadata: Metadata = {
     creatorId: "1595924352",
     images: ["https://adiadd.xyz/og.png"],
   },
+  alternates: {
+    types: {
+      "application/rss+xml": `${baseUrl}/feed.xml`,
+    },
+  },
 };
 
 const cx = (...classes) => classes.filter(Boolean).join(" ");

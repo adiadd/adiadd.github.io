@@ -1,9 +1,19 @@
+import type { Metadata } from "next";
 import { BlogPosts } from "src/components/posts";
 import TypeWriter from "src/components/type-writer";
+import { siteConfig } from "src/config/site";
 
-export const metadata = {
-  title: "thoughts",
-  description: "read my thoughts",
+export const metadata: Metadata = {
+  title: `Blog Posts | ${siteConfig.name}`,
+  description: `Read articles about software development, tech, and personal thoughts by ${siteConfig.name}`,
+  openGraph: {
+    title: `Blog Posts | ${siteConfig.name}`,
+    description: `Read articles about software development, tech, and personal thoughts by ${siteConfig.name}`,
+    type: "website",
+  },
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 export default function Page() {
