@@ -24,7 +24,7 @@ export default function ShareButtons({ url, title }: ShareButtonsProps) {
   };
 
   return (
-    <div className="flex gap-3">
+    <div className="flex">
       <TwitterShareButton url={url} title={title} className="!rounded-md">
         <div className="text-neutral-600 hover:text-[#1DA1F2] dark:text-neutral-400">
           <XIcon {...iconProps} />
