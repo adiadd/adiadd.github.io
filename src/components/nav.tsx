@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "src/config/site";
+import { ProfileImage } from "./client/profile-image";
 
 export function Navbar() {
   return (
@@ -22,17 +22,7 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="w-14 h-14 rounded-full relative overflow-hidden hover:animate-spin cursor-pointer">
-            <Image
-              src="/pfp.png"
-              alt="Real Adi"
-              fill
-              sizes="100vw"
-              style={{
-                objectFit: "cover",
-              }}
-            />
-          </div>
+          <ProfileImage />
         </nav>
       </div>
     </aside>
