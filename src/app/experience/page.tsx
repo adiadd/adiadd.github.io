@@ -25,10 +25,10 @@ export default function Page() {
         </strong>
       </h2>
       <p className="mb-4 text-neutral-900 dark:text-neutral-100">
-        led, architected, and developed applications across the entire stack for
-        numerous engagements with customers ranging from $1 million to $1
-        billion. frontend to backend, TypeScript to Python, and internal to
-        external customers, i built major and integral user-driven features
+        leading, architecting, and developing applications across the entire stack
+        for numerous engagements with customers ranging from $1 million to $1
+        billion. front-end to back-end, TypeScript to Python, and internal to
+        external customers, i build major and integral user-driven features
         generating over $60 million in future revenues
       </p>
       <h2 className="mb-2 text-lg font-semibold tracking-tighter">
@@ -95,8 +95,17 @@ export default function Page() {
         <li>GraphQL</li>
         <li>Node</li>
         <li>FastAPI</li>
+        <li>Flask</li>
+        <li>NumPy</li>
+        <li>Pandas</li>
+        <li>Matplotlib</li>
+        <li>Scikit-Learn</li>
         <li>Unity</li>
         <li>AWS (numerous services)</li>
+        <li>Docker</li>
+        <li>Git</li>
+        <li>CI/CD</li>
+        <li>and much much more...</li>
       </ul>
 
       <h2 className="mb-5 text-2xl font-semibold tracking-tighter">
