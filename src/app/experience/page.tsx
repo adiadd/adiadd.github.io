@@ -12,7 +12,7 @@ export default function Page() {
         <TypeWriter text="my experience" delay={100} />
       </h1>
       <h2 className="mb-2 text-lg font-semibold tracking-tighter">
-        senior cloud engineer & prev AppDev intern @{" "}
+        senior cloud engineer & prev AppDev intern @{""}
         <strong>
           <a
             href="https://aws.amazon.com/"
@@ -32,7 +32,7 @@ export default function Page() {
         generating over $60 million in future revenues
       </p>
       <h2 className="mb-2 text-lg font-semibold tracking-tighter">
-        building fun stuff @{" "}
+        building fun stuff @{""}
         <strong>
           <a
             href="https://www.agnilabs.xyz"
@@ -48,7 +48,7 @@ export default function Page() {
         trying to materialize the ideas in my head one mvp at a time💡🧪
       </p>
       <h2 className="mb-2 text-lg font-semibold tracking-tighter">
-        founder & ceo @{" "}
+        founder & ceo @{""}
         <strong>
           <a
             href="https://www.vglogs.com"
@@ -76,35 +76,33 @@ export default function Page() {
 
       <h2 className="mb-5 text-2xl font-semibold tracking-tighter ">skills</h2>
       <p className="text-neutral-900 dark:text-neutral-100">
-        i like to write the following languages:
+        i like to write:
       </p>
       <ul className="two-columns mb-5 list-disc">
-        <li>Python</li>
-        <li>TypeScript & JavaScript</li>
-        <li>HTML/CSS</li>
-        <li>Java</li>
-        <li>C#</li>
-        <li>SQL</li>
+        <li>python</li>
+        <li>typescript & javascript</li>
+        <li>html + css</li>
+        <li>java</li>
+        <li>rust</li>
+        <li>c++</li>
+        <li>c#</li>
+        <li>sql</li>
       </ul>
       <p className="text-neutral-900 dark:text-neutral-100">
-        and use the following frameworks/tools:
+        and use:
       </p>
       <ul className="two-columns mb-5 list-disc ">
-        <li>React</li>
-        <li>Next.js</li>
-        <li>GraphQL</li>
-        <li>Node</li>
-        <li>FastAPI</li>
-        <li>Flask</li>
-        <li>NumPy</li>
-        <li>Pandas</li>
-        <li>Matplotlib</li>
-        <li>Scikit-Learn</li>
-        <li>Unity</li>
-        <li>AWS (numerous services)</li>
-        <li>Docker</li>
-        <li>Git</li>
-        <li>CI/CD</li>
+        <li>react</li>
+        <li>next.js</li>
+        <li>graphql & rest</li>
+        <li>node</li>
+        <li>flask</li>
+        <li>numpy</li>
+        <li>pandas</li>
+        <li>matplotlib</li>
+        <li>cdk</li>
+        <li>terraform</li>
+        <li>pretty much all aws services</li>
         <li>and much much more...</li>
       </ul>
 
