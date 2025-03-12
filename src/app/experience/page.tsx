@@ -74,7 +74,14 @@ export default function Page() {
         and battle royale component with a bunch of awesome friends
       </p>
 
-      <h2 className="mb-5 text-2xl font-semibold tracking-tighter ">skills</h2>
+      <h2 className="mb-2 text-lg font-semibold tracking-tighter">
+        some fun things i did @ <strong style={{ color: "#bf5700" }}>UT Austin</strong>
+      </h2>
+      <p className="mb-4 text-neutral-900 dark:text-neutral-100">
+      helped lead <a href="https://texasstockteam.com/" target="_blank" rel="noopener noreferrer" className="homepage-link">Texas Stock Team</a> with amazing friends, organized <a href="https://hacktx.com/" target="_blank" rel="noopener noreferrer" className="homepage-link">HackTX</a> in Austin with <a href="https://www.freetailhackers.com" target="_blank" rel="noopener noreferrer" className="homepage-link">Freetail Hackers</a>, and built things alongside others at <a href="https://www.txconvergent.org/" target="_blank" rel="noopener noreferrer" className="homepage-link">Convergent</a>
+      </p>
+
+      <h1 className="mb-5 text-2xl font-semibold tracking-tighter ">skills</h1>
       <p className="text-neutral-900 dark:text-neutral-100">
         i like to write:
       </p>
