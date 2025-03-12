@@ -9,7 +9,7 @@ export default function Page() {
   return (
     <section>
       <h1 className="font-semibold text-4xl mb-8 tracking-tighter">
-        <TypeWriter text="my experience" delay={100} />
+        <TypeWriter text="my experiences" delay={100} />
       </h1>
       <h2 className="mb-2 text-lg font-semibold tracking-tighter">
         senior cloud engineer & prev AppDev intern @{""}
