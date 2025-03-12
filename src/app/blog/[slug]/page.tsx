@@ -33,7 +33,7 @@ export function generateMetadata({ params }) {
     : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
 
   return {
-    title: `${title} | Blog`,
+    title: `${title}`,
     description,
     openGraph: {
       title,
@@ -59,7 +59,7 @@ export function generateMetadata({ params }) {
     alternates: {
       canonical: `/blog/${post.slug}`,
     },
-    keywords: `${title}, blog, technology, programming`,
+    keywords: `${title}, blog, technology, programming, life, everything in between`,
     author: siteConfig.name,
     robots: {
       index: true,

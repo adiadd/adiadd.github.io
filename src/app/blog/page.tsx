@@ -4,11 +4,11 @@ import TypeWriter from "src/components/type-writer";
 import { siteConfig } from "src/config/site";
 
 export const metadata: Metadata = {
-  title: `Blog Posts | ${siteConfig.name}`,
-  description: `Read articles about software development, tech, and personal thoughts by ${siteConfig.name}`,
+  title: "thoughts",
+  description: `read my thoughts on software development, life, everything in between by ${siteConfig.name}`,
   openGraph: {
-    title: `Blog Posts | ${siteConfig.name}`,
-    description: `Read articles about software development, tech, and personal thoughts by ${siteConfig.name}`,
+    title: "thoughts",
+    description: `read my thoughts on software development, life, everything in between by ${siteConfig.name}`,
     type: "website",
   },
   alternates: {
