@@ -54,6 +54,9 @@ export const metadata: Metadata = {
       "application/rss+xml": `${baseUrl}/feed.xml`,
     },
   },
+  other: {
+    "og:logo": "✌🏾",
+  },
 };
 
 const cx = (...classes) => classes.filter(Boolean).join(" ");
