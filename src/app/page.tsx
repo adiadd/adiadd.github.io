@@ -46,7 +46,7 @@ export default function Page() {
       </p>
       <div>
         <p className="text-neutral-900 dark:text-neutral-100">
-          i&apos;m human just like you and love making new friends! feel free to{" "}
+          i love meeting new people! feel free to{" "}
           <a
             className="homepage-link"
             href="mailto:adiaddxyz@gmail.com"
@@ -68,7 +68,7 @@ export default function Page() {
           </a>
           {", or "}
           <CalButton />
-          {" - let's connect! 🤚🏾"}
+          {" 🤚🏾"}
         </p>
       </div>
 
