@@ -85,7 +85,7 @@ export default function Page() {
       <p className="text-neutral-900 dark:text-neutral-100">
         i like to write:
       </p>
-      <ul className="two-columns mb-5 list-disc">
+      <ul className="list-disc mb-5">
         <li>python</li>
         <li>typescript & javascript</li>
         <li>html + css</li>
@@ -98,7 +98,7 @@ export default function Page() {
       <p className="text-neutral-900 dark:text-neutral-100">
         and use:
       </p>
-      <ul className="two-columns mb-5 list-disc ">
+      <ul className="list-disc mb-5 ">
         <li>react</li>
         <li>next.js</li>
         <li>graphql & rest</li>
@@ -116,7 +116,7 @@ export default function Page() {
       <h2 className="mb-5 text-2xl font-semibold tracking-tighter">
         certs/honors
       </h2>
-      <ul className="two-columns mb-5 list-disc ">
+      <ul className="list-disc mb-5 ">
         <li>AWS Solutions Architect - Professional</li>
         <li>AWS Security - Professional</li>
         <li>AWS Developer - Associate</li>
