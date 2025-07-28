@@ -114,7 +114,7 @@ export default function Blog({ params }) {
           },
         }}
       />
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 mt-5">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
         <h1 className="p-name title font-semibold text-2xl tracking-tighter">
           <TypeWriter text={post.metadata.title} delay={50} />
         </h1>
