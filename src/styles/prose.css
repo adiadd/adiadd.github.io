@@ -3,15 +3,8 @@
   margin-left: -1em;
   padding-right: 0.5em;
   width: 80%;
-  max-width: 672px;
+  max-width: 700px;
   cursor: pointer;
-}
-
-.prose {
-  max-width: 100%;
-  min-width: 0;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
 }
 
 .prose .anchor:hover {
@@ -33,7 +26,6 @@
 
 .prose pre {
   @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900 py-2 px-3 text-sm;
-  max-width: 100%;
 }
 
 .prose code {
@@ -53,8 +45,6 @@
 .prose img {
   /* Don't apply styles to next/image */
   @apply m-0;
-  max-width: 100%;
-  height: auto;
 }
 
 .prose p {
@@ -93,15 +83,4 @@
   /* Override removing top margin, causing layout shift */
   margin-top: 1.25em !important;
   margin-bottom: 1.25em !important;
-}
-
-.prose table {
-  max-width: 100%;
-  overflow-x: auto;
-  display: block;
-  white-space: nowrap;
-}
-
-.prose blockquote {
-  max-width: 100%;
 }
