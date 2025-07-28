@@ -114,12 +114,12 @@ export default function Blog({ params }) {
           },
         }}
       />
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 overflow-hidden">
         <h1 className="p-name title font-semibold text-2xl tracking-tighter">
           <TypeWriter text={post.metadata.title} delay={50} />
         </h1>
 
-        <div className="flex items-center gap-4 mt-4 md:mt-0">
+        <div className="flex items-center gap-4 mt-4 md:mt-0 flex-shrink-0">
           <time className="dt-published text-sm text-neutral-600 dark:text-neutral-400 whitespace-nowrap">
             {formatDate(post.metadata.publishedAt)}
           </time>
