@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import type React from "react";
 import { siteConfig } from "src/config/site";
 
 type TerminalFrameProps = {
-  title?: string;
   children: React.ReactNode;
 };
 
@@ -100,6 +100,15 @@ function IconButtonLink({
 }
 
 export default function TerminalFrame({ children }: TerminalFrameProps) {
+  const pathname = usePathname();
+
+  const isActive = (path: string) => {
+    if (path === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(path);
+  };
+
   return (
     <div className="fixed inset-[clamp(32px,10vmin,120px)] z-0">
       <div className="h-full w-full rounded-lg border border-[color:var(--terminal-border)] bg-[color:var(--terminal-bg)] shadow-sm mx-auto flex flex-col">
@@ -114,19 +123,31 @@ export default function TerminalFrame({ children }: TerminalFrameProps) {
           <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
             <Link
               href="/"
-              className="text-xs sm:text-sm px-1.5 sm:px-2 py-0.5 sm:py-1 rounded hover:bg-[color:var(--terminal-border)]/5 text-[color:var(--text)]/80 hover:text-[color:var(--text)]"
+              className={`text-xs sm:text-sm px-1.5 sm:px-2 py-0.5 sm:py-1 rounded transition-all ${
+                isActive("/")
+                  ? "text-orange-500 font-semibold underline underline-offset-4 decoration-2 decoration-orange-500"
+                  : "hover:bg-[color:var(--terminal-border)]/5 text-[color:var(--text)]/80 hover:text-[color:var(--text)]"
+              }`}
             >
               home
             </Link>
             <Link
               href="/experience"
-              className="text-xs sm:text-sm px-1.5 sm:px-2 py-0.5 sm:py-1 rounded hover:bg-[color:var(--terminal-border)]/5 text-[color:var(--text)]/80 hover:text-[color:var(--text)]"
+              className={`text-xs sm:text-sm px-1.5 sm:px-2 py-0.5 sm:py-1 rounded transition-all ${
+                isActive("/experience")
+                  ? "text-orange-500 font-semibold underline underline-offset-4 decoration-2 decoration-orange-500"
+                  : "hover:bg-[color:var(--terminal-border)]/5 text-[color:var(--text)]/80 hover:text-[color:var(--text)]"
+              }`}
             >
               experience
             </Link>
             <Link
               href="/blog"
-              className="text-xs sm:text-sm px-1.5 sm:px-2 py-0.5 sm:py-1 rounded hover:bg-[color:var(--terminal-border)]/5 text-[color:var(--text)]/80 hover:text-[color:var(--text)]"
+              className={`text-xs sm:text-sm px-1.5 sm:px-2 py-0.5 sm:py-1 rounded transition-all ${
+                isActive("/blog")
+                  ? "text-orange-500 font-semibold underline underline-offset-4 decoration-2 decoration-orange-500"
+                  : "hover:bg-[color:var(--terminal-border)]/5 text-[color:var(--text)]/80 hover:text-[color:var(--text)]"
+              }`}
             >
               thoughts
             </Link>
@@ -164,7 +185,7 @@ export default function TerminalFrame({ children }: TerminalFrameProps) {
               <SubstackIcon />
             </IconButtonLink>
             <IconButtonLink
-              href="/rss"
+              href="/feed.xml"
               label="RSS"
               className="hover:text-[#f26522]"
             >

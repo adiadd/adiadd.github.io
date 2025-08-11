@@ -7,7 +7,7 @@ import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
 import TerminalFrame from "src/components/terminal/frame";
 import { siteConfig } from "src/config/site";
-import styles from "../../src/styles/background.module.css";
+import styles from "src/styles/background.module.css";
 import "./global.css";
 import { baseUrl } from "./sitemap";
 

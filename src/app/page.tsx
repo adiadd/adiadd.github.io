@@ -9,7 +9,11 @@ export default function Page() {
     <>
       <div className="mb-1 flex items-center gap-3">
         <ProfileImage />
-        <h1 className="text-4xl font-semibold tracking-tight">
+        <h1
+          className="text-4xl font-semibold tracking-tight"
+          aria-label="aditya addepalli"
+          suppressHydrationWarning
+        >
           <TypeWriter text="aditya addepalli" delay={100} />
         </h1>
       </div>
@@ -22,7 +26,7 @@ export default function Page() {
         </p>
         <p className="text-neutral-900 dark:text-neutral-100">
           i previously graduated from{" "}
-          <span style={{ color: "#bf5700" }}>UT Austin</span> with a major in
+          <span className="text-[#bf5700]">UT Austin</span> with a major in
           information systems and a certificate in cs. during the day, i write
           code for Amazon Web Services, at night, for the master of computer
           science from <span style={{ color: "#B3A369" }}>Georgia Tech</span>{" "}
@@ -54,8 +58,8 @@ export default function Page() {
           <a
             className="homepage-link ml-1"
             href="mailto:adiaddxyz@gmail.com"
-            target="_blank"
             rel="noopener noreferrer"
+            aria-label="email adiaddxyz@gmail.com"
           >
             shoot me an email
           </a>
@@ -67,6 +71,7 @@ export default function Page() {
             data-show-count="false"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="dm me on twitter/x"
           >
             dm me on twitter/x
           </a>

@@ -19,7 +19,7 @@ export function ProfileImage() {
         priority
         style={{ objectFit: "cover" }}
         onLoad={() => setIsLoading(false)}
-        className="transition-opacity duration-300"
+        className="transition-all duration-1000 hover:rotate-[360deg]"
       />
     </div>
   );

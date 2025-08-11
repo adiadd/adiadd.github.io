@@ -29,7 +29,6 @@ export default function Footer() {
             rel="noopener noreferrer"
             target="_blank"
             href={`${siteConfig.links.X}`}
-            id="twitter-tag"
           >
             <ArrowIcon />
             <p className="ml-2 h-7">twitter/x</p>
@@ -41,7 +40,6 @@ export default function Footer() {
             rel="noopener noreferrer"
             target="_blank"
             href={`${siteConfig.links.linkedIn}`}
-            id="linkedin-tag"
           >
             <ArrowIcon />
             <p className="ml-2 h-7">linkedin</p>
@@ -53,7 +51,6 @@ export default function Footer() {
             rel="noopener noreferrer"
             target="_blank"
             href={`${siteConfig.links.github}`}
-            id="github-tag"
           >
             <ArrowIcon />
             <p className="ml-2 h-7">github</p>
@@ -65,7 +62,6 @@ export default function Footer() {
             rel="noopener noreferrer"
             target="_blank"
             href={`${siteConfig.links.substack}`}
-            id="substack-tag"
           >
             <ArrowIcon />
             <p className="ml-2 h-7">substack</p>

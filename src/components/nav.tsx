@@ -6,7 +6,10 @@ export function Navbar() {
   return (
     <aside className="tracking-tight mb-4">
       <div className="lg:sticky lg:top-6">
-        <nav className="flex flex-row items-center justify-end px-0 pb-0">
+        <nav
+          aria-label="Primary navigation"
+          className="flex flex-row items-center justify-end px-0 pb-0"
+        >
           <div className="hidden md:flex flex-row items-center space-x-2 mr-3">
             {Object.entries(siteConfig.navItems).map(([path, { name }]) => (
               <Link
@@ -18,7 +21,6 @@ export function Navbar() {
               </Link>
             ))}
           </div>
-          {/* remove social icons from the navbar per request */}
           <ProfileImage />
         </nav>
       </div>
