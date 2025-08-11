@@ -5,10 +5,9 @@ import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
+import TerminalFrame from "src/components/terminal/frame";
 import { siteConfig } from "src/config/site";
-import styles from "../../src/styles/background.module.css";
-import Footer from "../components/footer";
-import { Navbar } from "../components/nav";
+import styles from "src/styles/background.module.css";
 import "./global.css";
 import { baseUrl } from "./sitemap";
 
@@ -82,14 +81,14 @@ export default function RootLayout({
       />
       <body className="antialiased mx-auto mt-8 frappe dark:mocha bg-base dark:text-white dark:bg-crust text-text">
         <div className={styles.gridBackground} />
-        <main className="flex-auto mt-6 flex flex-col px-2 mx-auto max-w-2xl">
-          <NextTopLoader showSpinner={false} color="#D18800" />
-          <Navbar />
-          {children}
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
-        </main>
+        <TerminalFrame>
+          <div className="mx-auto w-full max-w-5xl lg:max-w-6xl">
+            <NextTopLoader showSpinner={false} color="#D18800" />
+            {children}
+            <Analytics />
+            <SpeedInsights />
+          </div>
+        </TerminalFrame>
       </body>
     </html>
   );

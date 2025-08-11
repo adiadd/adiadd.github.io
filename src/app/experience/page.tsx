@@ -25,9 +25,9 @@ export default function Page() {
         </strong>
       </h2>
       <p className="mb-4 text-neutral-900 dark:text-neutral-100">
-        leading, architecting, and developing applications across the entire stack
-        for numerous engagements with customers ranging from $1 million to $1
-        billion. front-end to back-end, TypeScript to Python, and internal to
+        leading, architecting, and developing applications across the entire
+        stack for numerous engagements with customers ranging from $1 million to
+        $1 billion. front-end to back-end, TypeScript to Python, and internal to
         external customers, i build major and integral user-driven features
         generating over $60 million in future revenues
       </p>
@@ -75,55 +75,101 @@ export default function Page() {
       </p>
 
       <h2 className="mb-2 text-lg font-semibold tracking-tighter">
-        some fun things i did @ <strong style={{ color: "#bf5700" }}>UT Austin</strong>
+        some fun things i did @{" "}
+        <strong style={{ color: "#bf5700" }}>UT Austin</strong>
       </h2>
       <p className="mb-4 text-neutral-900 dark:text-neutral-100">
-      helped lead <a href="https://texasstockteam.com/" target="_blank" rel="noopener noreferrer" className="homepage-link">Texas Stock Team</a> with amazing friends, organized <a href="https://hacktx.com/" target="_blank" rel="noopener noreferrer" className="homepage-link">HackTX</a> in Austin with <a href="https://www.freetailhackers.com" target="_blank" rel="noopener noreferrer" className="homepage-link">Freetail Hackers</a>, and built things alongside others at <a href="https://www.txconvergent.org/" target="_blank" rel="noopener noreferrer" className="homepage-link">Convergent</a>
+        helped lead{" "}
+        <a
+          href="https://texasstockteam.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="homepage-link"
+        >
+          Texas Stock Team
+        </a>{" "}
+        with amazing friends, organized{" "}
+        <a
+          href="https://hacktx.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="homepage-link"
+        >
+          HackTX
+        </a>{" "}
+        in Austin with{" "}
+        <a
+          href="https://www.freetailhackers.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="homepage-link"
+        >
+          Freetail Hackers
+        </a>
+        , and built things alongside others at{" "}
+        <a
+          href="https://www.txconvergent.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="homepage-link"
+        >
+          Convergent
+        </a>
       </p>
 
       <h1 className="mb-5 text-2xl font-semibold tracking-tighter ">skills</h1>
-      <p className="text-neutral-900 dark:text-neutral-100">
-        i like to write:
-      </p>
-      <ul className="two-columns mb-5 list-disc">
-        <li>python</li>
-        <li>typescript & javascript</li>
-        <li>html + css</li>
-        <li>java</li>
-        <li>rust</li>
-        <li>c++</li>
-        <li>c#</li>
-        <li>sql</li>
-      </ul>
-      <p className="text-neutral-900 dark:text-neutral-100">
-        and use:
-      </p>
-      <ul className="two-columns mb-5 list-disc ">
-        <li>react</li>
-        <li>next.js</li>
-        <li>graphql & rest</li>
-        <li>node</li>
-        <li>flask</li>
-        <li>numpy</li>
-        <li>pandas</li>
-        <li>matplotlib</li>
-        <li>cdk</li>
-        <li>terraform</li>
-        <li>pretty much all aws services</li>
-        <li>and much much more...</li>
-      </ul>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-5">
+        <div>
+          <p className="text-neutral-900 dark:text-neutral-100 mb-2">
+            i like to write:
+          </p>
+          <ul className="list-disc pl-6 space-y-1">
+            <li>python</li>
+            <li>typescript & javascript</li>
+            <li>html + css</li>
+            <li>java</li>
+            <li>rust</li>
+            <li>c++</li>
+            <li>c#</li>
+            <li>sql</li>
+            <li>graphql & rest</li>
+            <li>node</li>
+          </ul>
+        </div>
+        <div>
+          <p className="text-neutral-900 dark:text-neutral-100 mb-2">
+            and use:
+          </p>
+          <ul className="list-disc pl-6 space-y-1">
+            <li>react</li>
+            <li>next.js</li>
+            <li>flask</li>
+            <li>numpy</li>
+            <li>pandas</li>
+            <li>matplotlib</li>
+            <li>cdk</li>
+            <li>terraform</li>
+            <li>pretty much all aws services</li>
+            <li>and much much more...</li>
+          </ul>
+        </div>
+      </div>
 
       <h2 className="mb-5 text-2xl font-semibold tracking-tighter">
         certs/honors
       </h2>
-      <ul className="two-columns mb-5 list-disc ">
-        <li>AWS Solutions Architect - Professional</li>
-        <li>AWS Security - Professional</li>
-        <li>AWS Developer - Associate</li>
-        <li>AWS Solutions Architect - Associate</li>
-        <li>AWS Cloud Practitioner</li>
-        <li>Eagle Scout (2016)</li>
-      </ul>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-5">
+        <ul className="list-disc pl-6 space-y-1">
+          <li>AWS Solutions Architect - Professional</li>
+          <li>AWS Security - Professional</li>
+          <li>AWS Developer - Associate</li>
+        </ul>
+        <ul className="list-disc pl-6 space-y-1">
+          <li>AWS Solutions Architect - Associate</li>
+          <li>AWS Cloud Practitioner</li>
+          <li>Eagle Scout (2016)</li>
+        </ul>
+      </div>
     </section>
   );
 }
