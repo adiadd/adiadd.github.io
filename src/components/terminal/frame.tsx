@@ -110,7 +110,7 @@ export default function TerminalFrame({ children }: TerminalFrameProps) {
   };
 
   return (
-    <div className="fixed inset-[clamp(32px,10vmin,120px)] z-0">
+    <div className="fixed inset-[clamp(8px,6vmin,120px)] sm:inset-[clamp(16px,8vmin,120px)] md:inset-[clamp(24px,9vmin,120px)] lg:inset-[clamp(32px,10vmin,120px)] z-0">
       <div className="h-full w-full rounded-lg border border-[color:var(--terminal-border)] bg-[color:var(--terminal-bg)] shadow-sm mx-auto flex flex-col">
         <div className="flex items-center justify-between border-b border-[color:var(--terminal-border)] bg-[color:var(--terminal-bg)] px-3 py-2">
           <div className="flex items-center gap-2 sm:gap-3">
