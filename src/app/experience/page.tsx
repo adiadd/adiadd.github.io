@@ -12,7 +12,7 @@ export default function Page() {
         <TypeWriter text="my experiences" delay={100} />
       </h1>
       <h2 className="mb-2 text-lg font-semibold tracking-tighter">
-        senior cloud engineer & prev AppDev intern @{""}
+        senior cloud engineer @{""}
         <strong>
           <a
             href="https://aws.amazon.com/"
