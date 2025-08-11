@@ -80,7 +80,7 @@ export default function NerdyTime() {
       case "scientific":
         return `Scientific: ${new Date().getHours().toExponential()}`;
       case "stardate":
-        return `Stardate: ${(new Date().getTime() / 1000000000).toFixed(2)}`;
+        return `Stardate: ${(Date.now() / 1000000000).toFixed(2)}`;
       case "decimal":
         return `Decimal: ${toDecimalTime()}`;
       case "zodiac":
@@ -198,8 +198,9 @@ export default function NerdyTime() {
   };
 
   return (
-    <div
-      className="font-mono text-sm opacity-50 hover:opacity-100 transition-opacity mt-8 mb-4 cursor-pointer select-none relative"
+    <button
+      type="button"
+      className="font-mono text-sm opacity-50 hover:opacity-100 transition-opacity mt-8 mb-4 cursor-pointer select-none relative w-full text-left"
       onClick={toggleFormat}
     >
       <style jsx>{`
@@ -223,15 +224,15 @@ export default function NerdyTime() {
           animation: bounce 2s infinite;
         }
       `}</style>
-      <div className="mb-2 text-neutral-500" onClick={toggleFormat}>
+      <div className="mb-2 text-neutral-500">
         &#x2f;&#x2f; for those who appreciate clocks
       </div>
       {showTooltip && (
-        <div className="absolute top-0 right-0 text-xs text-neutral-400 bounce">
+        <div className="absolute -top-6 right-0 sm:top-0 sm:right-0 text-xs text-neutral-400 bounce whitespace-nowrap">
           Click me
         </div>
       )}
       <div className="overflow-x-auto">{formatTime(time, format)}</div>
-    </div>
+    </button>
   );
 }
