@@ -25,11 +25,12 @@ export default function Page() {
         </strong>
       </h2>
       <p className="mb-4 text-neutral-900 dark:text-neutral-100">
-        leading, architecting, and developing applications across the entire
-        stack for numerous engagements with customers ranging from $1 million to
-        $1 billion. front-end to back-end, TypeScript to Python, and internal to
-        external customers, i build major and integral user-driven features
-        generating over $60 million in future revenues
+        leading, architecting, and building generative ai applications across
+        the entire stack for numerous customers with engagements/projects
+        ranging from proofs of concept to production, $100K–$1B. frontend to
+        backend, typescript to python, and internal to external customers, i
+        build major and integral user-driven features generating over $70
+        million in future revenue
       </p>
       <h2 className="mb-2 text-lg font-semibold tracking-tighter">
         building fun stuff @{""}
@@ -79,7 +80,7 @@ export default function Page() {
         <strong style={{ color: "#bf5700" }}>UT Austin</strong>
       </h2>
       <p className="mb-4 text-neutral-900 dark:text-neutral-100">
-        helped lead{" "}
+        led{" "}
         <a
           href="https://texasstockteam.com/"
           target="_blank"
@@ -97,7 +98,7 @@ export default function Page() {
         >
           HackTX
         </a>{" "}
-        in Austin with{" "}
+        with{" "}
         <a
           href="https://www.freetailhackers.com"
           target="_blank"
@@ -121,19 +122,16 @@ export default function Page() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-5">
         <div>
           <p className="text-neutral-900 dark:text-neutral-100 mb-2">
-            i like to write:
+            i work with:
           </p>
           <ul className="list-disc pl-6 space-y-1">
             <li>python</li>
             <li>typescript & javascript</li>
-            <li>html + css</li>
+            <li>html & css</li>
             <li>java</li>
             <li>rust</li>
             <li>c++</li>
-            <li>c#</li>
-            <li>sql</li>
-            <li>graphql & rest</li>
-            <li>node</li>
+            <li>vector databases</li>
           </ul>
         </div>
         <div>
@@ -141,16 +139,13 @@ export default function Page() {
             and use:
           </p>
           <ul className="list-disc pl-6 space-y-1">
-            <li>react</li>
-            <li>next.js</li>
-            <li>flask</li>
+            <li>react & frameworks</li>
+            <li>langchain & langgraph</li>
+            <li>DSPy</li>
             <li>numpy</li>
             <li>pandas</li>
-            <li>matplotlib</li>
-            <li>cdk</li>
             <li>terraform</li>
-            <li>pretty much all aws services</li>
-            <li>and much much more...</li>
+            <li>aws (bedrock, sagemaker, lambda, cdk, etc)</li>
           </ul>
         </div>
       </div>
