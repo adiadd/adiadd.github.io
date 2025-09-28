@@ -28,9 +28,9 @@ export default function Page() {
         leading, architecting, and building generative ai applications across
         the entire stack for numerous customers with engagements/projects
         ranging from proofs of concept to production, $100K–$1B. frontend to
-        backend, typescript to python, and internal to external customers, i
-        build major and integral user-driven features generating over $70
-        million in future revenue
+        backend, typescript to python, and internal to external customers,
+        i&apos;ve built major and integral user-driven features generating over
+        $70 million in future revenue
       </p>
       <h2 className="mb-2 text-lg font-semibold tracking-tighter">
         building fun stuff @{""}
