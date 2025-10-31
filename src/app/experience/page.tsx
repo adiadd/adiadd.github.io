@@ -64,7 +64,7 @@ export default function Page() {
       <p className="mb-6 text-neutral-900 dark:text-neutral-100">
         founded and architected a professional social media app and platform
         that allowed gamers to build their gaming resume for recognition,
-        credibility, and monetization
+        credibility, and opportunities; 10,000+ mau.
       </p>
       <h2 className="mb-2 text-lg font-semibold tracking-tighter">
         co-founder & developer @ <strong>bounty hunters</strong>
@@ -118,37 +118,39 @@ export default function Page() {
         </a>
       </p>
 
-      <h1 className="mb-5 text-2xl font-semibold tracking-tighter ">skills</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-5">
-        <div>
-          <p className="text-neutral-900 dark:text-neutral-100 mb-2">
-            i work with:
-          </p>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>python</li>
-            <li>typescript & javascript</li>
-            <li>html & css</li>
-            <li>java</li>
-            <li>rust</li>
-            <li>c++</li>
-            <li>vector databases</li>
-          </ul>
-        </div>
-        <div>
-          <p className="text-neutral-900 dark:text-neutral-100 mb-2">
-            and use:
-          </p>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>react & frameworks</li>
-            <li>langchain & langgraph</li>
-            <li>DSPy</li>
-            <li>numpy</li>
-            <li>pandas</li>
-            <li>terraform</li>
-            <li>aws (bedrock, sagemaker, lambda, cdk, etc)</li>
-          </ul>
-        </div>
-      </div>
+      {/**
+       * <h1 className="mb-5 text-2xl font-semibold tracking-tighter ">skills</h1>
+       * <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-5">
+       *   <div>
+       *     <p className="text-neutral-900 dark:text-neutral-100 mb-2">
+       *       i work with:
+       *     </p>
+       *     <ul className="list-disc pl-6 space-y-1">
+       *       <li>python</li>
+       *       <li>typescript & javascript</li>
+       *       <li>html & css</li>
+       *       <li>java</li>
+       *       <li>rust</li>
+       *       <li>c++</li>
+       *       <li>vector databases</li>
+       *     </ul>
+       *   </div>
+       *   <div>
+       *     <p className="text-neutral-900 dark:text-neutral-100 mb-2">
+       *       and use:
+       *     </p>
+       *     <ul className="list-disc pl-6 space-y-1">
+       *       <li>react & frameworks</li>
+       *       <li>langchain & langgraph</li>
+       *       <li>DSPy</li>
+       *       <li>numpy</li>
+       *       <li>pandas</li>
+       *       <li>terraform</li>
+       *       <li>aws (bedrock, sagemaker, lambda, cdk, etc)</li>
+       *     </ul>
+       *   </div>
+       * </div>
+       */}
 
       <h2 className="mb-5 text-2xl font-semibold tracking-tighter">
         certs/honors
@@ -161,6 +163,7 @@ export default function Page() {
         </ul>
         <ul className="list-disc pl-6 space-y-1">
           <li>AWS Solutions Architect - Associate</li>
+          <li>AWS AI Practitioner</li>
           <li>AWS Cloud Practitioner</li>
           <li>Eagle Scout (2016)</li>
         </ul>
