@@ -193,13 +193,13 @@ export default function NerdyTime() {
   };
 
   return (
-    <div className="mt-12 pt-6 border-t border-[color:var(--color-border)]">
+    <div className="mt-12 pt-6 border-t border-(color:var(--color-border))">
       <button
         type="button"
-        className="font-mono text-sm text-[color:var(--color-text-secondary)] hover:text-[color:var(--color-text)] transition-colors cursor-pointer select-none w-full text-left"
+        className="font-mono text-sm text-(color:var(--color-text-secondary)) hover:text-(color:var(--color-text)) transition-colors cursor-pointer select-none w-full text-left"
         onClick={toggleFormat}
       >
-        <div className="mb-2 text-[color:var(--color-text-secondary)] italic text-xs">
+        <div className="mb-2 text-(color:var(--color-text-secondary)) italic text-xs">
           — for those who appreciate clocks
         </div>
         <div className="overflow-x-auto">{formatTime(time, format)}</div>

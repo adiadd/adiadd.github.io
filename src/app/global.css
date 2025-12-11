@@ -371,3 +371,22 @@ table {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    animation: none;
+  }
+
+  .stagger-children > * {
+    animation: none;
+  }
+
+  .hover-lift {
+    transition: none;
+  }
+
+  .floating-nav {
+    animation: none;
+    transition: none;
+  }
+}
