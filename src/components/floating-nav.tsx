@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { siteConfig } from "src/config/site";
 
 function SocialIcon({
@@ -16,18 +16,14 @@ function SocialIcon({
   hoverColor: string;
   children: React.ReactNode;
 }) {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <a
       href={href}
       aria-label={label}
       target="_blank"
       rel="noopener noreferrer"
-      className="transition-all duration-200 hover:-translate-y-0.5"
-      style={{ color: isHovered ? hoverColor : "var(--color-text-secondary)" }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className="social-icon"
+      style={{ "--hover-color": hoverColor } as React.CSSProperties}
     >
       {children}
     </a>

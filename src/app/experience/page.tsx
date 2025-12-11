@@ -8,14 +8,16 @@ function ExperienceItem({
   company,
   href,
   children,
+  style,
 }: {
   title: string;
   company: string;
   href?: string;
   children: React.ReactNode;
+  style?: React.CSSProperties;
 }) {
   return (
-    <div className="mb-6">
+    <div className="mb-6" style={style}>
       <h2 className="text-lg font-display font-medium mb-1">
         {title}{" "}
         <span className="text-[color:var(--color-text-secondary)]">@</span>{" "}
@@ -49,6 +51,7 @@ export default function Page() {
           title="software engineer, gen ai"
           company="AWS"
           href="https://aws.amazon.com/"
+          style={{ "--stagger-index": 1 } as React.CSSProperties}
         >
           leading, architecting, and building generative ai applications across
           the entire stack for numerous customers with engagements/projects
@@ -62,6 +65,7 @@ export default function Page() {
           title="building fun stuff"
           company="agni labs"
           href="https://www.agnilabs.xyz"
+          style={{ "--stagger-index": 2 } as React.CSSProperties}
         >
           trying to materialize the ideas in my head one mvp at a time💡🧪
         </ExperienceItem>
@@ -70,20 +74,28 @@ export default function Page() {
           title="founder & ceo"
           company="vGlogs"
           href="https://www.vglogs.com"
+          style={{ "--stagger-index": 3 } as React.CSSProperties}
         >
           founded and architected a professional social media app and platform
           that allowed gamers to build their gaming resume for recognition,
           credibility, and opportunities; 10,000+ mau.
         </ExperienceItem>
 
-        <ExperienceItem title="co-founder & developer" company="bounty hunters">
+        <ExperienceItem
+          title="co-founder & developer"
+          company="bounty hunters"
+          style={{ "--stagger-index": 4 } as React.CSSProperties}
+        >
           developed a multiplayer game using Unity, C#, and AWS modeled after
           the live-action game &quot;assassin&quot; while incorporating a
           sandbox environment and battle royale component with a bunch of
           awesome friends
         </ExperienceItem>
 
-        <div className="mb-8">
+        <div
+          className="mb-8"
+          style={{ "--stagger-index": 5 } as React.CSSProperties}
+        >
           <h2 className="text-lg font-display font-medium mb-1">
             some fun things i did{" "}
             <span className="text-[color:var(--color-text-secondary)]">@</span>{" "}
@@ -129,7 +141,10 @@ export default function Page() {
           </p>
         </div>
 
-        <div className="mt-10 mb-5">
+        <div
+          className="mt-10 mb-5"
+          style={{ "--stagger-index": 6 } as React.CSSProperties}
+        >
           <h2 className="font-display text-xl font-medium mb-4">
             certs & honors
           </h2>

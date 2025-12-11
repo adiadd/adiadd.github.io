@@ -15,11 +15,12 @@ export function BlogPosts() {
           }
           return 1;
         })
-        .map((post) => (
+        .map((post, index) => (
           <Link
             key={post.slug}
             className="group block py-3 -mx-3 px-3 rounded-lg transition-all duration-300 hover:bg-[color:var(--color-surface)] hover:translate-x-1"
             href={`/blog/${post.slug}`}
+            style={{ "--stagger-index": index + 1 } as React.CSSProperties}
           >
             <p className="text-[color:var(--color-text-secondary)] text-sm tabular-nums mb-1 transition-colors group-hover:text-[color:var(--color-accent)]">
               {formatDate(post.metadata.publishedAt, false)}

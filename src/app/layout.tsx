@@ -1,11 +1,10 @@
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fraunces, JetBrains_Mono, Lora } from "next/font/google";
 import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
 import { FloatingNav } from "src/components/floating-nav";
-import LayoutFrame from "src/components/layout-frame";
 import { siteConfig } from "src/config/site";
 import styles from "src/styles/background.module.css";
 import "./global.css";
@@ -28,6 +27,8 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
   variable: "--font-mono",
 });
+
+export const viewport: Viewport = { viewportFit: "cover" };
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -88,7 +89,7 @@ export default function RootLayout({
         <div className={styles.paperBackground} />
         <main className="mx-auto max-w-[768px] px-5 md:px-8 py-12 md:py-16 pb-24">
           <NextTopLoader showSpinner={false} color="#5C6B54" />
-          <LayoutFrame>{children}</LayoutFrame>
+          <div className="min-h-[60vh]">{children}</div>
           <Analytics />
           <SpeedInsights />
         </main>
