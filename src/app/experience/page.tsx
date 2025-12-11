@@ -138,12 +138,13 @@ export default function Page() {
               <li>AWS Solutions Architect - Professional</li>
               <li>AWS Security - Professional</li>
               <li>AWS Developer - Associate</li>
+              <li>Eagle Scout (2016)</li>
             </ul>
             <ul className="list-disc pl-6 space-y-1 text-[color:var(--color-text)]">
               <li>AWS Solutions Architect - Associate</li>
               <li>AWS AI Practitioner</li>
               <li>AWS Cloud Practitioner</li>
-              <li>Eagle Scout (2016)</li>
+              <li>AWS Public Speaker Certified</li>
             </ul>
           </div>
         </div>

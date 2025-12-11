@@ -31,10 +31,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title: {
-    default: siteConfig.name,
-    template: `%s / ${siteConfig.nickName}`,
-  },
+  title: { default: siteConfig.name, template: `%s / ${siteConfig.nickName}` },
   icons:
     "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✌🏾</text></svg>",
   description: siteConfig.description,
@@ -66,14 +63,8 @@ export const metadata: Metadata = {
     creatorId: "1595924352",
     images: ["https://adiadd.xyz/og.png"],
   },
-  alternates: {
-    types: {
-      "application/rss+xml": `${baseUrl}/feed.xml`,
-    },
-  },
-  other: {
-    "og:logo": "✌🏾",
-  },
+  alternates: { types: { "application/rss+xml": `${baseUrl}/feed.xml` } },
+  other: { "og:logo": "✌🏾" },
 };
 
 const cx = (...classes) => classes.filter(Boolean).join(" ");
@@ -95,7 +86,7 @@ export default function RootLayout({
       />
       <body className="antialiased font-body">
         <div className={styles.paperBackground} />
-        <main className="mx-auto max-w-[680px] px-5 md:px-8 py-12 md:py-16 pb-24">
+        <main className="mx-auto max-w-[768px] px-5 md:px-8 py-12 md:py-16 pb-24">
           <NextTopLoader showSpinner={false} color="#5C6B54" />
           <LayoutFrame>{children}</LayoutFrame>
           <Analytics />
