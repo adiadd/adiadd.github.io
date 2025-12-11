@@ -34,7 +34,9 @@ export function FloatingNav() {
   const pathname = usePathname();
 
   const isActive = (path: string) =>
-    path === "/" ? pathname === "/" : pathname.startsWith(path);
+    path === "/"
+      ? pathname === "/"
+      : pathname === path || pathname.startsWith(path + "/");
 
   const links = [
     { path: "/", label: "home" },
@@ -61,7 +63,7 @@ export function FloatingNav() {
       ))}
 
       <span
-        className="mx-3 h-4 w-px bg-[color:var(--color-border)]"
+        className="mx-3 h-4 w-px bg-[var(--color-border)]"
         aria-hidden="true"
       />
 
