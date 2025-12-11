@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 type TimeFormat =
   | "unix"
@@ -16,32 +16,31 @@ type TimeFormat =
   | "zodiac"
   | "hebrew";
 
-export default function NerdyTime() {
-  const [time, setTime] = useState<number>(0);
-  const [format, setFormat] = useState<TimeFormat>("unix");
+const formats: TimeFormat[] = [
+  "unix",
+  "binary",
+  "hex",
+  "roman",
+  "morse",
+  "sanskrit",
+  "mayan",
+  "scientific",
+  "stardate",
+  "decimal",
+  "zodiac",
+  "hebrew",
+];
 
-  const formats = useMemo<TimeFormat[]>(
-    () => [
-      "unix",
-      "binary",
-      "hex",
-      "roman",
-      "morse",
-      "sanskrit",
-      "mayan",
-      "scientific",
-      "stardate",
-      "decimal",
-      "zodiac",
-      "hebrew",
-    ],
-    [],
-  );
+export default function NerdyTime() {
+  const [time, setTime] = useState<number | null>(null);
+  const [format, setFormat] = useState<TimeFormat>("unix");
 
   useEffect(() => {
     setTime(Math.floor(Date.now() / 1000));
-    const updateTime = () => setTime(Math.floor(Date.now() / 1000));
-    const timer = setInterval(updateTime, 1000);
+    const timer = setInterval(
+      () => setTime(Math.floor(Date.now() / 1000)),
+      1000,
+    );
     return () => clearInterval(timer);
   }, []);
 
@@ -54,7 +53,10 @@ export default function NerdyTime() {
     setFormat(getNextFormat(format));
   };
 
-  const formatTime = (time: number, format: TimeFormat): string => {
+  const formatTime = (time: number | null, format: TimeFormat): string => {
+    if (time === null) return "Loading...";
+
+    const date = new Date(time * 1000);
     switch (format) {
       case "unix":
         return `Unix: ${time}`;
@@ -63,23 +65,23 @@ export default function NerdyTime() {
       case "hex":
         return `Hex: ${time.toString(16)}`;
       case "roman":
-        return `Roman: ${toRoman(new Date().getHours())}`;
+        return `Roman: ${toRoman(date.getHours())}`;
       case "morse":
-        return `Morse: ${toMorse(new Date().toLocaleTimeString())}`;
+        return `Morse: ${toMorse(date.toLocaleTimeString())}`;
       case "sanskrit":
-        return `Sanskrit: ${toSanskrit(new Date().getHours())}`;
+        return `Sanskrit: ${toSanskrit(date.getHours())}`;
       case "mayan":
-        return `Mayan: ${toMayan(new Date().getHours())}`;
+        return `Mayan: ${toMayan(date.getHours())}`;
       case "scientific":
-        return `Scientific: ${new Date().getHours().toExponential()}`;
+        return `Scientific: ${date.getHours().toExponential()}`;
       case "stardate":
-        return `Stardate: ${(Date.now() / 1000000000).toFixed(2)}`;
+        return `Stardate: ${(time / 1000000).toFixed(2)}`;
       case "decimal":
-        return `Decimal: ${toDecimalTime()}`;
+        return `Decimal: ${toDecimalTime(date)}`;
       case "zodiac":
-        return `Zodiac: ${toZodiac(new Date().getHours())}`;
+        return `Zodiac: ${toZodiac(date.getHours())}`;
       case "hebrew":
-        return `Hebrew: ${toHebrew(new Date())}`;
+        return `Hebrew: ${toHebrew(date)}`;
       default:
         return "";
     }
@@ -146,10 +148,9 @@ export default function NerdyTime() {
     return hour.toString(20).toUpperCase();
   };
 
-  const toDecimalTime = (): string => {
-    const now = new Date();
+  const toDecimalTime = (date: Date): string => {
     const totalSeconds =
-      now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+      date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds();
     const decimalHours = (totalSeconds / 86400) * 10;
     return decimalHours.toFixed(2);
   };

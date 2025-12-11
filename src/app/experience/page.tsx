@@ -78,9 +78,9 @@ export default function Page() {
 
         <ExperienceItem title="co-founder & developer" company="bounty hunters">
           developed a multiplayer game using Unity, C#, and AWS modeled after
-          the live-action game "assassin" while incorporating a sandbox
-          environment and battle royale component with a bunch of awesome
-          friends
+          the live-action game &quot;assassin&quot; while incorporating a
+          sandbox environment and battle royale component with a bunch of
+          awesome friends
         </ExperienceItem>
 
         <div className="mb-8">
@@ -129,7 +129,7 @@ export default function Page() {
           </p>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-10 mb-5">
           <h2 className="font-display text-xl font-medium mb-4">
             certs & honors
           </h2>
