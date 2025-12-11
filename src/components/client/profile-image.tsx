@@ -7,19 +7,19 @@ export function ProfileImage() {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <div className="w-10 h-10 rounded-full relative overflow-hidden group cursor-pointer">
+    <div className="w-14 h-14 rounded-full relative overflow-hidden shadow-md shadow-[color:var(--color-border)]">
       {isLoading && (
-        <div className="absolute inset-0 animate-pulse bg-gray-200 dark:bg-gray-700" />
+        <div className="absolute inset-0 animate-pulse bg-[color:var(--color-surface)]" />
       )}
       <Image
         src="https://utfs.io/f/X8OJl8spEec683HrXmNyqLUu2H0ri7xZDjQtWpBhGEVIcdeR"
-        alt="Real Aditya"
+        alt="Aditya"
         fill
-        sizes="40px"
+        sizes="56px"
         priority
         style={{ objectFit: "cover" }}
         onLoad={() => setIsLoading(false)}
-        className="transition-all duration-1000 hover:rotate-[360deg]"
+        className="transition-transform duration-500 hover:scale-105"
       />
     </div>
   );

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { BlogPosts } from "src/components/posts";
-import TypeWriter from "src/components/type-writer";
 import { siteConfig } from "src/config/site";
 
 export const metadata: Metadata = {
@@ -19,10 +18,12 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <section>
-      <h1 className="font-semibold text-4xl mb-8 tracking-tighter">
-        <TypeWriter text="my thoughts" delay={100} />
+      <h1 className="font-display text-3xl md:text-4xl font-medium tracking-tight mb-8 fade-in">
+        my thoughts
       </h1>
-      <BlogPosts />
+      <div className="fade-in fade-in-delay-1">
+        <BlogPosts />
+      </div>
     </section>
   );
 }

@@ -1,79 +1,65 @@
-/* Base link styles */
-.homepage-link,
-.prose a {
+/* 
+ * The Soft Study — Link Styles
+ * Warm academia meets clean engineering
+ * Links feel like underlining a favorite passage in a treasured book
+ */
+
+.homepage-link {
   position: relative;
-  display: inline-block;
   color: var(--link-color);
-  font-weight: 400;
   text-decoration: none;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(
+    to right,
+    var(--color-accent) 0%,
+    var(--color-secondary) 100%
+  );
+  background-size: 0% 1.5px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 1px;
 }
 
-/* Animation styles only for devices that support hover */
 @media (hover: hover) {
-  .homepage-link,
-  .prose a {
-    padding: 0 4px;
-    transition: all var(--link-transition);
+  .homepage-link {
+    transition:
+      color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      background-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .homepage-link::before,
-  .homepage-link::after,
-  .prose a::before,
-  .prose a::after {
-    position: absolute;
-    opacity: 0;
-    font-weight: 300;
-    transition: all var(--link-transition);
-    color: var(--link-color);
-  }
-
-  .homepage-link::before,
-  .prose a::before {
-    content: "[";
-    left: -4px;
-    transform: translateX(8px);
-  }
-
-  .homepage-link::after,
-  .prose a::after {
-    content: "]";
-    right: -4px;
-    transform: translateX(-8px);
-  }
-
-  .homepage-link:hover::before,
-  .homepage-link:hover::after,
-  .prose a:hover::before,
-  .prose a:hover::after {
-    opacity: var(--link-hover-opacity);
-    transform: translateX(0);
+  .homepage-link:hover {
+    color: var(--link-hover-color);
+    background-size: 100% 1.5px;
   }
 }
 
-/* Mobile-specific styles */
+/* Mobile — static underline for touch devices */
 @media (hover: none) {
-  .homepage-link,
-  .prose a {
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    text-decoration-thickness: 1px;
-    text-decoration-color: rgba(209, 136, 0, 0.4);
+  .homepage-link {
+    background-size: 100% 1px;
+    background-image: linear-gradient(
+      to right,
+      var(--color-border) 0%,
+      var(--color-border) 100%
+    );
   }
 }
 
-/* Social link hover colors */
-#twitter-tag:hover {
-  color: #1da1f2;
-}
+/* Social links — brand colors with warmth */
+@media (hover: hover) {
+  #twitter-tag:hover {
+    color: #1da1f2;
+  }
 
-#linkedin-tag:hover {
-  color: #0077b5;
-}
+  #linkedin-tag:hover {
+    color: #0a66c2;
+  }
 
-#github-tag:hover {
-  color: #333;
-}
+  #github-tag:hover {
+    color: var(--color-text-secondary);
+  }
 
-#substack-tag:hover {
-  color: #ffa500;
+  #substack-tag:hover {
+    color: #ff6719;
+  }
 }

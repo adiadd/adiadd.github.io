@@ -13,28 +13,29 @@ export async function GET(request: Request) {
           flexDirection: "row",
           width: "100%",
           height: "100%",
-          backgroundColor: "#F5E9DE",
+          backgroundColor: "#FAF6F1",
         }}
       >
         <div
           style={{
             display: "flex",
             flexDirection: "column",
-            width: "50%",
+            width: "60%",
             height: "100%",
             justifyContent: "center",
-            padding: "40px",
+            padding: "60px",
           }}
         >
           <h1
             style={{
-              fontWeight: "bold",
-              color: "#45363F",
+              fontFamily: "Georgia, serif",
+              fontWeight: "500",
+              color: "#2D2926",
               margin: 0,
-              marginBottom: "16px",
+              marginBottom: "20px",
               maxWidth: "100%",
               textAlign: "left",
-              fontSize: "50px",
+              fontSize: "52px",
               lineHeight: "1.2",
             }}
           >
@@ -42,12 +43,13 @@ export async function GET(request: Request) {
           </h1>
           <h3
             style={{
-              color: "#6B5A66",
+              fontFamily: "Georgia, serif",
+              color: "#5C5552",
               margin: 0,
               fontSize: "24px",
             }}
           >
-            &#47; &#47; adiadd.xyz
+            adiadd.xyz
           </h3>
         </div>
         <div
@@ -55,8 +57,9 @@ export async function GET(request: Request) {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            width: "50%",
+            width: "40%",
             height: "100%",
+            backgroundColor: "#FFFDFB",
           }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -64,8 +67,8 @@ export async function GET(request: Request) {
             src="https://utfs.io/f/X8OJl8spEec6VBsfW0Uvycih9lnJHgb1GtLmP6ZFrzBEURxC"
             alt="aditya's 8 bit avatar"
             style={{
-              width: "80%",
-              height: "80%",
+              width: "70%",
+              height: "70%",
               objectFit: "contain",
             }}
           />

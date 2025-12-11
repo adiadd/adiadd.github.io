@@ -4,7 +4,6 @@ import { baseUrl } from "src/app/sitemap";
 import JsonLd from "src/components/json-ld";
 import { CustomMDX } from "src/components/mdx";
 import ShareButtons from "src/components/share-buttons";
-import TypeWriter from "src/components/type-writer";
 import { siteConfig } from "src/config/site";
 
 export async function generateStaticParams() {
@@ -114,19 +113,18 @@ export default function Blog({ params }) {
           },
         }}
       />
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 mt-5">
-        <h1 className="p-name title font-semibold text-2xl tracking-tighter">
-          <TypeWriter text={post.metadata.title} delay={50} />
+      <header className="mb-8">
+        <h1 className="p-name title font-display text-2xl md:text-3xl font-medium tracking-tight mb-3">
+          {post.metadata.title}
         </h1>
-
-        <div className="flex items-center gap-4 mt-4 md:mt-0">
-          <time className="dt-published text-sm text-neutral-600 dark:text-neutral-400 whitespace-nowrap">
+        <div className="flex items-center gap-4">
+          <time className="dt-published text-sm text-[color:var(--color-text-secondary)]">
             {formatDate(post.metadata.publishedAt)}
           </time>
-          <div className="border-l border-neutral-200 dark:border-neutral-700 h-6" />
+          <div className="border-l border-[color:var(--color-border)] h-4" />
           <ShareButtons url={postUrl} title={post.metadata.title} />
         </div>
-      </div>
+      </header>
 
       <div className="e-content prose">
         <CustomMDX source={post.content} />

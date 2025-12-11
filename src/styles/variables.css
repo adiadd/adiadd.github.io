@@ -1,27 +1,64 @@
 :root {
-  --link-color: #d18800;
-  --link-hover-opacity: 0.6;
+  /* Colors - Light Mode */
+  --color-background: #faf6f1;
+  --color-surface: #fffdfb;
+  --color-text: #2d2926;
+  --color-text-secondary: #5c5552;
+  --color-accent: #b8860b;
+  --color-secondary: #5c6b54;
+  --color-tertiary: #c4a4a4;
+  --color-border: #e8ded3;
+
+  /* Links */
+  --link-color: #5c6b54;
+  --link-hover-color: #b8860b;
+  --link-hover-opacity: 0.8;
   --link-transition: 0.2s ease;
-  --sh-class: #2d5e9d;
-  --sh-identifier: #354150;
-  --sh-sign: #8996a3;
-  --sh-string: #007f7a;
-  --sh-keyword: #e02518;
-  --sh-comment: #a19595;
-  --sh-jsxliterals: #6266d1;
-  --sh-property: #e25a1c;
-  --sh-entity: #e25a1c;
-  --background-color: #f5e9de;
-  --text-color: #000000;
+
+  /* Code Syntax Highlighting */
+  --sh-class: #5c6b54;
+  --sh-identifier: #2d2926;
+  --sh-sign: #5c5552;
+  --sh-string: #b8860b;
+  --sh-keyword: #c4a4a4;
+  --sh-comment: #a89f96;
+  --sh-jsxliterals: #5c6b54;
+  --sh-property: #b8860b;
+  --sh-entity: #b8860b;
+
+  /* Legacy support */
+  --background-color: #faf6f1;
+  --text-color: #2d2926;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --sh-class: #4c97f8;
-    --sh-identifier: white;
-    --sh-keyword: #f47067;
-    --sh-string: #0fa295;
-    --background-color: #11111b;
-    --text-color: #cdd6f4;
+    /* Colors - Dark Mode */
+    --color-background: #1c1612;
+    --color-surface: #252019;
+    --color-text: #f5ede4;
+    --color-text-secondary: #a89f96;
+    --color-accent: #d4a017;
+    --color-secondary: #8fa682;
+    --color-tertiary: #c4a4a4;
+    --color-border: #3d3530;
+
+    /* Links */
+    --link-color: #8fa682;
+    --link-hover-color: #d4a017;
+
+    /* Code Syntax Highlighting */
+    --sh-class: #8fa682;
+    --sh-identifier: #f5ede4;
+    --sh-keyword: #d4a017;
+    --sh-string: #8fa682;
+
+    /* Legacy support */
+    --background-color: #1c1612;
+    --text-color: #f5ede4;
+  }
+
+  html {
+    color-scheme: dark;
   }
 }
