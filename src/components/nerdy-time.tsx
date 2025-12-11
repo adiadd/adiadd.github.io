@@ -36,12 +36,13 @@ export default function NerdyTime() {
   const [format, setFormat] = useState<TimeFormat>("unix");
 
   useEffect(() => {
-    setTime(Math.floor(Date.now() / 1000));
-    const timer = setInterval(
-      () => setTime(Math.floor(Date.now() / 1000)),
-      1000,
-    );
-    return () => clearInterval(timer);
+    const updateTime = () => setTime(Math.floor(Date.now() / 1000));
+    const rafId = requestAnimationFrame(updateTime);
+    const timer = setInterval(updateTime, 1000);
+    return () => {
+      cancelAnimationFrame(rafId);
+      clearInterval(timer);
+    };
   }, []);
 
   const getNextFormat = (currentFormat: TimeFormat): TimeFormat => {
