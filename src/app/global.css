@@ -5,39 +5,8 @@
 @import "../styles/links.css";
 
 ::selection {
-  background-color: #47a3f3;
+  background-color: var(--color-secondary);
   color: #fefefe;
-}
-
-:root {
-  --link-color: #d18800;
-  --link-hover-opacity: 0.6;
-  --link-transition: 0.2s ease;
-  --sh-class: #2d5e9d;
-  --sh-identifier: #354150;
-  --sh-sign: #8996a3;
-  --sh-string: #007f7a;
-  --sh-keyword: #e02518;
-  --sh-comment: #a19595;
-  --sh-jsxliterals: #6266d1;
-  --sh-property: #e25a1c;
-  --sh-entity: #e25a1c;
-  --background-color: #f5e9de;
-  --text-color: #000000;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --sh-class: #4c97f8;
-    --sh-identifier: white;
-    --sh-keyword: #f47067;
-    --sh-string: #0fa295;
-    --background-color: #11111b;
-    --text-color: #cdd6f4;
-  }
-  html {
-    color-scheme: dark;
-  }
 }
 
 html {
@@ -45,13 +14,14 @@ html {
 }
 
 body {
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body), Georgia, "Times New Roman", serif;
+  line-height: 1.75;
 }
 
 .prose .anchor {
   @apply absolute invisible no-underline;
-
   margin-left: -1em;
   padding-right: 0.5em;
   width: 80%;
@@ -64,12 +34,24 @@ body {
 }
 
 .prose a {
-  @apply underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+  color: var(--link-color);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+  background-image: linear-gradient(var(--color-border), var(--color-border));
+  background-size: 100% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+}
+
+.prose a:hover {
+  color: var(--link-hover-color);
+  background-image: linear-gradient(var(--color-accent), var(--color-accent));
 }
 
 .prose .anchor:after {
-  @apply text-neutral-300 dark:text-neutral-700;
-  content: "#";
+  color: var(--color-border);
+  content: "§";
 }
 
 .prose *:hover > .anchor {
@@ -77,17 +59,24 @@ body {
 }
 
 .prose pre {
-  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900 py-2 px-3 text-sm;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  @apply rounded-lg overflow-x-auto py-3 px-4 text-sm;
+  font-family: var(--font-mono), monospace;
 }
 
 .prose code {
-  @apply px-1 py-0.5 rounded-lg;
+  @apply px-1.5 py-0.5 rounded;
+  background-color: var(--color-surface);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.875em;
 }
 
 .prose pre code {
   @apply p-0;
   border: initial;
-  line-height: 1.5;
+  line-height: 1.6;
+  background: transparent;
 }
 
 .prose code span {
@@ -95,32 +84,45 @@ body {
 }
 
 .prose img {
-  /* Don't apply styles to next/image */
   @apply m-0;
 }
 
 .prose p {
-  @apply my-4 text-neutral-800 dark:text-neutral-200;
+  @apply my-4;
+  color: var(--color-text);
 }
 
 .prose h1 {
-  @apply text-4xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-3xl md:text-4xl tracking-tight mt-8 mb-4;
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 500;
+  color: var(--color-text);
 }
 
 .prose h2 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-xl md:text-2xl tracking-tight mt-8 mb-3;
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 500;
+  color: var(--color-text);
 }
 
 .prose h3 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-lg md:text-xl tracking-tight mt-6 mb-2;
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 500;
+  color: var(--color-text);
 }
 
 .prose h4 {
-  @apply text-lg font-medium tracking-tight mt-6 mb-2;
+  @apply text-base md:text-lg tracking-tight mt-6 mb-2;
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 500;
+  color: var(--color-text);
 }
 
 .prose strong {
-  @apply font-medium;
+  @apply font-semibold;
+  color: var(--color-text);
 }
 
 .prose ul {
@@ -131,10 +133,9 @@ body {
   @apply list-decimal pl-6;
 }
 
-.prose > :first-child {
-  /* Override removing top margin, causing layout shift */
-  margin-top: 1.25em !important;
-  margin-bottom: 1.25em !important;
+.prose.prose > :first-child {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
 }
 
 pre::-webkit-scrollbar {
@@ -165,84 +166,119 @@ table {
   text-wrap: balance;
 }
 
-.homepage-link,
-.prose a {
-  position: relative;
-  display: inline-block;
-  color: var(--link-color);
-  font-weight: 400;
+/* Floating Navigation */
+.floating-nav {
+  position: fixed;
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 24px;
+  background: rgba(255, 253, 251, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(232, 222, 211, 0.5);
+  border-radius: 9999px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  z-index: 50;
+  animation: floatUp 0.5s ease-out 0.3s both;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.floating-nav:hover {
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 640px) {
+  .floating-nav {
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    padding: 8px 20px;
+    gap: 10px;
+  }
+}
+
+.floating-nav-link {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
   text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-@media (hover: hover) {
-  .homepage-link,
-  .prose a {
-    padding: 0 4px;
-    transition: all var(--link-transition);
-  }
+.floating-nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
 
-  .homepage-link::before,
-  .homepage-link::after,
-  .prose a::before,
-  .prose a::after {
-    position: absolute;
+.floating-nav-link:hover {
+  color: var(--color-text);
+}
+
+.floating-nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.floating-nav-link.active {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.floating-nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.floating-nav-separator {
+  color: var(--color-text-secondary);
+  opacity: 0.5;
+  user-select: none;
+}
+
+.social-icon {
+  color: var(--color-text-secondary);
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.social-icon:hover {
+  color: var(--hover-color);
+  transform: translateY(-2px);
+}
+
+@keyframes floatUp {
+  from {
     opacity: 0;
-    font-weight: 300;
-    transition: all var(--link-transition);
-    color: var(--link-color);
+    transform: translateX(-50%) translateY(20px);
   }
-
-  .homepage-link::before,
-  .prose a::before {
-    content: "[";
-    left: -4px;
-    transform: translateX(8px);
-  }
-
-  .homepage-link::after,
-  .prose a::after {
-    content: "]";
-    right: -4px;
-    transform: translateX(-8px);
-  }
-
-  .homepage-link:hover::before,
-  .homepage-link:hover::after,
-  .prose a:hover::before,
-  .prose a:hover::after {
-    opacity: var(--link-hover-opacity);
-    transform: translateX(0);
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
   }
 }
 
-@media (hover: none) {
-  .homepage-link,
-  .prose a {
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    text-decoration-thickness: 1px;
-    text-decoration-color: rgba(209, 136, 0, 0.4);
+@media (prefers-color-scheme: dark) {
+  .floating-nav {
+    background: rgba(37, 32, 25, 0.85);
+    border-color: rgba(61, 53, 48, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   }
-}
 
-.prose a {
-  text-decoration: none !important;
-}
-
-#twitter-tag:hover {
-  color: #1da1f2;
-}
-
-#linkedin-tag:hover {
-  color: #0077b5;
-}
-
-#github-tag:hover {
-  color: #333;
-}
-
-#substack-tag:hover {
-  color: #ffa500;
+  .floating-nav:hover {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+  }
 }
 
 .two-columns {
@@ -254,4 +290,103 @@ table {
 
 .two-columns li {
   margin-bottom: 5px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes gentlePulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.fade-in-delay-1 {
+  animation-delay: 0.1s;
+}
+.fade-in-delay-2 {
+  animation-delay: 0.2s;
+}
+.fade-in-delay-3 {
+  animation-delay: 0.3s;
+}
+.fade-in-delay-4 {
+  animation-delay: 0.4s;
+}
+.fade-in-delay-5 {
+  animation-delay: 0.5s;
+}
+
+/* Stagger children animation - set --stagger-index on each child (1-based) */
+.stagger-children > * {
+  animation: fadeInUp 0.5s ease-out both;
+  animation-delay: calc(var(--stagger-index, 1) * 0.05s);
+}
+
+/* Hover lift effect */
+.hover-lift {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    animation: none;
+  }
+
+  .stagger-children > * {
+    animation: none;
+  }
+
+  .hover-lift {
+    transition: none;
+  }
+
+  .floating-nav {
+    animation: none;
+    transition: none;
+  }
 }

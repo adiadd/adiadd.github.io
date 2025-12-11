@@ -1,172 +1,168 @@
-import TypeWriter from "src/components/type-writer";
-
 export const metadata = {
   title: "experience",
   description: "learn about what i've done",
 };
 
+function ExperienceItem({
+  title,
+  company,
+  href,
+  children,
+  style,
+}: {
+  title: string;
+  company: string;
+  href?: string;
+  children: React.ReactNode;
+  style?: React.CSSProperties;
+}) {
+  return (
+    <div className="mb-6" style={style}>
+      <h2 className="text-lg font-display font-medium mb-1">
+        {title}{" "}
+        <span className="text-[color:var(--color-text-secondary)]">@</span>{" "}
+        {href ? (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="homepage-link font-semibold"
+          >
+            {company}
+          </a>
+        ) : (
+          <span className="font-semibold">{company}</span>
+        )}
+      </h2>
+      <p className="text-[color:var(--color-text)]">{children}</p>
+    </div>
+  );
+}
+
 export default function Page() {
   return (
     <section>
-      <h1 className="font-semibold text-4xl mb-8 tracking-tighter">
-        <TypeWriter text="my experiences" delay={100} />
+      <h1 className="font-display text-3xl md:text-4xl font-medium tracking-tight mb-8 fade-in">
+        my experiences
       </h1>
-      <h2 className="mb-2 text-lg font-semibold tracking-tighter">
-        software engineer, gen ai @
-        <strong>
-          <a
-            href="https://aws.amazon.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="homepage-link"
-          >
-            AWS
-          </a>
-        </strong>
-      </h2>
-      <p className="mb-4 text-neutral-900 dark:text-neutral-100">
-        leading, architecting, and building generative ai applications across
-        the entire stack for numerous customers with engagements/projects
-        ranging from proofs of concept to production, $100K–$1B. frontend to
-        backend, typescript to python, and internal to external customers,
-        i&apos;ve built major and integral user-driven features generating over
-        $70 million in future revenue
-      </p>
-      <h2 className="mb-2 text-lg font-semibold tracking-tighter">
-        building fun stuff @{""}
-        <strong>
-          <a
-            href="https://www.agnilabs.xyz"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="homepage-link"
-          >
-            agni labs
-          </a>
-        </strong>
-      </h2>
-      <p className="mb-4 text-neutral-900 dark:text-neutral-100">
-        trying to materialize the ideas in my head one mvp at a time💡🧪
-      </p>
-      <h2 className="mb-2 text-lg font-semibold tracking-tighter">
-        founder & ceo @{""}
-        <strong>
-          <a
-            href="https://www.vglogs.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="homepage-link"
-          >
-            vGlogs
-          </a>
-        </strong>
-      </h2>
-      <p className="mb-6 text-neutral-900 dark:text-neutral-100">
-        founded and architected a professional social media app and platform
-        that allowed gamers to build their gaming resume for recognition,
-        credibility, and opportunities; 10,000+ mau.
-      </p>
-      <h2 className="mb-2 text-lg font-semibold tracking-tighter">
-        co-founder & developer @ <strong>bounty hunters</strong>
-      </h2>
-      <p className="mb-4 text-neutral-900 dark:text-neutral-100">
-        developed a multiplayer game using Unity, C#, and AWS modeled after the
-        live-action game “assassin” while incorporating a sandbox environment
-        and battle royale component with a bunch of awesome friends
-      </p>
 
-      <h2 className="mb-2 text-lg font-semibold tracking-tighter">
-        some fun things i did @{" "}
-        <strong style={{ color: "#bf5700" }}>UT Austin</strong>
-      </h2>
-      <p className="mb-4 text-neutral-900 dark:text-neutral-100">
-        led{" "}
-        <a
-          href="https://texasstockteam.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="homepage-link"
+      <div className="stagger-children">
+        <ExperienceItem
+          title="software engineer, gen ai"
+          company="AWS"
+          href="https://aws.amazon.com/"
+          style={{ "--stagger-index": 1 } as React.CSSProperties}
         >
-          Texas Stock Team
-        </a>{" "}
-        with amazing friends, organized{" "}
-        <a
-          href="https://hacktx.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="homepage-link"
-        >
-          HackTX
-        </a>{" "}
-        with{" "}
-        <a
-          href="https://www.freetailhackers.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="homepage-link"
-        >
-          Freetail Hackers
-        </a>
-        , and built things alongside others at{" "}
-        <a
-          href="https://www.txconvergent.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="homepage-link"
-        >
-          Convergent
-        </a>
-      </p>
+          leading, architecting, and building generative ai applications across
+          the entire stack for numerous customers with engagements/projects
+          ranging from proofs of concept to production, $100K–$1B. frontend to
+          backend, typescript to python, and internal to external customers,
+          i&apos;ve built major and integral user-driven features generating
+          over $70 million in future revenue
+        </ExperienceItem>
 
-      {/**
-       * <h1 className="mb-5 text-2xl font-semibold tracking-tighter ">skills</h1>
-       * <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-5">
-       *   <div>
-       *     <p className="text-neutral-900 dark:text-neutral-100 mb-2">
-       *       i work with:
-       *     </p>
-       *     <ul className="list-disc pl-6 space-y-1">
-       *       <li>python</li>
-       *       <li>typescript & javascript</li>
-       *       <li>html & css</li>
-       *       <li>java</li>
-       *       <li>rust</li>
-       *       <li>c++</li>
-       *       <li>vector databases</li>
-       *     </ul>
-       *   </div>
-       *   <div>
-       *     <p className="text-neutral-900 dark:text-neutral-100 mb-2">
-       *       and use:
-       *     </p>
-       *     <ul className="list-disc pl-6 space-y-1">
-       *       <li>react & frameworks</li>
-       *       <li>langchain & langgraph</li>
-       *       <li>DSPy</li>
-       *       <li>numpy</li>
-       *       <li>pandas</li>
-       *       <li>terraform</li>
-       *       <li>aws (bedrock, sagemaker, lambda, cdk, etc)</li>
-       *     </ul>
-       *   </div>
-       * </div>
-       */}
+        <ExperienceItem
+          title="building fun stuff"
+          company="agni labs"
+          href="https://www.agnilabs.xyz"
+          style={{ "--stagger-index": 2 } as React.CSSProperties}
+        >
+          trying to materialize the ideas in my head one mvp at a time💡🧪
+        </ExperienceItem>
 
-      <h2 className="mb-5 text-2xl font-semibold tracking-tighter">
-        certs/honors
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-5">
-        <ul className="list-disc pl-6 space-y-1">
-          <li>AWS Solutions Architect - Professional</li>
-          <li>AWS Security - Professional</li>
-          <li>AWS Developer - Associate</li>
-        </ul>
-        <ul className="list-disc pl-6 space-y-1">
-          <li>AWS Solutions Architect - Associate</li>
-          <li>AWS AI Practitioner</li>
-          <li>AWS Cloud Practitioner</li>
-          <li>Eagle Scout (2016)</li>
-        </ul>
+        <ExperienceItem
+          title="founder & ceo"
+          company="vGlogs"
+          href="https://www.vglogs.com"
+          style={{ "--stagger-index": 3 } as React.CSSProperties}
+        >
+          founded and architected a professional social media app and platform
+          that allowed gamers to build their gaming resume for recognition,
+          credibility, and opportunities; 10,000+ mau.
+        </ExperienceItem>
+
+        <ExperienceItem
+          title="co-founder & developer"
+          company="bounty hunters"
+          style={{ "--stagger-index": 4 } as React.CSSProperties}
+        >
+          developed a multiplayer game using Unity, C#, and AWS modeled after
+          the live-action game &quot;assassin&quot; while incorporating a
+          sandbox environment and battle royale component with a bunch of
+          awesome friends
+        </ExperienceItem>
+
+        <div
+          className="mb-8"
+          style={{ "--stagger-index": 5 } as React.CSSProperties}
+        >
+          <h2 className="text-lg font-display font-medium mb-1">
+            some fun things i did{" "}
+            <span className="text-[color:var(--color-text-secondary)]">@</span>{" "}
+            <span className="font-semibold text-[#bf5700]">UT Austin</span>
+          </h2>
+          <p className="text-[color:var(--color-text)]">
+            led{" "}
+            <a
+              href="https://texasstockteam.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="homepage-link"
+            >
+              Texas Stock Team
+            </a>{" "}
+            with amazing friends, organized{" "}
+            <a
+              href="https://hacktx.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="homepage-link"
+            >
+              HackTX
+            </a>{" "}
+            with{" "}
+            <a
+              href="https://www.freetailhackers.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="homepage-link"
+            >
+              Freetail Hackers
+            </a>
+            , and built things alongside others at{" "}
+            <a
+              href="https://www.txconvergent.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="homepage-link"
+            >
+              Convergent
+            </a>
+          </p>
+        </div>
+
+        <div
+          className="mt-10 mb-5"
+          style={{ "--stagger-index": 6 } as React.CSSProperties}
+        >
+          <h2 className="font-display text-xl font-medium mb-4">
+            certs & honors
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <ul className="list-disc pl-6 space-y-1 text-[color:var(--color-text)]">
+              <li>AWS Solutions Architect - Professional</li>
+              <li>AWS Security - Professional</li>
+              <li>AWS Developer - Associate</li>
+              <li>Eagle Scout (2016)</li>
+            </ul>
+            <ul className="list-disc pl-6 space-y-1 text-[color:var(--color-text)]">
+              <li>AWS Solutions Architect - Associate</li>
+              <li>AWS AI Practitioner</li>
+              <li>AWS Cloud Practitioner</li>
+              <li>AWS Public Speaker Certified</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   );

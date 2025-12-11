@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 type TimeFormat =
   | "unix"
@@ -16,40 +16,33 @@ type TimeFormat =
   | "zodiac"
   | "hebrew";
 
+const formats: TimeFormat[] = [
+  "unix",
+  "binary",
+  "hex",
+  "roman",
+  "morse",
+  "sanskrit",
+  "mayan",
+  "scientific",
+  "stardate",
+  "decimal",
+  "zodiac",
+  "hebrew",
+];
+
 export default function NerdyTime() {
-  const [time, setTime] = useState<number>(0);
+  const [time, setTime] = useState<number | null>(null);
   const [format, setFormat] = useState<TimeFormat>("unix");
-  const [showTooltip, setShowTooltip] = useState<boolean>(false);
-
-  const formats = useMemo<TimeFormat[]>(
-    () => [
-      "unix",
-      "binary",
-      "hex",
-      "roman",
-      "morse",
-      "sanskrit",
-      "mayan",
-      "scientific",
-      "stardate",
-      "decimal",
-      "zodiac",
-      "hebrew",
-    ],
-    [],
-  );
 
   useEffect(() => {
-    setTime(Math.floor(Date.now() / 1000));
     const updateTime = () => setTime(Math.floor(Date.now() / 1000));
+    const rafId = requestAnimationFrame(updateTime);
     const timer = setInterval(updateTime, 1000);
-    return () => clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
-    const toggleTooltip = () => setShowTooltip((prev) => !prev);
-    const interval = setInterval(toggleTooltip, Math.random() * 5000 + 2000);
-    return () => clearInterval(interval);
+    return () => {
+      cancelAnimationFrame(rafId);
+      clearInterval(timer);
+    };
   }, []);
 
   const getNextFormat = (currentFormat: TimeFormat): TimeFormat => {
@@ -61,7 +54,10 @@ export default function NerdyTime() {
     setFormat(getNextFormat(format));
   };
 
-  const formatTime = (time: number, format: TimeFormat): string => {
+  const formatTime = (time: number | null, format: TimeFormat): string => {
+    if (time === null) return "Loading...";
+
+    const date = new Date(time * 1000);
     switch (format) {
       case "unix":
         return `Unix: ${time}`;
@@ -70,23 +66,23 @@ export default function NerdyTime() {
       case "hex":
         return `Hex: ${time.toString(16)}`;
       case "roman":
-        return `Roman: ${toRoman(new Date().getHours())}`;
+        return `Roman: ${toRoman(date.getHours())}`;
       case "morse":
-        return `Morse: ${toMorse(new Date().toLocaleTimeString())}`;
+        return `Morse: ${toMorse(date.toLocaleTimeString())}`;
       case "sanskrit":
-        return `Sanskrit: ${toSanskrit(new Date().getHours())}`;
+        return `Sanskrit: ${toSanskrit(date.getHours())}`;
       case "mayan":
-        return `Mayan: ${toMayan(new Date().getHours())}`;
+        return `Mayan: ${toMayan(date.getHours())}`;
       case "scientific":
-        return `Scientific: ${new Date().getHours().toExponential()}`;
+        return `Scientific: ${date.getHours().toExponential()}`;
       case "stardate":
-        return `Stardate: ${(Date.now() / 1000000000).toFixed(2)}`;
+        return `Stardate: ${(time / 1000000).toFixed(2)}`;
       case "decimal":
-        return `Decimal: ${toDecimalTime()}`;
+        return `Decimal: ${toDecimalTime(date)}`;
       case "zodiac":
-        return `Zodiac: ${toZodiac(new Date().getHours())}`;
+        return `Zodiac: ${toZodiac(date.getHours())}`;
       case "hebrew":
-        return `Hebrew: ${toHebrew(new Date())}`;
+        return `Hebrew: ${toHebrew(date)}`;
       default:
         return "";
     }
@@ -153,10 +149,9 @@ export default function NerdyTime() {
     return hour.toString(20).toUpperCase();
   };
 
-  const toDecimalTime = (): string => {
-    const now = new Date();
+  const toDecimalTime = (date: Date): string => {
     const totalSeconds =
-      now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+      date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds();
     const decimalHours = (totalSeconds / 86400) * 10;
     return decimalHours.toFixed(2);
   };
@@ -198,41 +193,17 @@ export default function NerdyTime() {
   };
 
   return (
-    <button
-      type="button"
-      className="font-mono text-sm opacity-50 hover:opacity-100 transition-opacity mt-8 mb-4 cursor-pointer select-none relative w-full text-left"
-      onClick={toggleFormat}
-    >
-      <style jsx>{`
-        @keyframes bounce {
-          0%,
-          20%,
-          50%,
-          80%,
-          100% {
-            transform: translateY(0);
-          }
-          40% {
-            transform: translateY(-5px);
-          }
-          60% {
-            transform: translateY(-3px);
-          }
-        }
-
-        .bounce {
-          animation: bounce 2s infinite;
-        }
-      `}</style>
-      <div className="mb-2 text-neutral-500">
-        &#x2f;&#x2f; for those who appreciate clocks
-      </div>
-      {showTooltip && (
-        <div className="absolute -top-6 right-0 sm:top-0 sm:right-0 text-xs text-neutral-400 bounce whitespace-nowrap">
-          Click me
+    <div className="mt-12 pt-6 border-t border-(color:var(--color-border))">
+      <button
+        type="button"
+        className="font-mono text-sm text-(color:var(--color-text-secondary)) hover:text-(color:var(--color-text)) transition-colors cursor-pointer select-none w-full text-left"
+        onClick={toggleFormat}
+      >
+        <div className="mb-2 text-(color:var(--color-text-secondary)) italic text-xs">
+          — for those who appreciate clocks
         </div>
-      )}
-      <div className="overflow-x-auto">{formatTime(time, format)}</div>
-    </button>
+        <div className="overflow-x-auto">{formatTime(time, format)}</div>
+      </button>
+    </div>
   );
 }
