@@ -14,7 +14,7 @@ export default function Page() {
               aditya addepalli
             </h1>
             <p className="text-sm text-[color:var(--color-text-secondary)] mt-1">
-              nyc
+              📍 nyc
             </p>
           </div>
           <ProfileImage />
