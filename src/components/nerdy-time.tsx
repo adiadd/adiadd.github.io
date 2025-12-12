@@ -200,7 +200,7 @@ export default function NerdyTime() {
         onClick={toggleFormat}
       >
         <div className="mb-2 text-(color:var(--color-text-secondary)) italic text-xs">
-          — for those who appreciate clocks
+          — the current time, for those who appreciate clocks
         </div>
         <div className="overflow-x-auto">{formatTime(time, format)}</div>
       </button>
