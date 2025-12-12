@@ -1,5 +1,5 @@
+import { siteConfig } from "@/config/site";
 import Link from "next/link";
-import { siteConfig } from "src/config/site";
 import { ProfileImage } from "./client/profile-image";
 
 export function Navbar() {
@@ -15,7 +15,7 @@ export function Navbar() {
               <Link
                 key={path}
                 href={path}
-                className="text-sm text-[color:var(--text)]/70 hover:text-[color:var(--text)] transition-colors py-1 px-2"
+                className="text-sm text-(--text)/70 hover:text-(--text) transition-colors py-1 px-2"
               >
                 {name}
               </Link>

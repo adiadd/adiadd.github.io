@@ -1,9 +1,9 @@
 "use client";
 
+import { siteConfig } from "@/config/site";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Fragment } from "react";
-import { siteConfig } from "src/config/site";
 
 function SocialIcon({
   href,

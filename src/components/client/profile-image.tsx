@@ -7,9 +7,9 @@ export function ProfileImage() {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <div className="w-14 h-14 rounded-full relative overflow-hidden shadow-md shadow-[color:var(--color-border)]">
+    <div className="w-14 h-14 rounded-full relative overflow-hidden shadow-md shadow-(color:--color-border)">
       {isLoading && (
-        <div className="absolute inset-0 animate-pulse bg-[color:var(--color-surface)]" />
+        <div className="absolute inset-0 animate-pulse bg-(--color-surface)" />
       )}
       <Image
         src="https://utfs.io/f/X8OJl8spEec683HrXmNyqLUu2H0ri7xZDjQtWpBhGEVIcdeR"

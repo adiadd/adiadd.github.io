@@ -25,7 +25,7 @@ export default function ShareButtons({ url, title }: ShareButtonsProps) {
 
   return (
     <div className="flex">
-      <TwitterShareButton url={url} title={title} className="!rounded-md">
+      <TwitterShareButton url={url} title={title} className="rounded-md!">
         <div className="text-neutral-600 hover:text-[#1DA1F2] dark:text-neutral-400">
           <XIcon {...iconProps} />
         </div>
@@ -36,14 +36,14 @@ export default function ShareButtons({ url, title }: ShareButtonsProps) {
         title={title}
         summary={title}
         source={url}
-        className="!rounded-md"
+        className="rounded-md!"
       >
         <div className="text-neutral-600 hover:text-[#0077B5] dark:text-neutral-400">
           <LinkedinIcon {...iconProps} />
         </div>
       </LinkedinShareButton>
 
-      <FacebookShareButton url={url} hashtag="#blog" className="!rounded-md">
+      <FacebookShareButton url={url} hashtag="#blog" className="rounded-md!">
         <div className="text-neutral-600 hover:text-[#1877F2] dark:text-neutral-400">
           <FacebookIcon {...iconProps} />
         </div>

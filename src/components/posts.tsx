@@ -1,5 +1,5 @@
+import { formatDate, getBlogPosts } from "@/app/blog/utils";
 import Link from "next/link";
-import { formatDate, getBlogPosts } from "src/app/blog/utils";
 
 export function BlogPosts() {
   const allBlogs = getBlogPosts();
@@ -18,14 +18,14 @@ export function BlogPosts() {
         .map((post, index) => (
           <Link
             key={post.slug}
-            className="group block py-3 -mx-3 px-3 rounded-lg transition-all duration-300 hover:bg-[color:var(--color-surface)] hover:translate-x-1"
+            className="group block py-3 -mx-3 px-3 rounded-lg transition-all duration-300 hover:bg-(--color-surface) hover:translate-x-1"
             href={`/blog/${post.slug}`}
             style={{ "--stagger-index": index + 1 } as React.CSSProperties}
           >
-            <p className="text-[color:var(--color-text-secondary)] text-sm tabular-nums mb-1 transition-colors group-hover:text-[color:var(--color-accent)]">
+            <p className="text-(--color-text-secondary) text-sm tabular-nums mb-1 transition-colors group-hover:text-(--color-accent)">
               {formatDate(post.metadata.publishedAt, false)}
             </p>
-            <p className="text-[color:var(--color-text)] transition-colors">
+            <p className="text-(--color-text) transition-colors">
               {post.metadata.title}
             </p>
           </Link>
