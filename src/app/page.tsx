@@ -13,9 +13,7 @@ export default function Page() {
             <h1 className="text-3xl md:text-4xl font-display font-medium tracking-tight">
               aditya addepalli
             </h1>
-            <p className="text-sm text-[color:var(--color-text-secondary)] mt-1">
-              📍 nyc
-            </p>
+            <p className="text-sm text-(--color-text-secondary) mt-1">📍 nyc</p>
           </div>
           <ProfileImage />
         </div>
@@ -84,7 +82,7 @@ export default function Page() {
             {", or "}
             <CalButton /> {" 🤚🏾"}
           </p>
-          <p className="text-sm text-[color:var(--color-text-secondary)]">
+          <p className="text-sm text-(--color-text-secondary)">
             subscribe to my{" "}
             <a
               href={siteConfig.links.substack}

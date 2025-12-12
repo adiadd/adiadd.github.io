@@ -62,10 +62,7 @@ export function FloatingNav() {
         </Fragment>
       ))}
 
-      <span
-        className="mx-3 h-4 w-px bg-[var(--color-border)]"
-        aria-hidden="true"
-      />
+      <span className="mx-3 h-4 w-px bg-(--color-border)" aria-hidden="true" />
 
       <div className="flex items-center gap-3">
         <SocialIcon

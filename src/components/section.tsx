@@ -16,10 +16,8 @@ export default function Section({
   return (
     <section className={`mb-8 ${className}`}>
       {title && (
-        <h2 className="mb-3 text-sm font-medium tracking-wide uppercase text-[color:var(--color-text-secondary)]">
-          <span className="text-[color:var(--color-accent)] mr-2">
-            {marker}
-          </span>
+        <h2 className="mb-3 text-sm font-medium tracking-wide uppercase text-(--color-text-secondary)">
+          <span className="text-(--color-accent) mr-2">{marker}</span>
           {title}
         </h2>
       )}
