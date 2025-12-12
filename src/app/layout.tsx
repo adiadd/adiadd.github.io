@@ -68,7 +68,8 @@ export const metadata: Metadata = {
   other: { "og:logo": "✌🏾" },
 };
 
-const cx = (...classes) => classes.filter(Boolean).join(" ");
+const cx = (...classes: (string | undefined)[]) =>
+  classes.filter(Boolean).join(" ");
 
 export default function RootLayout({
   children,

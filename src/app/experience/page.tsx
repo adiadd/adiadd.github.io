@@ -19,8 +19,7 @@ function ExperienceItem({
   return (
     <div className="mb-6" style={style}>
       <h2 className="text-lg font-display font-medium mb-1">
-        {title}{" "}
-        <span className="text-[color:var(--color-text-secondary)]">@</span>{" "}
+        {title} <span className="text-(--color-text-secondary)">@</span>{" "}
         {href ? (
           <a
             href={href}
@@ -34,7 +33,7 @@ function ExperienceItem({
           <span className="font-semibold">{company}</span>
         )}
       </h2>
-      <p className="text-[color:var(--color-text)]">{children}</p>
+      <p className="text-(--color-text)">{children}</p>
     </div>
   );
 }
@@ -98,10 +97,10 @@ export default function Page() {
         >
           <h2 className="text-lg font-display font-medium mb-1">
             some fun things i did{" "}
-            <span className="text-[color:var(--color-text-secondary)]">@</span>{" "}
+            <span className="text-(--color-text-secondary)">@</span>{" "}
             <span className="font-semibold text-[#bf5700]">UT Austin</span>
           </h2>
-          <p className="text-[color:var(--color-text)]">
+          <p className="text-(--color-text)">
             led{" "}
             <a
               href="https://texasstockteam.com/"
@@ -149,13 +148,13 @@ export default function Page() {
             certs & honors
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <ul className="list-disc pl-6 space-y-1 text-[color:var(--color-text)]">
+            <ul className="list-disc pl-6 space-y-1 text-(--color-text)">
               <li>AWS Solutions Architect - Professional</li>
               <li>AWS Security - Professional</li>
               <li>AWS Developer - Associate</li>
               <li>Eagle Scout (2016)</li>
             </ul>
-            <ul className="list-disc pl-6 space-y-1 text-[color:var(--color-text)]">
+            <ul className="list-disc pl-6 space-y-1 text-(--color-text)">
               <li>AWS Solutions Architect - Associate</li>
               <li>AWS AI Practitioner</li>
               <li>AWS Cloud Practitioner</li>

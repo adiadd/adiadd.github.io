@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { formatDate, getBlogPosts } from "src/app/blog/utils";
 import { baseUrl } from "src/app/sitemap";
@@ -5,6 +6,10 @@ import JsonLd from "src/components/json-ld";
 import { CustomMDX } from "src/components/mdx";
 import ShareButtons from "src/components/share-buttons";
 import { siteConfig } from "src/config/site";
+
+type Props = {
+  params: Promise<{ slug: string }>;
+};
 
 export async function generateStaticParams() {
   const posts = getBlogPosts();
@@ -14,11 +19,11 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata(props) {
+export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
   const post = getBlogPosts().find((post) => post.slug === params.slug);
   if (!post) {
-    return;
+    notFound();
   }
 
   const {
@@ -60,7 +65,7 @@ export async function generateMetadata(props) {
       canonical: `/blog/${post.slug}`,
     },
     keywords: `${title}, blog, technology, programming, life, everything in between`,
-    author: siteConfig.name,
+    authors: [{ name: siteConfig.name }],
     robots: {
       index: true,
       follow: true,
@@ -75,7 +80,7 @@ export async function generateMetadata(props) {
   };
 }
 
-export default async function Blog(props) {
+export default async function Blog(props: Props) {
   const params = await props.params;
   const post = getBlogPosts().find((post) => post.slug === params.slug);
 
@@ -120,10 +125,10 @@ export default async function Blog(props) {
           {post.metadata.title}
         </h1>
         <div className="flex items-center gap-4">
-          <time className="dt-published text-sm text-[color:var(--color-text-secondary)]">
+          <time className="dt-published text-sm text-(--color-text-secondary)">
             {formatDate(post.metadata.publishedAt)}
           </time>
-          <div className="border-l border-[color:var(--color-border)] h-4" />
+          <div className="border-l border-(--color-border) h-4" />
           <ShareButtons url={postUrl} title={post.metadata.title} />
         </div>
       </header>

@@ -1,46 +1,50 @@
-import RSS from "rss";
-import { getBlogPosts } from "../blog/utils";
 import { siteConfig } from "src/config/site";
+import { getBlogPosts } from "../blog/utils";
 import { baseUrl } from "../sitemap";
 
+function escapeXml(text: string): string {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
 export async function GET() {
-  const feed = new RSS({
-    title: siteConfig.name,
-    description: siteConfig.description,
-    site_url: baseUrl,
-    feed_url: `${baseUrl}/feed.xml`,
-    language: "en",
-    custom_namespaces: {
-      atom: "http://www.w3.org/2005/Atom",
-    },
-    custom_elements: [
-      {
-        "atom:link": {
-          _attr: {
-            href: `${baseUrl}/feed.xml`,
-            rel: "self",
-            type: "application/rss+xml",
-          },
-        },
-      },
-    ],
-  });
+  const posts = getBlogPosts().sort(
+    (a, b) =>
+      new Date(b.metadata.publishedAt).getTime() -
+      new Date(a.metadata.publishedAt).getTime(),
+  );
 
-  const posts = getBlogPosts();
+  const items = posts
+    .map(
+      (post) => `    <item>
+      <title>${escapeXml(post.metadata.title)}</title>
+      <link>${baseUrl}/blog/${post.slug}</link>
+      <description>${escapeXml(post.metadata.summary)}</description>
+      <pubDate>${new Date(post.metadata.publishedAt).toUTCString()}</pubDate>
+      <guid isPermaLink="true">${baseUrl}/blog/${post.slug}</guid>
+    </item>`,
+    )
+    .join("\n");
 
-  for (const post of posts) {
-    feed.item({
-      title: post.metadata.title,
-      description: post.metadata.summary,
-      url: `${baseUrl}/blog/${post.slug}`,
-      date: post.metadata.publishedAt,
-      guid: `${baseUrl}/blog/${post.slug}`,
-    });
-  }
+  const feed = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>${escapeXml(siteConfig.name)}</title>
+    <link>${baseUrl}</link>
+    <description>${escapeXml(siteConfig.description)}</description>
+    <language>en</language>
+    <atom:link href="${baseUrl}/feed.xml" rel="self" type="application/rss+xml"/>
+${items}
+  </channel>
+</rss>`;
 
-  return new Response(feed.xml(), {
+  return new Response(feed, {
     headers: {
-      "Content-Type": "application/xml",
+      "Content-Type": "application/rss+xml",
     },
   });
 }
