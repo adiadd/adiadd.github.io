@@ -1,4 +1,4 @@
-import { siteConfig } from "src/config/site";
+import { siteConfig } from "@/config/site";
 import { getBlogPosts } from "../blog/utils";
 import { baseUrl } from "../sitemap";
 

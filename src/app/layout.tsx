@@ -1,12 +1,12 @@
+import { FloatingNav } from "@/components/floating-nav";
+import { siteConfig } from "@/config/site";
+import styles from "@/styles/background.module.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
 import { Fraunces, JetBrains_Mono, Lora } from "next/font/google";
 import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
-import { FloatingNav } from "src/components/floating-nav";
-import { siteConfig } from "src/config/site";
-import styles from "src/styles/background.module.css";
 import "./global.css";
 import { baseUrl } from "./sitemap";
 

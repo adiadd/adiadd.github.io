@@ -1,11 +1,11 @@
+import { formatDate, getBlogPosts } from "@/app/blog/utils";
+import { baseUrl } from "@/app/sitemap";
+import JsonLd from "@/components/json-ld";
+import { CustomMDX } from "@/components/mdx";
+import ShareButtons from "@/components/share-buttons";
+import { siteConfig } from "@/config/site";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { formatDate, getBlogPosts } from "src/app/blog/utils";
-import { baseUrl } from "src/app/sitemap";
-import JsonLd from "src/components/json-ld";
-import { CustomMDX } from "src/components/mdx";
-import ShareButtons from "src/components/share-buttons";
-import { siteConfig } from "src/config/site";
 
 type Props = {
   params: Promise<{ slug: string }>;

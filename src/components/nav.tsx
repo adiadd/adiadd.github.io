@@ -1,5 +1,5 @@
+import { siteConfig } from "@/config/site";
 import Link from "next/link";
-import { siteConfig } from "src/config/site";
 import { ProfileImage } from "./client/profile-image";
 
 export function Navbar() {

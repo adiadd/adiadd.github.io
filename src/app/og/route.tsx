@@ -1,5 +1,5 @@
+import { siteConfig } from "@/config/site";
 import { ImageResponse } from "next/og";
-import { siteConfig } from "src/config/site";
 
 export async function GET(request: Request) {
   const url = new URL(request.url);
