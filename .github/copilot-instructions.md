@@ -1,69 +1,84 @@
 # AI Coding Guidelines
 
+## Design Philosophy
+"The Soft Study" - warm academia meets clean engineering. The design should always communicate: thoughtful, well-read, calm, technical yet approachable.
+
+Be extremely creative but simple in your recommendations, take on the persona of a brand designer who is looking to level up my personal website simply and meaningfully with a personality taste to it. Always be desktop and mobile friendly
+
 ## Stack & Architecture
 - **Framework**: Next.js 16 app router + TypeScript, static personal site with MDX blog
-- **Styling**: Tailwind v4 with custom CSS variables in `src/styles/`
-- **Analytics**: Umami + Vercel Analytics/SpeedInsights (wired in root layout)
-- **Package manager**: bun (see `bun.lockb`)
+- **Styling**: Tailwind v4 with CSS variables (light/dark via `prefers-color-scheme`)
+- **Analytics**: Vercel Analytics + SpeedInsights (wired in root layout)
+- **Package manager**: bun
 
-## Key Commands
+## Commands
 ```bash
-bun dev          # Start dev server with Turbo
+bun dev          # Dev server with Turbo
 bun build        # Production build
 bun lint         # ESLint
 bun typecheck    # TypeScript check
 bun format       # Prettier write
 ```
 
-## Project Structure
-| Path | Purpose |
-|------|---------|
-| `src/app/` | Next.js app router pages & routes |
-| `src/posts/*.mdx` | Blog content (frontmatter: `title`, `publishedAt`, `summary`, optional `image`) |
-| `src/components/` | React components (client components in `client/` subfolder) |
-| `src/styles/` | CSS modules & custom properties |
-| `src/config/site.ts` | Site metadata, nav items, social links |
+## Blog System
+- **Create posts**: `src/posts/{slug}.mdx` with frontmatter:
+  ```yaml
+  ---
+  title: "Post Title"
+  publishedAt: "YYYY-MM-DD"
+  summary: "One-line description"
+  image: "/optional-og.png"
+  ---
+  ```
+- **Auto-updates**: Sitemap + RSS regenerate on build via `getBlogPosts()` in `src/app/blog/utils.ts`
+- **MDX components**: Headings get anchor links (`#slug`), external links auto-target blank, syntax highlighting via `sugar-high`
 
-## Content & Blog System
-- **Adding posts**: Create `src/posts/{slug}.mdx` with frontmatter. Sitemap/RSS auto-update on build.
-- **Frontmatter**: `title` (required), `publishedAt` (YYYY-MM-DD, required), `summary` (required), `image` (optional, for OG)
-- **Data loading**: `getBlogPosts()` in `src/app/blog/utils.ts` uses Node fs—server components only
-- **MDX components**: Custom heading anchors, `next/image` wrapper, syntax highlighting via sugar-high
+## Styling Patterns
+**CSS Variables** (defined in `src/styles/variables.css`):
+```css
+var(--color-background)   var(--color-surface)    var(--color-text)
+var(--color-accent)       var(--color-secondary)  var(--color-border)
+var(--link-color)         var(--link-hover-color)
+```
 
-## Styling Conventions
-- Use CSS variables: `var(--color-text)`, `var(--color-accent)`, `var(--color-surface)`, etc.
-- Tailwind arbitrary values: `text-(--color-text)`, `bg-(--color-surface)`
-- Existing utility classes: `homepage-link`, `fade-in`, `fade-in-delay-{1-5}`, `stagger-children`, `hover-lift`
-- Animations defined in `src/app/global.css`; tokens in `src/styles/variables.css`
+**Tailwind arbitrary values**: `text-(--color-text)`, `bg-(--color-surface)`
+
+**Animation classes** (in `src/app/global.css`):
+- `fade-in`, `fade-in-delay-{1-5}` — staggered entrance animations
+- `stagger-children` — parent class; children need `style={{ "--stagger-index": n }}`
+- `hover-lift` — subtle hover elevation
+- `homepage-link` — animated gradient underline on hover
 
 ## Component Patterns
-- **Client components**: Use `"use client"` directive; place in `src/components/client/` if stateful
-- **Section layout**: Use `<Section title="..." marker="§">` wrapper for homepage/experience sections
-- **Links**: External links get `target="_blank" rel="noopener noreferrer"`; use `homepage-link` class for animated underlines
-- **Stagger animations**: Set `style={{ "--stagger-index": n }}` on children inside `.stagger-children`
-- **CalButton**: Embeds Cal.com scheduling via `@calcom/embed-react`; initializes on mount with dark theme
-- **NerdyTime**: Cycles through 12 time formats (unix, binary, hex, roman, morse, etc.) on click; updates every second
+- **Client components**: Add `"use client"` directive; place in `src/components/client/` subfolder
+- **Section wrapper**: `<Section title="about" marker="§">` for consistent section headings
+- **External links**: Always add `target="_blank" rel="noopener noreferrer"`
 
-## Navigation Updates
-When adding new top-level pages:
-1. Update `siteConfig.navItems` in `src/config/site.ts`
-2. Update hardcoded links in `src/components/floating-nav.tsx`
-3. Add route to `src/app/sitemap.ts` routes array
+## Adding New Pages
+1. Create route in `src/app/{route}/page.tsx`
+2. Add to `siteConfig.navItems` in `src/config/site.ts`
+3. Update `links` array in `src/components/floating-nav.tsx` (hardcoded for active state logic)
+4. Add route to `routes` array in `src/app/sitemap.ts`
 
-## SEO & Metadata
-- Default metadata from `src/config/site.ts`; `baseUrl` from `src/app/sitemap.ts`
-- OG images: Custom via `src/app/og/route.tsx` (pass `?title=...`) or frontmatter `image`
-- JSON-LD: Use `<JsonLd data={{...}} />` component
-- Mirror metadata shape from existing pages: `title`, `description`, `openGraph`, `twitter`, `alternates.canonical`
+## SEO Metadata
+Mirror existing pages' metadata structure:
+```tsx
+export const metadata: Metadata = {
+  title: "Page Title",
+  description: "...",
+  openGraph: { title, description, url: `${baseUrl}/route` },
+  twitter: { card: "summary_large_image", title, description },
+  alternates: { canonical: `${baseUrl}/route` },
+};
+```
+- Use `<JsonLd data={{...}} />` for structured data
+- OG images: `src/app/og/route.tsx` accepts `?title=...` param
 
-## Images
-- Remote images require allowlist in `next.config.ts` (currently: `utfs.io`)
-- Use `next/image` with `fill` + `sizes` for responsive images
-- `ProfileImage` component shows shimmer loading state
-
-## Key Files Reference
-- Root layout: `src/app/layout.tsx` (fonts, analytics, nav, background)
-- Site config: `src/config/site.ts` (name, links, navItems)
-- Blog utils: `src/app/blog/utils.ts` (MDX parsing, date formatting)
-- MDX renderer: `src/components/mdx.tsx` (custom components)
-- RSS feed: `src/app/feed.xml/route.ts`
+## Key Files
+| File | Purpose |
+|------|---------|
+| `src/config/site.ts` | Site name, social links, nav items |
+| `src/styles/variables.css` | Color tokens (light + dark mode) |
+| `src/app/global.css` | Prose styles, floating nav, animations |
+| `src/components/mdx.tsx` | Custom MDX component overrides |
+| `src/app/blog/utils.ts` | `getBlogPosts()`, `formatDate()` — server-only |

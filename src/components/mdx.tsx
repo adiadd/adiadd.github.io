@@ -52,9 +52,10 @@ function CustomLink(
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
 
-function RoundedImage({ className, style, ...props }: ImageProps) {
+function RoundedImage({ className, style, alt = "", ...props }: ImageProps) {
   return (
     <Image
+      alt={alt}
       className={`rounded-lg ${className ?? ""}`}
       {...props}
       style={{

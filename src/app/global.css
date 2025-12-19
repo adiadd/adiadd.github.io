@@ -390,3 +390,35 @@ table {
     transition: none;
   }
 }
+
+/* Time Greeting */
+.time-greeting {
+  display: inline-block;
+}
+
+/* Animated Pilcrow Marker */
+.pilcrow-marker {
+  display: inline-block;
+  color: var(--color-accent);
+  margin-right: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.group:hover .pilcrow-marker {
+  transform: rotate(12deg) scale(1.1);
+  text-shadow: 0 0 12px var(--color-accent);
+  filter: brightness(1.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pilcrow-marker {
+    transition: none;
+  }
+
+  .group:hover .pilcrow-marker {
+    transform: none;
+    text-shadow: none;
+    filter: none;
+  }
+}

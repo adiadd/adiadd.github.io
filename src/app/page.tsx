@@ -2,6 +2,7 @@ import CalButton from "../components/cal-button";
 import { ProfileImage } from "../components/client/profile-image";
 import NerdyTime from "../components/nerdy-time";
 import Section from "../components/section";
+import { TimeGreeting } from "../components/time-greeting";
 import { siteConfig } from "../config/site";
 
 export default function Page() {
@@ -22,8 +23,8 @@ export default function Page() {
       <div className="fade-in fade-in-delay-1">
         <Section title="about">
           <p>
-            heyo ✌🏾! my name is aditya <em>[ah DITH ya]</em>. i love to learn
-            and build.
+            <TimeGreeting /> ✌🏾! my name is aditya <em>[ah DITH ya]</em>. i love
+            to learn and build.
           </p>
           <p>
             i previously graduated from{" "}
