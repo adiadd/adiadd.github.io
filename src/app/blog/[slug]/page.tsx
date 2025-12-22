@@ -1,5 +1,6 @@
 import { formatDate, getBlogPosts } from "@/app/blog/utils";
 import { baseUrl } from "@/app/sitemap";
+import { BookTags } from "@/components/book-tag";
 import JsonLd from "@/components/json-ld";
 import { CustomMDX } from "@/components/mdx";
 import ShareButtons from "@/components/share-buttons";
@@ -31,11 +32,25 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     publishedAt: publishedTime,
     summary: description,
     image,
+    tags,
   } = post.metadata;
 
   const ogImage = image
     ? image
     : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
+
+  // Combine tags with base keywords for better SEO
+  const tagKeywords = tags?.join(", ") || "";
+  const keywords = [
+    tagKeywords,
+    title,
+    "blog",
+    "technology",
+    "programming",
+    "life",
+  ]
+    .filter(Boolean)
+    .join(", ");
 
   return {
     title: `${title}`,
@@ -46,6 +61,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       type: "article",
       publishedTime,
       url: `${baseUrl}/blog/${post.slug}`,
+      tags: tags,
       images: [
         {
           url: ogImage,
@@ -64,7 +80,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     alternates: {
       canonical: `/blog/${post.slug}`,
     },
-    keywords: `${title}, blog, technology, programming, life, everything in between`,
+    keywords,
     authors: [{ name: siteConfig.name }],
     robots: {
       index: true,
@@ -104,6 +120,7 @@ export default async function Blog(props: Props) {
             ? `${baseUrl}${post.metadata.image}`
             : `${baseUrl}/og?title=${encodeURIComponent(post.metadata.title)}`,
           url: `${baseUrl}/blog/${post.slug}`,
+          keywords: post.metadata.tags?.join(", "),
           author: {
             "@type": "Person",
             name: siteConfig.name,
@@ -124,13 +141,16 @@ export default async function Blog(props: Props) {
         <h1 className="p-name title font-display text-2xl md:text-3xl font-medium tracking-tight mb-3">
           {post.metadata.title}
         </h1>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center gap-4 mb-3">
           <time className="dt-published text-sm text-(--color-text-secondary)">
             {formatDate(post.metadata.publishedAt)}
           </time>
           <div className="border-l border-(--color-border) h-4" />
           <ShareButtons url={postUrl} title={post.metadata.title} />
         </div>
+        {post.metadata.tags && post.metadata.tags.length > 0 && (
+          <BookTags tags={post.metadata.tags} size="md" className="mt-2" />
+        )}
       </header>
 
       <div className="e-content prose">

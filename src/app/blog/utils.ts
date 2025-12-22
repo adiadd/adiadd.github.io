@@ -1,11 +1,12 @@
 import fs from "node:fs";
 import path from "node:path";
 
-type Metadata = {
+export type Metadata = {
   title: string;
   publishedAt: string;
   summary: string;
   image?: string;
+  tags?: string[];
 };
 
 function parseFrontmatter(fileContent: string) {
@@ -18,10 +19,39 @@ function parseFrontmatter(fileContent: string) {
 
   // biome-ignore lint/complexity/noForEach: <explanation>
   frontMatterLines?.forEach((line) => {
+    // Skip comment lines
+    if (line.trim().startsWith("#")) return;
+
     const [key, ...valueArr] = line.split(": ");
     let value = valueArr.join(": ").trim();
     value = value.replace(/^['"](.*)['"]$/, "$1"); // Remove quotes
-    metadata[key.trim() as keyof Metadata] = value;
+
+    const trimmedKey = key.trim();
+
+    // Handle tags as array (format: tags: ["tag1", "tag2"] or tags: tag1, tag2)
+    if (trimmedKey === "tags") {
+      // Try parsing as JSON array first
+      if (value.startsWith("[")) {
+        try {
+          metadata.tags = JSON.parse(value);
+        } catch {
+          // Fallback: parse as comma-separated
+          metadata.tags = value
+            .replace(/[\[\]"']/g, "")
+            .split(",")
+            .map((t) => t.trim())
+            .filter(Boolean);
+        }
+      } else {
+        // Comma-separated format
+        metadata.tags = value
+          .split(",")
+          .map((t) => t.trim())
+          .filter(Boolean);
+      }
+    } else {
+      metadata[trimmedKey as keyof Omit<Metadata, "tags">] = value;
+    }
   });
 
   return { metadata: metadata as Metadata, content };

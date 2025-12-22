@@ -35,3 +35,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .DS_Store
+
+# Playwright MCP
+.playwright-mcp
