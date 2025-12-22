@@ -6,6 +6,7 @@ type Metadata = {
   publishedAt: string;
   summary: string;
   image?: string;
+  labels?: string[];
 };
 
 function parseFrontmatter(fileContent: string) {
@@ -19,9 +20,28 @@ function parseFrontmatter(fileContent: string) {
   // biome-ignore lint/complexity/noForEach: <explanation>
   frontMatterLines?.forEach((line) => {
     const [key, ...valueArr] = line.split(": ");
+    const trimmedKey = key.trim();
     let value = valueArr.join(": ").trim();
     value = value.replace(/^['"](.*)['"]$/, "$1"); // Remove quotes
-    metadata[key.trim() as keyof Metadata] = value;
+    
+    // Handle labels array
+    if (trimmedKey === "labels") {
+      const labelsMatch = value.match(/\[(.*)\]/);
+      if (labelsMatch) {
+        metadata.labels = labelsMatch[1]
+          .split(",")
+          .map((label) => label.trim().replace(/^['"](.*)['"]$/, "$1"))
+          .filter((label) => label.length > 0);
+      }
+    } else if (trimmedKey === "title") {
+      metadata.title = value;
+    } else if (trimmedKey === "publishedAt") {
+      metadata.publishedAt = value;
+    } else if (trimmedKey === "summary") {
+      metadata.summary = value;
+    } else if (trimmedKey === "image") {
+      metadata.image = value;
+    }
   });
 
   return { metadata: metadata as Metadata, content };
