@@ -1,6 +1,7 @@
 import { formatDate, getBlogPosts } from "@/app/blog/utils";
 import { baseUrl } from "@/app/sitemap";
 import JsonLd from "@/components/json-ld";
+import { Labels } from "@/components/label";
 import { CustomMDX } from "@/components/mdx";
 import ShareButtons from "@/components/share-buttons";
 import { siteConfig } from "@/config/site";
@@ -37,6 +38,13 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     ? image
     : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
 
+  // Build keywords string including labels
+  const keywordsArray = [title, "blog", "technology", "programming", "life"];
+  if (post.metadata.labels && post.metadata.labels.length > 0) {
+    keywordsArray.push(...post.metadata.labels);
+  }
+  const keywords = keywordsArray.join(", ");
+
   return {
     title: `${title}`,
     description,
@@ -64,7 +72,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     alternates: {
       canonical: `/blog/${post.slug}`,
     },
-    keywords: `${title}, blog, technology, programming, life, everything in between`,
+    keywords,
     authors: [{ name: siteConfig.name }],
     robots: {
       index: true,
@@ -118,19 +126,26 @@ export default async function Blog(props: Props) {
             "@type": "WebPage",
             "@id": `${baseUrl}/blog/${post.slug}`,
           },
+          ...(post.metadata.labels &&
+            post.metadata.labels.length > 0 && {
+              keywords: post.metadata.labels.join(", "),
+            }),
         }}
       />
       <header className="mb-8">
         <h1 className="p-name title font-display text-2xl md:text-3xl font-medium tracking-tight mb-3">
           {post.metadata.title}
         </h1>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 mb-3">
           <time className="dt-published text-sm text-(--color-text-secondary)">
             {formatDate(post.metadata.publishedAt)}
           </time>
           <div className="border-l border-(--color-border) h-4" />
           <ShareButtons url={postUrl} title={post.metadata.title} />
         </div>
+        {post.metadata.labels && post.metadata.labels.length > 0 && (
+          <Labels labels={post.metadata.labels} />
+        )}
       </header>
 
       <div className="e-content prose">

@@ -1,4 +1,5 @@
 import { formatDate, getBlogPosts } from "@/app/blog/utils";
+import { Labels } from "@/components/label";
 import Link from "next/link";
 
 export function BlogPosts() {
@@ -25,9 +26,12 @@ export function BlogPosts() {
             <p className="text-(--color-text-secondary) text-sm tabular-nums mb-1 transition-colors group-hover:text-(--color-accent)">
               {formatDate(post.metadata.publishedAt, false)}
             </p>
-            <p className="text-(--color-text) transition-colors">
+            <p className="text-(--color-text) transition-colors mb-2">
               {post.metadata.title}
             </p>
+            {post.metadata.labels && post.metadata.labels.length > 0 && (
+              <Labels labels={post.metadata.labels} variant="compact" />
+            )}
           </Link>
         ))}
     </div>

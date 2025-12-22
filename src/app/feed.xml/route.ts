@@ -19,15 +19,23 @@ export async function GET() {
   );
 
   const items = posts
-    .map(
-      (post) => `    <item>
+    .map((post) => {
+      const categories =
+        post.metadata.labels && post.metadata.labels.length > 0
+          ? post.metadata.labels
+              .map((label) => `      <category>${escapeXml(label)}</category>`)
+              .join("\n")
+          : "";
+
+      return `    <item>
       <title>${escapeXml(post.metadata.title)}</title>
       <link>${baseUrl}/blog/${post.slug}</link>
       <description>${escapeXml(post.metadata.summary)}</description>
       <pubDate>${new Date(post.metadata.publishedAt).toUTCString()}</pubDate>
       <guid isPermaLink="true">${baseUrl}/blog/${post.slug}</guid>
-    </item>`,
-    )
+${categories}
+    </item>`;
+    })
     .join("\n");
 
   const feed = `<?xml version="1.0" encoding="UTF-8"?>
