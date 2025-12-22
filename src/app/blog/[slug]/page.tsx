@@ -41,15 +41,13 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 
   // Combine tags with base keywords for better SEO
   const keywords = [
-    ...(tags?.length ? [tags.join(", ")] : []),
+    ...(tags || []),
     title,
     "blog",
     "technology",
     "programming",
     "life",
-  ]
-    .filter(Boolean)
-    .join(", ");
+  ].join(", ");
 
   return {
     title: `${title}`,
