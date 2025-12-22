@@ -503,6 +503,15 @@ table {
   background: var(--color-secondary);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .book-tag,
+  .book-tag::before,
+  .book-tag::after,
+  .book-tag span::after {
+    transition: none;
+  }
+}
+
 /* Medium size variant */
 .book-tag-md {
   font-size: 0.6rem;

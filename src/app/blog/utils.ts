@@ -33,7 +33,8 @@ function parseFrontmatter(fileContent: string) {
       // Try parsing as JSON array first
       if (value.startsWith("[")) {
         try {
-          metadata.tags = JSON.parse(value);
+          const parsed = JSON.parse(value);
+          metadata.tags = Array.isArray(parsed) ? parsed : [];
         } catch {
           // Fallback: parse as comma-separated
           metadata.tags = value

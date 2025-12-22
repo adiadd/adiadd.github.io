@@ -40,9 +40,8 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
 
   // Combine tags with base keywords for better SEO
-  const tagKeywords = tags?.join(", ") || "";
   const keywords = [
-    tagKeywords,
+    ...(tags?.length ? [tags.join(", ")] : []),
     title,
     "blog",
     "technology",
