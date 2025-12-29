@@ -58,12 +58,12 @@ export async function GET(request: Request) {
           alignItems: "center",
           width: "40%",
           height: "100%",
-          backgroundColor: "#FFFDFB",
+          backgroundColor: "#FAF6F1",
         }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://utfs.io/f/X8OJl8spEec6VBsfW0Uvycih9lnJHgb1GtLmP6ZFrzBEURxC"
+          src="https://trqxlmj192.ufs.sh/f/X8OJl8spEec6Q3VpGpYOhl4IouBTfMnVzkc8XDPNeJ7YsE13"
           alt="aditya's 8 bit avatar"
           style={{
             width: "70%",
