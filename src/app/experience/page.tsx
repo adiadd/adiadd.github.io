@@ -77,7 +77,7 @@ export default function Page() {
         >
           founded and architected a professional social media app and platform
           that allowed gamers to build their gaming resume for recognition,
-          credibility, and opportunities; 10,000+ mau.
+          credibility, and opportunities; 5,000+ mau.
         </ExperienceItem>
 
         <ExperienceItem
