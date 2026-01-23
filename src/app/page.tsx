@@ -37,7 +37,7 @@ export default function Page() {
           </p>
           <p>
             i&apos;m a curious person by nature and one of my life&apos;s goal
-            is to eventually make the world a better place, in whatever way that
+            is to eventually make the world a better place and leave it better than I found it, in whatever way that
             may be.
           </p>
           <p>
