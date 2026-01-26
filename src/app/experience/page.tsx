@@ -147,7 +147,7 @@ export default function Page() {
           <h2 className="font-display text-xl font-medium mb-4">
             certs & honors
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-4">
             <ul className="list-disc pl-6 space-y-1 text-(--color-text)">
               <li>AWS Solutions Architect - Professional</li>
               <li>AWS Security - Professional</li>
