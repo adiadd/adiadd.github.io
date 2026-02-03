@@ -27,6 +27,11 @@ export default function Page() {
             to learn and build.
           </p>
           <p>
+            i&apos;m a curious person by nature and one of my life&apos;s goal
+            is to eventually make the world a better place and leave it better
+            than I found it, in whatever way that may be.
+          </p>
+          <p>
             i previously graduated from{" "}
             <span className="text-[#bf5700] font-medium">UT Austin</span> with a
             major in information systems and a certificate in cs. during the
@@ -34,11 +39,6 @@ export default function Page() {
             of computer science from{" "}
             <span className="text-[#B3A369] font-medium">Georgia Tech</span>{" "}
             i&apos;m pursuing, and in between, for fun.
-          </p>
-          <p>
-            i&apos;m a curious person by nature and one of my life&apos;s goal
-            is to eventually make the world a better place and leave it better than I found it, in whatever way that
-            may be.
           </p>
           <p>
             i&apos;m currently extremely interested in applied ai and ai
