@@ -46,12 +46,13 @@ export default function Page() {
           </p>
           <p>
             i think the world will be drastically different in the next 5, 10,
-            20+ years. ai will not be an assistant or agent(s) but deeply
-            integrated into our society in ways we can&apos;t even imagine. i
-            want to contribute to a world where society is empowered by ai,
-            where humans are free in their thinking. to think big, solve major &
-            quixotic problems, and further humanity as a whole; ai to be an
-            enhancer not an obstacle or something to fear.
+            20+ years. ai will not just be an assistant or agent(s) that you
+            talk to but also deeply integrated into our society in ways we
+            can&apos;t even imagine yet. i want to contribute to a world where
+            society is empowered by ai, where humans are free in their thinking.
+            to think big, solve major & quixotic problems, and further humanity
+            as a whole; ai to be an enhancer not an obstacle or something to
+            fear.
           </p>
         </Section>
       </div>

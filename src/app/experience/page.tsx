@@ -1,4 +1,6 @@
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "experience",
   description: "learn about what i've done",
 };
@@ -66,7 +68,8 @@ export default function Page() {
           href="https://www.agnilabs.xyz"
           style={{ "--stagger-index": 2 } as React.CSSProperties}
         >
-          trying to materialize the ideas in my head one mvp at a time💡🧪
+          🔥 incubating novel ideas and providing strategic consulting to help
+          customers adopt ai into their business 🧪
         </ExperienceItem>
 
         <ExperienceItem
