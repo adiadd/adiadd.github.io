@@ -32,13 +32,14 @@ export default function Page() {
             than I found it, in whatever way that may be.
           </p>
           <p>
-            i previously graduated from{" "}
-            <span className="text-[#bf5700] font-medium">UT Austin</span> with a
-            major in information systems and a certificate in cs. during the
-            day, i write code for Amazon Web Services, at night, for the master
+            during the
+            day, i build for an ai healthcare startup, at night, for the master
             of computer science from{" "}
             <span className="text-[#B3A369] font-medium">Georgia Tech</span>{" "}
             i&apos;m pursuing, and in between, for fun.
+            before this, i graduated from{" "}
+            <span className="text-[#bf5700] font-medium">UT Austin</span> with a
+            major in information systems and a certificate in cs.
           </p>
           <p>
             i&apos;m currently extremely interested in applied ai and ai

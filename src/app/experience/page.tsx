@@ -49,12 +49,20 @@ export default function Page() {
 
       <div className="stagger-children">
         <ExperienceItem
+          title="founding engineer"
+          company="stealth"
+          style={{ "--stagger-index": 2 } as React.CSSProperties}
+        >
+          raising the bar of care in nursing homes with ai
+        </ExperienceItem>
+
+        <ExperienceItem
           title="software engineer, gen ai"
           company="AWS"
           href="https://aws.amazon.com/"
           style={{ "--stagger-index": 1 } as React.CSSProperties}
         >
-          leading, architecting, and building generative ai applications across
+          lead, architected, and built generative ai applications across
           the entire stack for numerous customers with engagements/projects
           ranging from proofs of concept to production, $100K–$1B. frontend to
           backend, typescript to python, and internal to external customers,
