@@ -5,6 +5,25 @@ import Section from "../components/section";
 import { TimeGreeting } from "../components/time-greeting";
 import { siteConfig } from "../config/site";
 
+const aboutRows = [
+  { label: "life goal", value: "leave the world better than i found it" },
+  { label: "by day", value: "building at an ai healthcare startup" },
+  {
+    label: "by night",
+    value: (
+      <>
+        master&apos;s in cs at{" "}
+        <span className="text-[#B3A369] font-medium">Georgia Tech</span>
+      </>
+    ),
+  },
+  { label: "in between", value: "tinkering for fun" },
+  {
+    label: "before",
+    value: <span className="text-[#bf5700] font-medium">UT Austin</span>,
+  },
+];
+
 export default function Page() {
   return (
     <>
@@ -23,37 +42,24 @@ export default function Page() {
       <div className="fade-in fade-in-delay-1">
         <Section title="about">
           <p>
-            <TimeGreeting /> ✌🏾! my name is aditya <em>[ah DITH ya]</em>. i love
-            to learn and build.
+            <TimeGreeting /> ✌🏾! i&apos;m aditya <em>[ah DITH ya]</em>. i&apos;m
+            a curious person who loves to learn new things, build new things,
+            and go down rabbit holes.
           </p>
+          <dl className="grid grid-cols-1 sm:grid-cols-[max-content_1fr] sm:gap-x-5 gap-y-1">
+            {aboutRows.map(({ label, value }) => (
+              <div key={label} className="contents">
+                <dt className="font-mono text-sm text-(--color-accent) pt-0.5">
+                  {label}
+                </dt>
+                <dd className="max-sm:mb-2">{value}</dd>
+              </div>
+            ))}
+          </dl>
           <p>
-            i&apos;m a curious person by nature and one of my life&apos;s goal
-            is to eventually make the world a better place and leave it better
-            than I found it, in whatever way that may be.
-          </p>
-          <p>
-            during the
-            day, i build for an ai healthcare startup, at night, for the master
-            of computer science from{" "}
-            <span className="text-[#B3A369] font-medium">Georgia Tech</span>{" "}
-            i&apos;m pursuing, and in between, for fun.
-            before this, i graduated from{" "}
-            <span className="text-[#bf5700] font-medium">UT Austin</span> with a
-            major in information systems and a certificate in cs.
-          </p>
-          <p>
-            i&apos;m currently extremely interested in applied ai and ai
-            engineering.
-          </p>
-          <p>
-            i think the world will be drastically different in the next 5, 10,
-            20+ years. ai will not just be an assistant or agent(s) that you
-            talk to but also deeply integrated into our society in ways we
-            can&apos;t even imagine yet. i want to contribute to a world where
-            society is empowered by ai, where humans are free in their thinking.
-            to think big, solve major & quixotic problems, and further humanity
-            as a whole; ai to be an enhancer not an obstacle or something to
-            fear.
+            i think ai will change the world in ways we can&apos;t imagine yet.
+            i want to do my part to make sure ai makes people&apos;s lives
+            better, and frees us up for the big, quixotic problems.
           </p>
         </Section>
       </div>
