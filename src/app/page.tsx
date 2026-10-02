@@ -43,7 +43,7 @@ export default function Page() {
         <Section title="about">
           <p>
             <TimeGreeting /> ✌🏾! i&apos;m aditya <em>[ah DITH ya]</em>. i&apos;m
-            a curious person who loves to learn new things, build new things,
+            a curious human who loves to learn new things, build new things,
             and go down rabbit holes.
           </p>
           <dl className="grid grid-cols-1 sm:grid-cols-[max-content_1fr] sm:gap-x-5 gap-y-1">
