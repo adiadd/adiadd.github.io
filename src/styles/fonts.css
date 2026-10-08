@@ -1,0 +1,37 @@
+/*
+ * Timeless type family (https://timeless.co/type) — Timeless Free Font License v1.2.
+ * The license forbids putting the font files in a public repository, so the
+ * .woff2 files are gitignored. See public/fonts/timeless/README.md.
+ * If they are missing, everything falls back to Georgia / system-ui.
+ */
+
+@font-face {
+  font-family: "Timeless Serif";
+  src: url("/fonts/timeless/TimelessSerifVF.woff2") format("woff2");
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Timeless Serif";
+  src: url("/fonts/timeless/TimelessSerifItalicVF.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Timeless Sans";
+  src: url("/fonts/timeless/TimelessSansVF.woff2") format("woff2");
+  font-weight: 300 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Registered as theme vars so `font-display`, `font-body`, `font-ui` utilities exist */
+@theme {
+  --font-display: "Timeless Serif", Georgia, "Times New Roman", serif;
+  --font-body: "Timeless Serif", Georgia, "Times New Roman", serif;
+  --font-ui: "Timeless Sans", system-ui, -apple-system, sans-serif;
+}

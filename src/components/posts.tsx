@@ -23,7 +23,7 @@ export function BlogPosts() {
             href={`/blog/${post.slug}`}
             style={{ "--stagger-index": index + 1 } as React.CSSProperties}
           >
-            <p className="text-(--color-text-secondary) text-sm tabular-nums mb-1 transition-colors group-hover:text-(--color-accent)">
+            <p className="font-ui text-(--color-text-secondary) text-sm tabular-nums mb-1 transition-colors group-hover:text-(--color-accent)">
               {formatDate(post.metadata.publishedAt, false)}
             </p>
             <p className="text-(--color-text) transition-colors mb-1.5">

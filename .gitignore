@@ -38,3 +38,6 @@ next-env.d.ts
 
 # Playwright MCP
 .playwright-mcp
+
+# Timeless fonts: license forbids hosting in a public repository (see public/fonts/timeless/README.md)
+/public/fonts/timeless/*.woff2

@@ -4,23 +4,11 @@ import styles from "@/styles/background.module.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
-import { Fraunces, JetBrains_Mono, Lora } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
 import "./global.css";
 import { baseUrl } from "./sitemap";
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-display",
-});
-
-const lora = Lora({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-body",
-});
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -77,10 +65,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={cx(fraunces.variable, lora.variable, jetbrainsMono.variable)}
-    >
+    <html lang="en" className={cx(jetbrainsMono.variable)}>
       <Script
         defer
         src="https://cloud.umami.is/script.js"

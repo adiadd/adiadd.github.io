@@ -139,7 +139,7 @@ export default async function Blog(props: Props) {
           {post.metadata.title}
         </h1>
         <div className="flex flex-wrap items-center gap-4 mb-3">
-          <time className="dt-published text-sm text-(--color-text-secondary)">
+          <time className="dt-published font-ui text-sm text-(--color-text-secondary)">
             {formatDate(post.metadata.publishedAt)}
           </time>
           <div className="border-l border-(--color-border) h-4" />

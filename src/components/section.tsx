@@ -16,7 +16,7 @@ export default function Section({
   return (
     <section className={`mb-8 ${className}`}>
       {title && (
-        <h2 className="mb-3 text-sm font-medium tracking-wide uppercase text-(--color-text-secondary) group cursor-default">
+        <h2 className="mb-3 font-ui text-sm font-medium tracking-wide uppercase text-(--color-text-secondary) group cursor-default">
           <span className="pilcrow-marker">{marker}</span>
           {title}
         </h2>
